@@ -1,12 +1,22 @@
 ---
-title: Publications
-cms_exclude: true
+title: ''
+date: 2022-10-24
+type: landing
 
-# View.
-view: citation
+design:
+  # Default section spacing
+  spacing: '6rem'
+sections:
+  - block: collection
+    id: papers
+    content:
+      title: My Publications
+      filters:
+        folders:
+          - publications
+        featured_only: true
+    design:
+      view: article-grid
+      columns: 1
 
-# Optional header image (relative to `static/media/` folder).
-banner:
-  caption: ''
-  image: ''
 ---

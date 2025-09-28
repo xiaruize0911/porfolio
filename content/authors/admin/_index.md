@@ -34,7 +34,7 @@ organizations:
 profiles:
   - icon: at-symbol
     url: 'mailto:xiaruize0911@gmail.com'
-    label: E-mail Me
+    label: Email Me
   - icon: brands/x
     url: https://twitter.com/xiaruize
   - icon: brands/github
@@ -138,16 +138,16 @@ skills:
         icon: book-open
 
 languages:
-  # - name: Chinese (Native)
-  #   percent: 100
-  # - name: English (Fluent)
-  #   percent: 90
+  - name: Chinese (Native)
+    percent: 100
+  - name: English (Fluent)
+    percent: 90
 
 # Awards.
 #   Add/remove as many awards below as you like.
 #   Only `title`, `awarder`, and `date` are required.
 #   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
-awards:
+# awards:
   # - title: Best Paper Award
   #   url: https://neurips.cc/
   #   date: '2022-12-01'
