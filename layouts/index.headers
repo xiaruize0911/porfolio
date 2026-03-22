@@ -2,6 +2,12 @@
 {{- $csp_report_only := site.Params.security.csp.report_only | default false -}}
 {{- $default_perms := "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()" -}}
 {{- $permissions_policy := site.Params.security.permissions.policy | default $default_perms -}}
+{{- $publicationPdfs := slice -}}
+{{- range where site.RegularPages "Section" "publications" -}}
+  {{- with .Resources.GetMatch "paper.pdf" -}}
+    {{- $publicationPdfs = $publicationPdfs | append .RelPermalink -}}
+  {{- end -}}
+{{- end -}}
 # Netlify headers
 # Local override to allow embedding publication PDFs on their own pages.
 /*
@@ -13,7 +19,8 @@
   {{with $csp_policy}}Content-Security-Policy{{if $csp_report_only}}-Report-Only{{end}}: {{replaceRE "(\\s\\s+)" " " (trim . " ")}}{{end}}
   {{with $permissions_policy}}Permissions-Policy: {{replaceRE "(\\s\\s+)" " " (trim . " ")}}{{end}}
 
-/publications/*/paper.pdf
+{{ range $publicationPdfs }}
+{{ . }}
   X-Frame-Options: SAMEORIGIN
   X-XSS-Protection: 1; mode=block
   X-Content-Type-Options: nosniff
@@ -21,6 +28,7 @@
   Referrer-Policy: strict-origin-when-cross-origin
   {{with $csp_policy}}Content-Security-Policy{{if $csp_report_only}}-Report-Only{{end}}: {{replaceRE "(\\s\\s+)" " " (trim . " ")}}{{end}}
   {{with $permissions_policy}}Permissions-Policy: {{replaceRE "(\\s\\s+)" " " (trim . " ")}}{{end}}
+{{ end }}
 
 /index.webmanifest
   Content-Type: application/manifest+json
