@@ -13,12 +13,7 @@ sections:
       title: ''
       subtitle: ''
       text: |
-        # ARTIFICIAL MINDS,
-        # HUMAN VALUES,
-        # AND
-        # SOCIAL IMPACT
-
-        [Get Involved](/get-involved/) · [View Experience](/experience/) · [Read the Latest Essays](/blog/)
+        {{< home-hero-floating-title >}}
 
         ### Our Mission
 
@@ -29,7 +24,7 @@ sections:
         The answer lives in research, essays, real-world experience, and community-facing work. In other words: fewer black boxes, more human responsibility.
     design:
       columns: '1'
-      css_class: 'text-center'
+      css_class: 'text-center homepage-hero-section'
 
   - block: collection
     id: research
@@ -76,6 +71,7 @@ sections:
       count: 4
       order: desc
     design:
+      css_class: responsive-card-grid
       view: card
       columns: 3
 
