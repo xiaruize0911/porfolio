@@ -1,0 +1,30 @@
+\begin{table*}[!ht]
+\small
+\centering
+\vspace{-0.2in}
+\caption{The IS, FID, sFID, and GBOPs for CIFAR-10 with DDIM using tensor-wise quantization under different precisions. The best performance is \textbf{bolded}.}
+\vspace{0.05in}
+\resizebox{0.9\textwidth}{!}{
+\begin{tabular}{l|c|ccc||c|cccc}
+\toprule
+{Methods} & {Bits (W/A)} & IS $\uparrow$ & FID $\downarrow$ & sFID $\downarrow$ & {Bits (W/A)} & IS $\uparrow$ & FID $\downarrow$ & sFID $\downarrow$ & \\
+\midrule
+Full Prec. (Act) & 8/32  & 9.00 & 4.24 & 4.41 & 4/32  & 8.78 & 5.09 & 5.19 \\
+\midrule
+LTQ & \multirow{2}{*}{8/8} & \bf 9.08  & \bf 4.19 & 4.40 & \multirow{2}{*}{4/8}  & \bf 8.80 & \bf 5.02 & 5.21 & \\
+LTQ+MoDiff (Ours) &  & 9.04 & 4.21 & \bf 4.37 & & 8.76 & 5.05 & \bf 5.16 & \\
+\midrule
+LTQ & \multirow{2}{*}{8/6}& 8.98 & 9.93 & 8.69 &  \multirow{2}{*}{4/6} & 8.89  & 9.96 & 8.07 & \\
+LTQ+MoDiff (Ours) & & \bf 9.09 & \bf 4.00 & \bf 4.27 & & \bf 8.80 & \bf 5.04 & \bf 4.42 & \\
+\midrule
+LTQ & \multirow{2}{*}{8/4}  & 2.27 & 306.06 & 94.28 & \multirow{2}{*}{4/4} & 2.37 & 294.88 & 90.91& \\
+LTQ+MoDiff(Ours) & & \bf 8.37 & \bf 28.19 & \bf 19.90 && \bf 8.35 & \bf 26.17 & \bf 18.94 & \\
+\midrule
+LTQ & \multirow{2}{*}{8/2}& 1.19 & 457.25 & 165.85 & \multirow{2}{*}{4/2}& 1.19 & 457.11 & 165.61 & \\
+LTQ+MoDiff (Ours) & & \bf 4.26 & 1\bf 86.04 & \bf 86.73 & & \bf 3.29 & \bf 146.52 & \bf 87.78 & \\
+\bottomrule
+\end{tabular}
+}
+\label{apptab:tensor}
+\end{table*}
+

@@ -1,0 +1,14 @@
+\section{Introduction}
+
+Diffusion models achieve state-of-the-art generative performance but incur high inference costs due to iterative denoising.
+MoDiff proposes \emph{modulated quantization}, enabling aggressive activation quantization while maintaining generation fidelity. The original work demonstrates large reductions in binary operations but does not provide kernel-level optimization or runtime analysis.
+
+Our goal is to transform MoDiff from a proof-of-concept quantization strategy into a practically usable acceleration system.
+
+To achieve the goal above, we did the following work:
+\begin{itemize}
+    \item We implemented MoDiff on top of the CUTLASS library, employing 4-bit and 8-bit integer (int4/int8) layers to optimize computational efficiency.
+    \item We performed a series of benchmarks with varying quantization bit-widths to empirically validate the effectiveness of the proposed optimization scheme.
+    \item We conducted a detailed performance analysis of the MoDiff model, reporting the execution time for each constituent component and quantifying the speedup contributed by each component.
+    \item We evaluated the method on the LSUN-Churches dataset and demonstrated that the proposed implementation achieves the anticipated image-generation quality.
+\end{itemize}

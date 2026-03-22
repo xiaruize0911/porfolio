@@ -1,0 +1,18 @@
+\begin{table}[ht!]
+\small
+\centering
+\vspace{-0.1in}
+\caption{The relationship between BOPs and memory usage of our method using DDIM on CIFAR-10 for generating a single image.}
+\begin{tabular}{l|ccc|c}
+\toprule
+{Measurement} & {W8A2} & {W8A4} & {W8A8} & {W8A32} \\
+\midrule
+sFID & 8.42 & 4.38  & 4.39 & 4.41 \\
+GBops & 102 & 205 & 409 & 1636 \\
+Memory (Mb) & 35.28 & 36.4 & 38.89 & 35.09 \\
+\bottomrule
+\end{tabular}
+\vspace{-0.1in}
+\label{tab:memory}
+\end{table}
+

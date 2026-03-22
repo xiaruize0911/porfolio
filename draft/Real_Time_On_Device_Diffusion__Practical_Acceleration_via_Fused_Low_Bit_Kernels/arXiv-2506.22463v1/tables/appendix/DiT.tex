@@ -1,0 +1,19 @@
+\begin{table}[h!]
+\centering
+\caption{The IS, FID, and sFID for ImageNet 256x256 with DiT-XL/2 under different precisions. The best performance is \textbf{bolded}.}
+\begin{tabular}{l|c|c|c|c}
+\toprule
+{Methods} & {Bits (W/A)} & IS $\uparrow$ & FID $\downarrow$ & sFID $\downarrow$ \\
+\midrule
+PTQ4DiT & \multirow{2}{*}{8/8} & 36.91 & 54.80 & 89.60 \\
+PTQ4DiT+MoDiff (Ours) & & \bf 37.37 & \bf 53.76 & \bf 89.53 \\
+\midrule
+PTQ4DiT & \multirow{2}{*}{8/6} & 3.41 & 200.26 & 373.71 \\
+PTQ4DiT+MoDiff (Ours) & & \bf 36.74 & \bf 54.74 & \bf 88.49 \\
+\midrule
+PTQ4DiT & \multirow{2}{*}{8/4} & 1.45 & 271.87 & 207.59 \\
+PTQ4DiT+MoDiff (Ours) & & \bf 17.23 & \bf 90.91 & \bf 102.07 \\
+\bottomrule
+\end{tabular}
+\label{tab:DiT}
+\end{table}

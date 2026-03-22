@@ -1,0 +1,58 @@
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+font=\footnotesize,
+node distance=0.45cm,
+box/.style={draw, dashed, rounded corners, inner sep=6pt, align=center, fill=blue!8},
+cache/.style={draw, rounded corners, fill=yellow!15, inner sep=4pt, align=center},
+prec/.style={draw, rounded corners, inner sep=4pt, align=center},
+arrow/.style={-{Stealth[length=0.8mm]}, line width=0.3pt}
+]
+
+% main pipeline
+\node[prec, fill=green!10] (fp32in)
+{$\va_t^{(l)}$ \\ \textbf{FP32}};
+
+\node[box, below=of fp32in] (gn)
+{GroupNorm \\ $Q^{(l)}$ \\ $\hat{\va}_t^{(l)}$ update \\ \textbf{FP32 → INT4/8}};
+
+\node[prec, fill=orange!12, below=of gn] (int)
+{$Q^{(l)}(\va_t^{(l)}-\hat{\va}_{t+1}^{(l)})$ \\ \textbf{INT4/8}};
+
+\node[box, below=of int] (conv)
+{Conv / Linear \\ $\hat Q$ \\ $\hat{\vo}_t^{(l)}$ update \\ \textbf{INT4/8 → FP32}};
+
+\node[prec, fill=green!10, below=of conv] (fp32out)
+{$\hat{\vo}_t^{(l)}$ \\ \textbf{FP32}};
+
+% caches
+\node[cache, left=0.9cm of gn] (acache)
+{$\hat{\va}_{t+1}^{(l)}$ \\ \textbf{FP32 cache}};
+
+\node[cache, right=0.9cm of gn] (acacheout)
+{$\hat{\va}_t^{(l)}$ \\ \textbf{FP32 cache}};
+
+\node[cache, left=0.9cm of conv] (ocache)
+{$\hat{\vo}_{t+1}^{(l)}$ \\ \textbf{FP32 cache}};
+
+\node[cache, right=0.9cm of conv] (ocacheout)
+{$\hat{\vo}_t^{(l)}$ \\ \textbf{FP32 cache}};
+
+% arrows main
+\draw[arrow] (fp32in) -- (gn);
+\draw[arrow] (gn) -- (int);
+\draw[arrow] (int) -- (conv);
+\draw[arrow] (conv) -- (fp32out);
+
+% cache arrows
+\draw[arrow] (acache) -- (gn);
+\draw[arrow] (gn) -- (acacheout);
+
+\draw[arrow] (ocache) -- (conv);
+\draw[arrow] (conv) -- (ocacheout);
+
+\end{tikzpicture}
+
+\caption{The Kernel Design for MoDiff.}
+\label{fig:kernel_design}
+\end{figure}

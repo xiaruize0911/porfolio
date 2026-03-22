@@ -10,8 +10,8 @@ design:
 sections:
     - block: collection
       content:
-        title: My Blog
-        subtitle: ''
+        title: Blog
+        subtitle: 'Essays on AI, ethics, public life, and human flourishing'
         text: ''
         # Page type to display. E.g. post, talk, publication...
         page_type: blog
@@ -32,9 +32,8 @@ sections:
         # Page order: descending (desc) or ascending (asc) date.
         order: desc
       design:
-        # Choose a layout view
+        css_class: responsive-card-grid
         view: card
-        # Reduce spacing
         spacing:
             margin: [0, 0, 0, 0]
         padding: [0, 0, 0, 0]

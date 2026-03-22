@@ -23,11 +23,12 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Student
+role: Student Researcher in AI & Society
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
   - name: Nanjing Foreign Language School
+  - name: Artificial Minds, Human Values
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
@@ -41,14 +42,12 @@ profiles:
     url: https://github.com/xiaruize0911
 
 interests:
-  - Competitive Programming
-  - Algorithms
-  - Machine Learning
-  - Data Science
-  - Deep Learning
-  - Web Development
-  - Large Language Models
-  - AI Ethics
+  - AI Ethics and Governance
+  - Human-Centered Machine Learning
+  - Accessibility and Inclusive Design
+  - Civic Technology
+  - Education and AI Literacy
+  - Interdisciplinary Research
 
 education:
   # - area: PhD Computer Science (AI Focus)
@@ -171,12 +170,16 @@ languages:
   #     Recognized for contributions to scaling laws in deep learning.
 ---
 
-Hi there! 
+## Artificial Minds, Human Values
 
-I'm **Xia Ruize**, a student at Nanjing Foreign Language School.
+I’m **Ruize Xia**, a student researcher interested in the meeting point between **artificial intelligence**, **ethics**, and **public life**.
 
-I am very passionate about competitive programming, algorithms, machine learning, data science, deep learning, web development, large language models, and AI ethics.
+My work begins with a conviction: technical progress is not automatically human progress. Powerful systems can help people learn, communicate, and solve hard problems, but only when they are built with care for fairness, accessibility, accountability, and human dignity.
 
-I invite you to check out my website to discover more about my projects and experiences in these fields.
+That belief shapes the work collected on this site:
 
-Don't hesitate to get in touch if you're interested in connecting or collaborating!
+* **Research** on value-aligned evaluation, accessible AI, and decision support.
+* **Writing** that connects machine learning to education, civic trust, and moral responsibility.
+* **Service and public-facing experiments** that turn abstract principles into workshops, tools, and community-facing practice.
+
+The goal is not to romanticize technology or reject it. The goal is to ask better questions, design better systems, and keep human values legible even when the machines grow more capable.

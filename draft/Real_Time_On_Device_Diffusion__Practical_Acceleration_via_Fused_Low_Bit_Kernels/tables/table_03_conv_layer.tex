@@ -1,0 +1,16 @@
+\begin{table}[t]
+    \centering
+    \caption{Layer-wise speedup analysis across convolutional layers with different shapes. Here, \(C_{in}\) denotes the number of input channels, \(C_{out}\) denotes the number of output channels, and \(K\) denotes the kernel size. Count indicates how many times each layer shape appears in the model. The speedup is compared to FP32.}
+    \label{tab:conv_layer} \resizebox{\linewidth}{!}{
+    \begin{tabular}{lr|r|rr|rr}
+        \toprule ($C_{in}$, $C_{out}$, K) & Count & FP32   & INT8   & Speedup      & INT4   & Speedup      \\
+        \midrule (1536, 768, 3) & 5     & 0.3677 & 0.1452 & 2.53$\times$ & 0.0802 & 4.59$\times$ \\
+        (768, 768, 3)           & 23    & 0.2220 & 0.0791 & 2.81$\times$ & 0.0439 & 5.06$\times$ \\
+        (384, 384, 3)           & 21    & 0.1508 & 0.0518 & 2.91$\times$ & 0.0332 & 4.54$\times$ \\
+        (192, 192, 3)           & 9     & 0.1434 & 0.0802 & 1.79$\times$ & 0.0479 & 2.99$\times$ \\
+        (576, 192, 3)           & 1     & 0.0712 & 0.0654 & 1.09$\times$ & 0.0373 & 1.91$\times$ \\
+        (768, 384, 1)           & 4     & 0.0370 & 0.0251 & 1.47$\times$ & 0.0218 & 1.70$\times$ \\
+        (384, 192, 1)           & 2     & 0.0353 & 0.0228 & 1.55$\times$ & 0.0213 & 1.65$\times$ \\
+        \bottomrule
+    \end{tabular}}
+\end{table}

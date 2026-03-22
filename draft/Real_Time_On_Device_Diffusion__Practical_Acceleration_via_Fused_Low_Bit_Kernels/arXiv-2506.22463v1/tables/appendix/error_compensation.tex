@@ -1,0 +1,17 @@
+\begin{table}[t!]
+\centering
+\small
+\caption{FID on CIFAR-10 using the DDIM sampler in the ablation study of error compensation. ``EC'' denotes error compensation and the best performance is \textbf{bolded}.}
+\begin{tabular}{c|c|cc}
+\toprule
+\multirow{2}{*}{\centering {Bits (W/A)}} & \multirow{2}{*}{\centering {LCQ}} & \multicolumn{2}{c}{{LCQ+MoDiff}} \\
+& & w/o EC & w/ EC \\
+\midrule
+8/8 & 4.61 & 4.41 & \textbf{4.40} \\
+8/6 & 13.07 & 10.21 & \textbf{4.38} \\
+8/4 & 33.97 & 25.42 & \textbf{4.38} \\
+\bottomrule
+\end{tabular}
+\vspace{-0.1in}
+\label{tab:error_compensation}
+\end{table}

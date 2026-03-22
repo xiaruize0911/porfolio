@@ -1,0 +1,26 @@
+\begin{table*}[!ht]
+\small
+\centering
+\caption{The Precision and Recall for Church with LDM-8 under different Bits. The best performance is \textbf{bolded}.}
+\begin{tabular}{l|c|cc||c|ccc}
+\toprule
+{Methods} & {Bits (W/A)} & Precision & Recall & {Bits (W/A)} & Precision  & Recall & \\
+\midrule
+Full Prec. (Act) & 8/32 & 0.63 & 0.51 & 4/32 & 0.63 & 0.52 \\
+\midrule
+LCQ & \multirow{2}{*}{8/8} & 0.62 & 0.47 & \multirow{2}{*}{4/8} & 0.62 & 0.46 & \\
+LCQ+MoDiff (Ours) & & 0.63 & 0.53 & & 0.63 & 0.53 & \\
+\midrule
+LCQ & \multirow{2}{*}{8/6}& 0.59 & 0.46 & \multirow{2}{*}{4/6}& 0.59 & 0.45 & \\
+LCQ+MoDiff (Ours) & & 0.63 & 0.53 & & 0.63 & 0.53 & \\
+\midrule
+LCQ & \multirow{2}{*}{8/4}& 0.03 & 0.14 & \multirow{2}{*}{4/4}& 0.02 & 0.07 & \\
+LCQ+MoDiff (Ours) & & 0.63 & 0.53 & & 0.63 & 0.5 & \\
+\midrule
+LCQ &\multirow{2}{*}{8/3} & 0.00 & 0.00 &\multirow{2}{*}{4/3} & 0.00 & 0.00 & \\
+LCQ+MoDiff (Ours)& & 0.61 & 0.34 & & 0.60 & 0.34 & \\
+\bottomrule
+\end{tabular}
+\label{tab:church_pr}
+\end{table*}
+

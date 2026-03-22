@@ -1,0 +1,18 @@
+\section{Analysis of Performance}
+\label{sec:analysis}
+
+In this section, we assess the performance of our implementation through systematic benchmarking, controlled experimental evaluation, and quantitative analysis. We provide a comprehensive characterization of the computational cost of each model component, supported by a rigorous theoretical examination of the corresponding performance metrics. The objective of this study is to delineate the strengths and performance-limiting factors of the implementation, thereby yielding insights to inform and guide subsequent optimization efforts.
+\input{figures/compu_cost_breakdown.tex}
+
+\subsection{Computational Cost Breakdown}
+
+To understand where time is spent, we break down component-level cumulative cost in Figure~\ref{fig:compu_cost_breakdown} and Table~\ref{tab:component_breakdown}.
+
+Based on the detailed computational breakdown, we observe that convolutional and attention layers constitute the primary contributors to the overall computational cost. This suggests that the MoDiff optimization, which reduces the time spent on convolutional operations, can substantially decrease the required computational resources. Nevertheless, residual non-quantized layers still contribute non-negligibly to the total computation, which explains the optimization's inability to attain the theoretically optimal throughput of fully low-bit convolutional implementations.
+
+\input{figures/plot_03_conv_layer_analysis.tex}
+\input{tables/table_02_component_breakdown.tex}
+
+\subsection{Convolutional Layer Benchmark}
+
+To evaluate the CUTLASS-based convolution path and the efficiency of the fused kernels, we benchmark representative UNet conv shapes; results are shown in Figure~\ref{fig:plot_03_conv_layer_analysis}. For most layers, INT8 yields a speedup of approximately $2\times$ to $3\times$, and INT4 achieves up to about $5\times$. The gains are smaller for certain 1$\times$1 layers due to reduced arithmetic work and increased sensitivity to launch and quantization overhead. Through this work, we demonstrate that our kernels achieve significant improvements in computational cost.

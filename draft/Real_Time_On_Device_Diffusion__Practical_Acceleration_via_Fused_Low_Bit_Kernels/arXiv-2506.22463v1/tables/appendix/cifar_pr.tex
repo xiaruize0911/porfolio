@@ -1,0 +1,39 @@
+\begin{table*}[!ht]
+\small
+\centering
+\caption{The Precision and Recall for CIFAR-10 with DDIM under different Bits. The best performance is \textbf{bolded}.}
+\begin{tabular}{l|c|cc||c|ccc}
+\toprule
+{Methods} & {Bits (W/A)} & Precision & Recall & {Bits (W/A)} & Precision  & Recall & \\
+\midrule
+Full Prec. (Act) & 8/32 & 0.65 & 0.55 & 4/32 & 0.64 & 0.56\\
+\midrule
+Q-Diff & \multirow{4}{*}{8/8} & 0.65 & 0.55 & \multirow{4}{*}{4/8} & 0.66 & 0.58 \\
+Q-Diff+MoDiff (Ours) & & 0.65 & 0.56 & & 0.65 & 0.58 & \\
+LCQ & & 0.67 & 0.59 & & 0.67 & 0.57 & \\
+LCQ+MoDiff (Ours) & & 0.66 & 0.59 & & 0.67 & 0.55 & \\
+\midrule
+Q-Diff & \multirow{4}{*}{8/6} & 0.46 & 0.47 & \multirow{4}{*}{4/6} & 0.47 & 0.44 \\
+Q-Diff+MoDiff (Ours) & & 0.66 & 0.57 & & 0.65 & 0.59 & \\
+LCQ & & 0.67 & 0.58 & & 0.67 & 0.57 & \\
+LCQ+MoDiff (Ours) & & 0.66 & 0.58 & & 0.67 & 0.56 & \\
+\midrule
+Q-Diff & \multirow{4}{*}{8/4} & 0.08 & 0.00 & \multirow{4}{*}{4/4} & 0.05 & 0.00 \\
+Q-Diff+MoDifff(Ours) & & 0.54 & 0.53 & & 0.53 & 0.55 & \\
+LCQ & & 0.47 & 0.44 & & 0.48 & 0.43 & \\
+LCQ+MoDiff (Ours) & & 0.67 & 0.59 & & 0.67 & 0.57 & \\
+\midrule
+Q-Diff & \multirow{4}{*}{8/3} & 0.00 & 0.00 & \multirow{4}{*}{4/3} & 0.00 & 0.00 \\
+Q-Diff+MoDiff (Ours) & & 0.45 & 0.39 & & 0.33 & 0.32 & \\
+LCQ & & 0.33 & 0.08 & & 0.35 & 0.08 & \\
+LCQ+MoDiff (Ours)& & 0.66 & 0.59 & & 0.67 & 0.57 & \\
+\midrule
+Q-Diff & \multirow{4}{*}{8/2} & 0.00 & 0.00 & \multirow{4}{*}{4/2} & 0.00 & 0.00 \\
+Q-Diff+MoDiff (Ours) & & 0.00 & 0.00 & & 0.14 & 0.00 & \\
+LCQ & & 0.00 & 0.00 & & 0.00 & 0.00 & \\
+LCQ+MoDiff (Ours) & & 0.58 & 0.50 & & 0.58 & 0.47 & \\
+\bottomrule
+\end{tabular}
+\label{tab:cifar10_pr}
+\end{table*}
+

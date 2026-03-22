@@ -1,0 +1,22 @@
+\begin{figure*}[t]
+    \centering
+    \begin{minipage}[c]{0.25\linewidth}
+        \centering
+        \begin{tabular}{lccc}
+            \toprule \textbf{Mode} & \textbf{FID Score} & \textbf{Samples} \\
+            \midrule FP32          & 5.73               & 50000            \\
+            INT8                   & 5.85               & 50000            \\
+            INT4                   & 14.80              & 50000            \\
+            \bottomrule
+        \end{tabular}
+        \subcaption{FID Evaluation Results} \label{tab:fid_eval}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{0.68\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/plot_01_pipeline_speedup.png}
+        \subcaption{Benchmark Results for Model Performance Optimization} \label{fig:plot_01_pipeline_speedup}
+    \end{minipage}
+    \caption{Performance and Quality Evaluation}
+    \label{fig:plot_fid_combined}
+\end{figure*}

@@ -1,0 +1,155 @@
+17-Mar-2026
+
+Dear Mr. XIA:
+
+I am writing to you regarding manuscript # Access-2026-08381 entitled "Text2Sign: A Computationally Efficient Diffusion Architecture for Text-to-Sign Language Video Generation" which you submitted to IEEE Access.
+
+Your article was peer reviewed with interest but has not been recommended for publication in its current form.  We strongly encourage you to address the reviewers’ concerns, which can be found at the bottom of this letter, and resubmit your article to IEEE Access once you have updated it accordingly.
+ 
+Please note that IEEE Access has a binary peer review process. Therefore, to uphold quality to IEEE standards, an article is rejected even if it requires minor edits.
+ 
+When updating your manuscript, you should elaborate on your points and clarify with references, examples, data, etc. If you disagree with any technical points the reviewers have made, please include your counterarguments in your response to the reviewers (more information detailed below) and work this into the updated manuscript. 
+
+Also, note that if a reviewer suggested references, you should only add those that are relevant to your work if you feel they strengthen your article. Recommending references to specific publications is not appropriate for reviewers and you should report excessive cases to ieeeaccessEIC@ieee.org.  Authors are not obligated to cite articles that are recommended by the reviewers, and the final decision on the article will not be influenced by whether or not authors cite these suggested references.
+ 
+IEEE Access allows one opportunity to resubmit. If the updated manuscript is determined not to have addressed all of the previous reviewers’ concerns, or if the Associate Editor still has substantial technical concerns, the article will be rejected and no further resubmissions will be allowed.
+ 
+When you are ready to resubmit your updated article, you can do so in the IEEE Author Portal.  When you log into the IEEE Author Portal you will see the title of the rejected article and the option to “Start Resubmission”.
+
+https://ieee.atyponrex.com/submission/submissionBoard/REX-PROD-2-E1960789-3ED7-452A-837D-57B8528CC0DB-38A442E1-FB86-4D1E-A724-C01E45CB00AC-89179/current?idtype=external
+ 
+Upon resubmission you will be asked to upload the following 3 files:
+
+1) A document containing your response to reviewers from the previous peer review.  The “response to reviewers” document (template attached) should have the following regarding each comment: a) Reviewer’s concern, b) your response to the concern, c) your action to remedy the concern. The document should be uploaded with your manuscript files under "Author's Response Files.”
+
+2) Your updated manuscript with all your individual changes highlighted, including grammatical changes (e.g. preferably with the yellow highlight tool within the pdf file). This file should be uploaded with your manuscript files as “Highlighted PDF.”
+
+3) A clean copy of the final manuscript (without highlighted changes) submitted as a Word or LaTeX file, and as a PDF, both submitted as the “Main Manuscript.”
+
+**IMPORTANT: Please see the attached Resubmission Checklist that details all the items listed above.  Please utilize this checklist to ensure you have made the necessary edits to your manuscript, and to ensure you have all the necessary files prepared prior to resubmission.
+
+*** AUTHOR LIST CHANGES: If your revised manuscript has an updated author list, you will need to submit a formal request to the Editor by completing the attachment labelled ‘Request for Byline Change,’ and uploading it as 'Request for byline change form.' This should include a DETAILED justification explaining each author’s contribution(s) to the work. You will also need to provide the justification for the author change during the submission process.  Change in the author list is considered rare and exceptional, and the decision to allow such changes rests with the Editor. Once the list and order of authors has been established, the list and order of authors should not be altered without permission of all living authors of that article.
+
+We sincerely hope you will update your manuscript and resubmit soon. Please contact me if you have any questions.
+
+Thank you for your interest in IEEE Access.
+
+Sincerely,
+
+Dr. Tao Huang
+Associate Editor, IEEE Access
+Tao.Huang1@jcu.edu.au, kevin.tao.huang@gmail.com
+
+Reviewers' Comments to Author:
+
+Reviewer: 1
+
+Comments:
+Dear Authors,
+
+Thank you for your efforts.
+
+I would like to add the following comments:
+
+1. The field of sign language computing has evolved from fundamental Sign Language Recognition (SLR), which focused on translating gestures into text, toward Sign Language Production (SLP), where the goal is to generate human-like signing from linguistic inputs, to convince readers, it is nice to include some of the following research progress: “IDF-Sign: Addressing Inconsistent Depth Features for Dynamic Sign Word Recognition” and “FSign-Net: Depth Sensor Aggregated Frame-based Fourier Network for Sign Word Recognition”, "Spatial-temporal feature-based end-to-end Fourier network for 3D sign language recognition", "American sign language words recognition using spatio-temporal prosodic and angle features: A sequential learning approach", "Minimizing redundancy in hand dynamic features for enhanced sign language recognition",  to contextualize their limitations to the field and demonstrate that Text2Sign marks a critical shift toward synthesis, moving beyond 2D video to leverage 3D and depth modalities.
+
+2. "Impractical for real-time" is a common claim, but "computationally efficient" is vague. Instead of just saying it's efficient, state what your model achieves on a specific Frames Per Second (FPS) on target edge hardware (like an NVIDIA Jetson or mobile SoC, etc.).
+
+3. FVD (Fréchet Video Distance) is a standard metric, but it doesn't always correlate with human understanding of sign language.
+
+4. Mention how the frozen CLIP encoder helps the model understand "unseen" text prompts that weren't in the training set.
+
+5. Provide a table to compare your method directly with the best existing methods on the same datasets.
+
+6. Highlights your limitations with respect to your claims.
+7. Try to avoid unsubstantiated and over-exaggerated claims.
+
+Additional Questions:
+Please confirm that you have reviewed all relevant files, including supplementary files and any author response files, which can be found in the "View Author's Response" link above (author responses will only appear for resubmissions): Yes, all files have been reviewed
+
+1) Does the paper contribute to the body of knowledge?: Yes
+
+2) Is the paper technically sound?: Need to improve
+
+3) Is the subject matter presented in a comprehensive manner?: Yes
+
+4) Are the references provided applicable and sufficient?: Need to be improved
+
+5) Are there references that are not appropriate for the topic being discussed?: No
+
+5a) If yes, then please indicate which references should be removed.:
+
+
+Reviewer: 2
+
+Comments:
+- I think the “computationally efficient” claim is overstated: the model is extremely large (hundreds of millions of parameters) and the reported inference time is seconds per short clip on a data-center GPU, which is not compatible with real-time or edge deployment as currently demonstrated.
+
+- I’m not convinced the evaluation targets the core goal of sign language generation. Current metrics (denoising MSE, FVD-like proxy, motion heuristics) do not measure linguistic correctness, intelligibility, or whether the generated signing matches the text meaning.
+
+- I think the experimental evidence is underpowered for strong architectural conclusions. Several key ablations are trained for a very small number of optimization steps, so differences may reflect early-training dynamics rather than stable, fully-trained performance.
+
+- I’m concerned the quality metrics are not reliable as reported. “FVD-proxy in pixel space” is not a standard or well-validated proxy for sign-language video quality, and computing generation metrics on only a handful of synthesized clips is too small to be convincing.
+
+- I think the “frozen CLIP is better” conclusion is not fully justified without stronger controls. A randomly initialized custom text encoder trained from scratch under a short training budget is an unfair comparison; a fair baseline would use a pretrained text encoder of similar capacity or train the custom encoder longer with matched compute.
+
+- I’m not convinced the factorized-attention story is settled. The paper compares factorized vs full 3D attention at one low resolution and short clip length; the trade-off may change at higher resolutions, longer temporal windows, and with realistic sampling step counts.
+
+- I think the dataset split and generalization claims need tightening. Sign-language generation is highly signer-dependent; without a signer-disjoint split (or at least clear reporting of signer distribution and split protocol), it’s hard to trust “generalization” improvements.
+
+- I’d like ablations that isolate conditioning: no-text conditioning, random text conditioning, and different text encoders (pretrained transformer-only, CLIP variants), to show the model is truly text-faithful rather than generating generic signing motion.
+
+- Releasing the code would be beneficial for reproducibility.
+
+Additional Questions:
+Please confirm that you have reviewed all relevant files, including supplementary files and any author response files, which can be found in the "View Author's Response" link above (author responses will only appear for resubmissions): Yes, all files have been reviewed
+
+1) Does the paper contribute to the body of knowledge?: Partially
+
+2) Is the paper technically sound?: Partially
+
+3) Is the subject matter presented in a comprehensive manner?: Partially
+
+4) Are the references provided applicable and sufficient?: Partially
+
+5) Are there references that are not appropriate for the topic being discussed?: No
+
+5a) If yes, then please indicate which references should be removed.:
+
+
+Reviewer: 3
+
+Comments:
+The paper proposes a Text2Sign language generation framework that integrates a frozen CLIP-based text encoder with a 3D UNet backbone augmented by Diffusion Transformer blocks employing factorized spatial and temporal attention.
+The manuscript is concise, clearly written, and generally easy to follow. The topics of  sign language translation are timely and relevant. However, the following comments should be addressed:
+1) The Abstract should be improved. Although the research topic involves several abbreviations (or acronyms), their use should be avoided in the Abstract whenever possible. In addition, the Abstract should clearly indicate the main contributions of the study as well as its limitations.
+2) The methods are currently presented as a subsection of the ‘Introduction’. However, the methodology of a scientific study is sufficiently important to warrant a dedicated section rather than being included as a subsection. I therefore recommend creating a separate section entitled ‘Methods’ or ‘Methodology’ and expanding it to provide a clearer and more detailed description for readers interested in the technical aspects of the work.
+3) Similar comments apply to the subsection titled ‘Related Work’. I recommend creating a separate section, for example, ‘Literature Review’. In addition, the literature review should be expanded, as several relevant and recent papers are currently missing, including (among others): a)  https://doi.org/10.3390/app9132683 ; b) https://doi.org/10.1007/s10209-021-00823-1 ; c) https://doi.org/10.1016/j.neucom.2025.130421; d) https://doi.org/10.1007/s10209-015-0413-4 ; e) https://doi.org/10.3389/feduc.2023.1121597 ; ...
+4) It is important to compare the model with existing (or simiar) approaches developed by other researchers;
+5) The authors have employed multi-metric evaluations, and the inclusion of a normalized multi-metric comparison is a notable strength of the study;
+6) The writing quality should be polished and the manuscript structure requires refinement.
+
+Additional Questions:
+Please confirm that you have reviewed all relevant files, including supplementary files and any author response files, which can be found in the "View Author's Response" link above (author responses will only appear for resubmissions): Yes, all files have been reviewed
+
+1) Does the paper contribute to the body of knowledge?: Yes. The manuscript proposes a Text2Sign language generation framework that integrates a frozen CLIP-based text encoder with a 3D UNet backbone augmented by Diffusion Transformer blocks employing factorized spatial and temporal attention. The paper is concise, clearly written, and generally easy to follow. The topics of sign language translation are timely and relevant.
+
+2) Is the paper technically sound?: Yes. The study presents a promising approach, and several strengths are evident.
+
+3) Is the subject matter presented in a comprehensive manner?: While the manuscript is generally clear, the writing quality should be polished, and the overall structure of the paper requires refinement to enhance readability and presentation.
+
+4) Are the references provided applicable and sufficient?: a) Ko, S.-K.; Kim, C.J.; Jung, H.; Cho, C. Neural Sign Language Translation Based on Human Keypoint Estimation. Appl. Sci. 2019, 9, 2683. https://doi.org/10.3390/app9132683
+
+b) Kahlon, N.K., Singh, W. Machine translation from text to sign language: a systematic review. Univ Access Inf Soc 22, 1–35 (2023). https://doi.org/10.1007/s10209-021-00823-1
+
+c) Maia, W. F. ; Lopes, A. M. ; David, S. A. . Automatic sign language to text translation using MediaPipe and transformer architectures. NEUROCOMPUTING, v. 642, p. 130421, 2025.
+
+d) Filhol, M., Hadjadj, M.N. & Testu, B. A rule triggering system for automatic text-to-sign translation. Univ Access Inf Soc 15, 487–498 (2016). https://doi.org/10.1007/s10209-015-0413-4
+
+e) Rodríguez-Correa PA, Valencia-Arias A, Patiño-Toro ON, Oblitas Díaz Y and Teodori De la Puente R (2023) Benefits and development of assistive technologies for Deaf people's communication: A systematic review. Front. Educ. 8:1121597. doi: 10.3389/feduc.2023.1121597
+
+5) Are there references that are not appropriate for the topic being discussed?: No
+
+5a) If yes, then please indicate which references should be removed.:
+
+If you have any questions, please contact article administrator: Miss Priya Rai p.rai@ieee.org

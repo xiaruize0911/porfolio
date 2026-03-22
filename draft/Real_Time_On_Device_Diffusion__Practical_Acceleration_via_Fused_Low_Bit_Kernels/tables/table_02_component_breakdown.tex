@@ -1,0 +1,14 @@
+\begin{table}[t]
+    \centering
+    \caption{Component-wise time cost and speedup. The speedup is compared to FP32.}
+    \label{tab:component_breakdown} \resizebox{\linewidth}{!}{
+    \begin{tabular}{lr|rr|rr}
+        \toprule Component & FP32   & INT8   &       Speedup       & INT4   &      Speedup        \\
+        \midrule Conv2d    & 1410.0 & 1355.3 & 1.04$\times$ & 1126.3 & 1.26$\times$ \\
+        Attention          & 1378.5 & 750.4  & 1.77$\times$ & 268.8  & 1.84$\times$ \\
+        Linear             & 69.4   & 552.4  & 0.13$\times$ & 547.1  & 0.13$\times$ \\
+        GroupNorm          & 7.5    & 7.7    & 0.98$\times$ & 60.1   & 1.00$\times$ \\
+        SiLU               & 21.1   & 44.4   & 0.48$\times$ & 166.2  & 0.35$\times$ \\
+        \bottomrule
+    \end{tabular}}
+\end{table}

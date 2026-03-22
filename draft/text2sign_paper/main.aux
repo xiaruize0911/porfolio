@@ -1,0 +1,193 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{who2025deafness}
+\citation{bls2025interpreters}
+\citation{saunders2020progressive}
+\citation{duarte2021how2sign}
+\citation{ho2020ddpm,rombach2022ldm}
+\citation{ho2022videodiffusion}
+\citation{peebles2023dit}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{section.1}\protected@file@percent }
+\newlabel{sec:introduction}{{I}{1}{Introduction}{section.1}{}}
+\citation{ko2019neural}
+\citation{maia2025mediapipe}
+\citation{kahlon2023systematic,rodriguez2023assistive}
+\citation{abdullahi2023idfsign,abdullahi2024fsign,abdullahi2024fourier3d,abdullahi2022prosodic,abdullahi2025redundancy}
+\citation{filhol2016rule}
+\citation{springer2024visualsign}
+\citation{signapse2025signstream}
+\citation{bitmovin2024signlanguage}
+\citation{ho2020ddpm}
+\citation{rombach2022ldm}
+\citation{nichol2021improved}
+\citation{zhang2023lavie}
+\citation{blattmann2023svd}
+\citation{fang2025tinyfusion}
+\citation{hinton2015distillation,sanh2020distilbert}
+\citation{zhang2025videodiffusionsurvey,arxiv2025videosurvey}
+\citation{ho2022videodiffusion}
+\citation{fang2025tinyfusion}
+\citation{han2016deepcompression}
+\@writefile{toc}{\contentsline {section}{\numberline {II}Related Work}{2}{section.2}\protected@file@percent }
+\newlabel{sec:related_work}{{II}{2}{Related Work}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-A}}Sign Language Processing and Overlay Systems}{2}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-B}}Diffusion-Based Text-to-Video Generation}{2}{subsection.2.2}\protected@file@percent }
+\citation{duarte2021how2sign}
+\citation{duarte2021how2sign}
+\citation{ho2020ddpm}
+\citation{nichol2021improved}
+\citation{radford2021clip}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-C}}Efficient Architectures for Video Diffusion}{3}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {III}Methodology}{3}{section.3}\protected@file@percent }
+\newlabel{sec:method}{{III}{3}{Methodology}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-A}}Dataset}{3}{subsection.3.1}\protected@file@percent }
+\newlabel{subsec:dataset}{{\mbox  {III-A}}{3}{Dataset}{subsection.3.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Dataset Statistics After Preprocessing ($64\times 64$, $T=32$) With Signer-Disjoint Split}}{3}{table.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{tab:dataset_stats}{{1}{3}{Dataset Statistics After Preprocessing ($64\times 64$, $T=32$) With Signer-Disjoint Split}{table.caption.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}Diffusion Framework}{3}{subsection.3.2}\protected@file@percent }
+\newlabel{subsec:background_diffusion}{{\mbox  {III-B}}{3}{Diffusion Framework}{subsection.3.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {III-B}0a}Noise schedule.}{3}{paragraph.3.2.0.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Signal retention $\bar  {\alpha }_t$ under cosine (solid blue) and linear (dashed red) noise schedules. The cosine schedule preserves more low-timestep signal, helping the model learn fine details earlier.}}{3}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:noise_schedule}{{1}{3}{Signal retention $\bar {\alpha }_t$ under cosine (solid blue) and linear (dashed red) noise schedules. The cosine schedule preserves more low-timestep signal, helping the model learn fine details earlier}{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {III-B}0b}Reverse process.}{3}{paragraph.3.2.0.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-C}}Text-to-Video Architecture}{3}{subsection.3.3}\protected@file@percent }
+\newlabel{subsec:architecture}{{\mbox  {III-C}}{3}{Text-to-Video Architecture}{subsection.3.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-C}1}Text Encoder}{3}{subsubsection.3.3.1}\protected@file@percent }
+\citation{peebles2023dit}
+\citation{ho2020ddpm}
+\citation{song2020denoising}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-C}2}3D UNet with DiT-Style Transformer Blocks}{4}{subsubsection.3.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {III-C}2a}3D convolutions.}{4}{paragraph.3.3.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {III-C}2b}Factorized spatio-temporal attention.}{4}{paragraph.3.3.2.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Factorized attention decomposition. Full 3D attention over all $T\!\times \!H\!\times \!W$ tokens (top, red shading) is decomposed into sequential spatial attention per frame and temporal attention per spatial location (bottom, blue/green shading), reducing complexity from quadratic in the full volume to quadratic in each dimension independently.}}{4}{figure.caption.3}\protected@file@percent }
+\newlabel{fig:attn_factor}{{2}{4}{Factorized attention decomposition. Full 3D attention over all $T\!\times \!H\!\times \!W$ tokens (top, red shading) is decomposed into sequential spatial attention per frame and temporal attention per spatial location (bottom, blue/green shading), reducing complexity from quadratic in the full volume to quadratic in each dimension independently}{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {III-C}2c}Adaptive Layer Normalization (AdaLN).}{4}{paragraph.3.3.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {III-C}2d}Cross-attention conditioning.}{4}{paragraph.3.3.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-C}3}Network Configuration}{4}{subsubsection.3.3.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Model Configuration Parameters}}{4}{table.caption.4}\protected@file@percent }
+\newlabel{tab:config}{{2}{4}{Model Configuration Parameters}{table.caption.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-D}}Training Objective and Sampling}{4}{subsection.3.4}\protected@file@percent }
+\newlabel{subsec:training_sampling}{{\mbox  {III-D}}{4}{Training Objective and Sampling}{subsection.3.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-D}1}Training Objective}{4}{subsubsection.3.4.1}\protected@file@percent }
+\newlabel{eq:loss}{{6}{4}{Training Objective}{equation.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-D}2}DDIM Sampling}{4}{subsubsection.3.4.2}\protected@file@percent }
+\citation{paszke2019pytorch}
+\citation{rombach2022ldm}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Experiments}{5}{section.4}\protected@file@percent }
+\newlabel{sec:experiments}{{IV}{5}{Experiments}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-A}}Experimental Setup}{5}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IV-A}0a}Implementation.}{5}{paragraph.4.1.0.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IV-A}0b}Evaluation metrics.}{5}{paragraph.4.1.0.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-B}}Ablation Study}{5}{subsection.4.2}\protected@file@percent }
+\newlabel{sec:ablation}{{\mbox  {IV-B}}{5}{Ablation Study}{subsection.4.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-B}1}Training Dynamics}{5}{subsubsection.4.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Generalization gap analysis. For each variant, the three bars represent training loss (light), validation loss (solid), and the generalization gap (hatched). Our full model exhibits the smallest gap (0.0268), indicating the best regularization properties among all variants.}}{6}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:gen_gap}{{4}{6}{Generalization gap analysis. For each variant, the three bars represent training loss (light), validation loss (solid), and the generalization gap (hatched). Our full model exhibits the smallest gap (0.0268), indicating the best regularization properties among all variants}{figure.caption.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Per-Epoch Convergence: Training and Validation Loss}}{6}{table.caption.7}\protected@file@percent }
+\newlabel{tab:convergence}{{3}{6}{Per-Epoch Convergence: Training and Validation Loss}{table.caption.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-B}2}Computational Efficiency}{6}{subsubsection.4.2.2}\protected@file@percent }
+\citation{saunders2020progressive}
+\citation{filhol2016rule}
+\citation{signapse2025signstream,bitmovin2024signlanguage}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Comprehensive Ablation Study Results. All variants were trained for 3 epochs with 50 steps/epoch on a single NVIDIA L4 GPU (24\,GB). {\fontencoding  {T1}\fontseries  {b}\selectfont  {B}old} = best; \underline  {underline} = second best. Memory is reported as peak allocated GPU memory.}}{7}{table.caption.8}\protected@file@percent }
+\newlabel{tab:ablation_main}{{4}{7}{Comprehensive Ablation Study Results. All variants were trained for 3 epochs with 50 steps/epoch on a single NVIDIA L4 GPU (24\,GB). \textbf {Bold} = best; \underline {underline} = second best. Memory is reported as peak allocated GPU memory}{table.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Memory--quality Pareto trade-off. Each point represents an ablation variant, plotted as peak GPU memory (GB) versus validation loss (MSE). The dashed line connecting Pareto-optimal points illustrates the efficiency frontier. Our model achieves the lowest loss despite higher memory usage, while the No DiT baseline offers the best memory efficiency at the cost of reduced quality.}}{7}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:pareto}{{5}{7}{Memory--quality Pareto trade-off. Each point represents an ablation variant, plotted as peak GPU memory (GB) versus validation loss (MSE). The dashed line connecting Pareto-optimal points illustrates the efficiency frontier. Our model achieves the lowest loss despite higher memory usage, while the No DiT baseline offers the best memory efficiency at the cost of reduced quality}{figure.caption.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Inference latency for generating a single 16-frame clip using 15-step DDIM sampling. The No DiT baseline is fastest (2{,}629\,ms), while our factorized model (2{,}860\,ms) incurs only 8.8\% overhead — well within practical bounds for non-real-time applications.}}{7}{figure.caption.10}\protected@file@percent }
+\newlabel{fig:inference}{{6}{7}{Inference latency for generating a single 16-frame clip using 15-step DDIM sampling. The No DiT baseline is fastest (2{,}629\,ms), while our factorized model (2{,}860\,ms) incurs only 8.8\% overhead — well within practical bounds for non-real-time applications}{figure.caption.10}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Theoretical Attention Scaling Comparison for $T{=}32$ Frames. Values show the dominant pairwise interaction count before constant factors.}}{7}{table.caption.12}\protected@file@percent }
+\newlabel{tab:scaling}{{6}{7}{Theoretical Attention Scaling Comparison for $T{=}32$ Frames. Values show the dominant pairwise interaction count before constant factors}{table.caption.12}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Efficiency--Quality Trade-Off Summary}}{7}{table.caption.11}\protected@file@percent }
+\newlabel{tab:efficiency_summary}{{5}{7}{Efficiency--Quality Trade-Off Summary}{table.caption.11}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-B}3}Generation Quality}{7}{subsubsection.4.2.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Generation Quality Metrics Across Ablation Variants. {\fontencoding  {T1}\fontseries  {b}\selectfont  {B}old} = best; \underline  {underline} = second best.}}{7}{table.caption.14}\protected@file@percent }
+\newlabel{tab:quality_metrics}{{8}{7}{Generation Quality Metrics Across Ablation Variants. \textbf {Bold} = best; \underline {underline} = second best}{table.caption.14}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Contextual comparison with representative prior sign-language production systems. ``N/R'' denotes values not reported in a directly comparable form in the cited source. Because datasets, output modalities, and evaluation protocols differ, this table should be read as context rather than a leaderboard.}}{8}{table.caption.13}\protected@file@percent }
+\newlabel{tab:external_comparison}{{7}{8}{Contextual comparison with representative prior sign-language production systems. ``N/R'' denotes values not reported in a directly comparable form in the cited source. Because datasets, output modalities, and evaluation protocols differ, this table should be read as context rather than a leaderboard}{table.caption.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Training loss curves across ablation variants (3 epochs, 50 steps/epoch). Solid lines show smoothed trends; shaded regions indicate raw step-level noise. Vertical dotted lines mark epoch boundaries. Our full model and Custom TextEnc achieve the lowest final training losses, confirming the effectiveness of the DiT backbone.}}{8}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:training_loss}{{7}{8}{Training loss curves across ablation variants (3 epochs, 50 steps/epoch). Solid lines show smoothed trends; shaded regions indicate raw step-level noise. Vertical dotted lines mark epoch boundaries. Our full model and Custom TextEnc achieve the lowest final training losses, confirming the effectiveness of the DiT backbone}{figure.caption.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Per-epoch convergence comparison. {\fontencoding  {T1}\fontseries  {b}\selectfont  {L}eft:} Training loss shows all variants converge rapidly from $\sim $0.35 to below 0.12. {\fontencoding  {T1}\fontseries  {b}\selectfont  {R}ight:} Validation loss reveals that our factorized DiT design achieves the best generalization (0.065), while the No DiT baseline saturates at 0.080.}}{8}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:convergence}{{8}{8}{Per-epoch convergence comparison. \textbf {Left:} Training loss shows all variants converge rapidly from $\sim $0.35 to below 0.12. \textbf {Right:} Validation loss reveals that our factorized DiT design achieves the best generalization (0.065), while the No DiT baseline saturates at 0.080}{figure.caption.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Computational efficiency comparison with dual axes. Bars represent training step time (ms); diamond markers show peak GPU memory (GB). The red dashed line indicates the 24\,GB NVIDIA L4 limit. Our full model uses 19.0\,GB---within the single-GPU budget---while the No DiT baseline requires only 8.5\,GB.}}{8}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:efficiency}{{9}{8}{Computational efficiency comparison with dual axes. Bars represent training step time (ms); diamond markers show peak GPU memory (GB). The red dashed line indicates the 24\,GB NVIDIA L4 limit. Our full model uses 19.0\,GB---within the single-GPU budget---while the No DiT baseline requires only 8.5\,GB}{figure.caption.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Parameter composition showing UNet (trainable), text encoder (frozen CLIP or trainable custom), stacked per variant. Custom TextEnc has the highest trainable count (572.8M) since its text encoder is jointly trained. Gray hatched regions indicate frozen parameters.}}{9}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:params}{{10}{9}{Parameter composition showing UNet (trainable), text encoder (frozen CLIP or trainable custom), stacked per variant. Custom TextEnc has the highest trainable count (572.8M) since its text encoder is jointly trained. Gray hatched regions indicate frozen parameters}{figure.caption.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Generation quality metrics across all ablation variants. Gold-outlined bars highlight the best-performing variant for each metric. Our full model achieves the lowest motion magnitude and spatial gradient, indicating controlled, purposeful motion.}}{9}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:quality}{{11}{9}{Generation quality metrics across all ablation variants. Gold-outlined bars highlight the best-performing variant for each metric. Our full model achieves the lowest motion magnitude and spatial gradient, indicating controlled, purposeful motion}{figure.caption.19}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-C}}Qualitative Results}{9}{subsection.4.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Generation for ``Hello'' from the strongest checkpoint used in qualitative evaluation under 8-step DDIM and CFG$=5.0$. Eight evenly spaced frames show stable global pose and smooth temporal progression, but also the visible noise and weak fine-grained articulation that continue to limit qualitative fidelity.}}{9}{figure.caption.20}\protected@file@percent }
+\newlabel{fig:generated_sample}{{12}{9}{Generation for ``Hello'' from the strongest checkpoint used in qualitative evaluation under 8-step DDIM and CFG$=5.0$. Eight evenly spaced frames show stable global pose and smooth temporal progression, but also the visible noise and weak fine-grained articulation that continue to limit qualitative fidelity}{figure.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Qualitative generations for two prompts under the same 8-step DDIM, CFG$=5.0$ setting. Top: ``Hello.'' Bottom: ``Thank you.'' The model changes coarse pose patterns across prompts, but both outputs remain noisy and low-detail.}}{9}{figure.caption.21}\protected@file@percent }
+\newlabel{fig:comparison_training}{{13}{9}{Qualitative generations for two prompts under the same 8-step DDIM, CFG$=5.0$ setting. Top: ``Hello.'' Bottom: ``Thank you.'' The model changes coarse pose patterns across prompts, but both outputs remain noisy and low-detail}{figure.caption.21}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Discussion}{9}{section.5}\protected@file@percent }
+\newlabel{sec:discussion}{{V}{9}{Discussion}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-A}}Key Findings}{9}{subsection.5.1}\protected@file@percent }
+\citation{rombach2022ldm}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Normalized multi-metric radar comparison across all ablation variants. Each axis is independently normalized so that the outer boundary represents the best score. Our full model (blue) achieves the most balanced profile, performing best or near-best on five of six axes. The Custom TextEnc variant trades motion control for temporal consistency, while the No DiT baseline underperforms across all quality metrics.}}{10}{figure.caption.22}\protected@file@percent }
+\newlabel{fig:radar}{{14}{10}{Normalized multi-metric radar comparison across all ablation variants. Each axis is independently normalized so that the outer boundary represents the best score. Our full model (blue) achieves the most balanced profile, performing best or near-best on five of six axes. The Custom TextEnc variant trades motion control for temporal consistency, while the No DiT baseline underperforms across all quality metrics}{figure.caption.22}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Summary of percentage improvements in validation loss achieved by each architectural component: DiT blocks provide the largest gain (19.5\%), followed by pretrained text encoding (11.0\%), and factorized attention (2.5\%).}}{10}{figure.caption.23}\protected@file@percent }
+\newlabel{fig:key_findings}{{15}{10}{Summary of percentage improvements in validation loss achieved by each architectural component: DiT blocks provide the largest gain (19.5\%), followed by pretrained text encoding (11.0\%), and factorized attention (2.5\%)}{figure.caption.23}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-B}}Analysis of Training Dynamics}{10}{subsection.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-C}}Extended 100-Epoch Run}{11}{subsection.5.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Summary of the 100-epoch training run (text2sign\_20260207\_124013).}}{11}{table.caption.24}\protected@file@percent }
+\newlabel{tab:full_run_summary}{{9}{11}{Summary of the 100-epoch training run (text2sign\_20260207\_124013)}{table.caption.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Per-epoch train and validation loss for the 100-epoch run. The red marker denotes the best validation epoch (84, with a loss of 0.00578).}}{11}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:fullrun_loss}{{16}{11}{Per-epoch train and validation loss for the 100-epoch run. The red marker denotes the best validation epoch (84, with a loss of 0.00578)}{figure.caption.25}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Train--validation gap (train$-$val) over 100 epochs. The gap narrows and stabilizes after roughly epoch 70.}}{11}{figure.caption.26}\protected@file@percent }
+\newlabel{fig:fullrun_gap}{{17}{11}{Train--validation gap (train$-$val) over 100 epochs. The gap narrows and stabilizes after roughly epoch 70}{figure.caption.26}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-D}}Checkpoint Evaluation and Fine-Tuning Analysis}{11}{subsection.5.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Compact evaluation summary for the strongest checkpoint under 8-step DDIM and CFG$=5.0$. The checkpoint is extremely smooth temporally (temporal consistency $=1.0000$) and relatively lightweight at inference time, but its low SSIM/PSNR values and the accompanying qualitative samples indicate that smoothness does not translate into convincing signing fidelity.}}{12}{figure.caption.27}\protected@file@percent }
+\newlabel{fig:checkpoint_audit}{{18}{12}{Compact evaluation summary for the strongest checkpoint under 8-step DDIM and CFG$=5.0$. The checkpoint is extremely smooth temporally (temporal consistency $=1.0000$) and relatively lightweight at inference time, but its low SSIM/PSNR values and the accompanying qualitative samples indicate that smoothness does not translate into convincing signing fidelity}{figure.caption.27}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-E}}Limitations and Future Work}{12}{subsection.5.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {V-E}0a}Resolution, computational budget, and visual fidelity.}{12}{paragraph.5.5.0.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {V-E}0b}Temporal length and compositional generation.}{12}{paragraph.5.5.0.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {V-E}0c}Semantic and linguistic evaluation.}{12}{paragraph.5.5.0.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {V-E}0d}Deployment optimization.}{12}{paragraph.5.5.0.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {V-E}0e}Dataset diversity and generalization.}{12}{paragraph.5.5.0.5}\protected@file@percent }
+\bibstyle{IEEEtran}
+\bibdata{references}
+\bibcite{who2025deafness}{1}
+\bibcite{bls2025interpreters}{2}
+\bibcite{saunders2020progressive}{3}
+\bibcite{duarte2021how2sign}{4}
+\bibcite{ho2020ddpm}{5}
+\bibcite{rombach2022ldm}{6}
+\bibcite{ho2022videodiffusion}{7}
+\bibcite{peebles2023dit}{8}
+\bibcite{ko2019neural}{9}
+\bibcite{maia2025mediapipe}{10}
+\bibcite{kahlon2023systematic}{11}
+\bibcite{rodriguez2023assistive}{12}
+\bibcite{abdullahi2023idfsign}{13}
+\bibcite{abdullahi2024fsign}{14}
+\bibcite{abdullahi2024fourier3d}{15}
+\bibcite{abdullahi2022prosodic}{16}
+\bibcite{abdullahi2025redundancy}{17}
+\bibcite{filhol2016rule}{18}
+\bibcite{springer2024visualsign}{19}
+\bibcite{signapse2025signstream}{20}
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Conditioning-control analysis for the strongest checkpoint (8-step DDIM, CFG$=5.0$). Cross-prompt distance measures mean MSE between generations from different prompts; same-prompt distance measures mean MSE across repeated generations of the same prompt. These are coarse pixel-space probes rather than linguistic faithfulness metrics.}}{13}{table.caption.28}\protected@file@percent }
+\newlabel{tab:conditioning_controls}{{10}{13}{Conditioning-control analysis for the strongest checkpoint (8-step DDIM, CFG$=5.0$). Cross-prompt distance measures mean MSE between generations from different prompts; same-prompt distance measures mean MSE across repeated generations of the same prompt. These are coarse pixel-space probes rather than linguistic faithfulness metrics}{table.caption.28}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusion}{13}{section.6}\protected@file@percent }
+\newlabel{sec:conclusion}{{VI}{13}{Conclusion}{section.6}{}}
+\@writefile{toc}{\contentsline {section}{REFERENCES}{13}{section*.30}\protected@file@percent }
+\bibcite{bitmovin2024signlanguage}{21}
+\bibcite{nichol2021improved}{22}
+\bibcite{zhang2023lavie}{23}
+\bibcite{blattmann2023svd}{24}
+\bibcite{fang2025tinyfusion}{25}
+\bibcite{hinton2015distillation}{26}
+\bibcite{sanh2020distilbert}{27}
+\bibcite{zhang2025videodiffusionsurvey}{28}
+\bibcite{arxiv2025videosurvey}{29}
+\bibcite{han2016deepcompression}{30}
+\bibcite{radford2021clip}{31}
+\bibcite{song2020denoising}{32}
+\bibcite{paszke2019pytorch}{33}
+\@writefile{toc}{\contentsline {subsection}{Ruize Xia}{14}{section*.31}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Architecture overview of the Text2Sign 3D UNet with DiT-style transformer blocks. The network operates on 3D video tensors through an encoder--decoder structure with skip connections. DiT blocks (blue shading) apply factorized spatial--temporal attention at resolutions $16\times 16$ and $8\times 8$. Blue dashed arrows indicate timestep conditioning via Adaptive Layer Normalization (AdaLN); red dashed arrows indicate text conditioning via cross-attention with frozen CLIP features.}}{15}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:architecture}{{3}{15}{Architecture overview of the Text2Sign 3D UNet with DiT-style transformer blocks. The network operates on 3D video tensors through an encoder--decoder structure with skip connections. DiT blocks (blue shading) apply factorized spatial--temporal attention at resolutions $16\times 16$ and $8\times 8$. Blue dashed arrows indicate timestep conditioning via Adaptive Layer Normalization (AdaLN); red dashed arrows indicate text conditioning via cross-attention with frozen CLIP features}{figure.caption.5}{}}
+\gdef \@abspage@last{15}

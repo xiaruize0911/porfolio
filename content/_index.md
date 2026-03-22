@@ -5,47 +5,91 @@ date: 2022-10-24
 type: landing
 
 design:
-  # Default section spacing
   spacing: '6rem'
 
 sections:
+  - block: markdown
+    content:
+      title: ''
+      subtitle: ''
+      text: |
+        # ARTIFICIAL MINDS,
+        # HUMAN VALUES,
+        # AND
+        # SOCIAL IMPACT
+
+        [Get Involved](/get-involved/) · [View Experience](/experience/) · [Read the Latest Essays](/blog/)
+
+        ### Our Mission
+
+        This site investigates how artificial intelligence can be designed, governed, and taught in ways that protect **human dignity**, strengthen **public trust**, and expand **social opportunity**.
+
+        Inspired by the interdisciplinary spirit of technology, philosophy, and civic engagement, the project asks a simple but demanding question: **How do we build intelligent systems without losing sight of the people they are meant to serve?**
+
+        The answer lives in research, essays, real-world experience, and community-facing work. In other words: fewer black boxes, more human responsibility.
+    design:
+      columns: '1'
+      css_class: 'text-center'
+
+  - block: collection
+    id: research
+    content:
+      title: Research
+      subtitle: 'Compiled papers and working notes on accessibility, efficient AI systems, and responsible model adaptation'
+      text: ''
+      filters:
+        folders:
+          - publications
+        featured_only: true
+      count: 3
+    design:
+      view: article-grid
+      columns: 3
+
+  - block: collection
+    id: experience
+    content:
+      title: Experience
+      subtitle: 'Internships and practical engineering work'
+      text: ''
+      filters:
+        folders:
+          - experience
+        featured_only: false
+      count: 3
+      order: desc
+    design:
+      css_class: responsive-card-grid
+      view: card
+      columns: 3
+
+  - block: collection
+    id: club
+    content:
+      title: NFLS AI Club
+      subtitle: 'Meetings, workshops, and hands-on learning'
+      text: ''
+      filters:
+        folders:
+          - nfls-ai-club
+        featured_only: false
+      count: 4
+      order: desc
+    design:
+      view: card
+      columns: 3
+
   - block: resume-biography-3
     content:
-      # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
       text: ''
-      # Show a call-to-action button under your biography? (optional)
-      # button:
-      #   text: Download CV
-      #   url: uploads/resume.pdf
       headings:
-        about: 'About Me'
-        education: ''
-        interests: ''
+        about: 'About the Founder'
+        education: 'Education'
+        interests: 'Focus Areas'
     design:
-      # Apply a gradient background
       css_class: hbx-bg-gradient
-      # Avatar customization
       avatar:
-        size: medium # Options: small (150px), medium (200px, default), large (320px), xl (400px), xxl (500px)
-        shape: circle # Options: circle (default), square, rounded
-  # - block: markdown
-  #   content:
-  #     title: '📚 My Research'
-  #     subtitle: ''
-  #     text: |-
-  #       I am passionate about advancing the field of artificial intelligence through research and collaboration. 
-  #   design:
-  #     columns: '1'
-  # - block: collection
-  #   id: papers
-  #   content:
-  #     title: My Publications
-  #     filters:
-  #       folders:
-  #         - publications
-  #       featured_only: true
-  #   design:
-  #     view: article-grid
-  #     columns: 2
+        size: medium
+        shape: circle
 ---

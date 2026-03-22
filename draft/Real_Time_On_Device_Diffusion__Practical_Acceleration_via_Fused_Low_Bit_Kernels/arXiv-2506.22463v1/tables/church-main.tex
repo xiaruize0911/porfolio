@@ -1,0 +1,34 @@
+\begin{table}[t!]
+\small
+\caption{The IS, FID, sFID, and GBOPs for LSUN-Church with LDM-8 under different precisions.}
+\resizebox{0.45\textwidth}{!}{
+\begin{tabular}{l|c|c|cc}
+\toprule
+{Methods} & {Bits (W/A)} & GBops & FID $\downarrow$ & sFID $\downarrow$ \\
+\midrule
+Full Prec. (Act) & 8/32 &{5015} & 4.03 & 10.89 \\
+\midrule
+Q-Diff & \multirow{4}{*}{8/8} & \multirow{4}{*}{1254} & 4.24 & 10.57 \\
+Q-Diff+MoDiff (Ours) & & & \bf 3.85 & 10.82 \\
+LCQ & & & 4.02 & 11.53 \\
+LCQ+MoDiff (Ours) & & & 3.99 &\bf  10.06 \\
+\midrule
+Q-Diff & \multirow{4}{*}{8/6} & \multirow{4}{*}{1254} & 55.13 & 30.98 \\
+Q-Diff+MoDiff (Ours) & & & 5.43 & 13.41 \\
+LCQ & & & 4.50 & 12.90 \\
+LCQ+MoDiff (Ours) & && \bf 3.89 & \bf 10.12 \\
+\midrule
+Q-Diff & \multirow{4}{*}{8/4} & \multirow{4}{*}{1254} & 355.85 & 187.56 \\
+Q-Diff+MoDiff (Ours) & & & \bf 3.97 & 11.16 \\
+LCQ & & & 198.37 & 161.03 \\
+LCQ+MoDiff (Ours) & && 34.02 & \bf 10.59 \\
+\midrule
+Q-Diff & \multirow{4}{*}{8/3} & \multirow{4}{*}{1254} & 367.51 & 354.59 \\
+Q-Diff+MoDiff (Ours) & & & \bf 5.40 & \bf 13.81 \\
+LCQ & & & 341.62 & 407.68 \\
+LCQ+MoDiff (Ours) && & 12.05 & 35.29 \\
+\bottomrule
+\end{tabular}
+}
+\label{tab:church}
+\end{table}

@@ -1,0 +1,77 @@
+% CVPR 2026 Paper Template; see https://github.com/cvpr-org/author-kit
+
+\documentclass[10pt, twocolumn, letterpaper]{article}
+
+%%%%%%%%% PAPER TYPE  - PLEASE UPDATE FOR FINAL VERSION
+\usepackage{cvpr}              % To produce the CAMERA-READY version
+% \usepackage[review]{cvpr} % To produce the REVIEW version
+% \usepackage[pagenumbers]{cvpr} % To force page numbers, e.g. for an arXiv version
+
+% Import additional packages in the preamble file, before hyperref
+\input{preamble}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta}
+\usepackage{float}
+% It is strongly recommended to use hyperref, especially for the review version.
+% hyperref with option pagebackref eases the reviewers' job.
+% Please disable hyperref *only* if you encounter grave issues,
+% e.g. with the file validation for the camera-ready version.
+%
+% If you comment hyperref and then uncomment it, you should delete *.aux before re-running LaTeX.
+% (Or just hit 'q' on the first LaTeX run, let it finish, and you should be clear).
+\definecolor{cvprblue}{rgb}{0.21,0.49,0.74}
+\usepackage[pagebackref, breaklinks, colorlinks, allcolors=cvprblue]{hyperref}
+
+%%%%%%%%% PAPER ID  - PLEASE UPDATE
+\def\paperID{55} % *** Enter the Paper ID here
+\def\confName{CVPR}
+\def\confYear{2026}
+
+\input{macros}
+
+%%%%%%%%% TITLE - PLEASE UPDATE
+\title{Real-Time On-Device Diffusion: Practical Acceleration via Fused Low-Bit Kernels}
+
+%%%%%%%%% AUTHORS - PLEASE UPDATE
+% \author{First Author\\
+% Institution1\\
+% Institution1 address\\
+% {\tt\small firstauthor@i1.org}
+% % For a paper whose authors are all at the same institution,
+% % omit the following lines up until the closing ``}''.
+% % Additional authors and addresses can be added with ``\and'',
+% % just like the second author.
+% % To save space, use either the email address or home page, not both
+% \and Second Author\\
+% Institution2\\
+% First line of institution2 address\\
+% {\tt\small secondauthor@i2.org} }
+\author{Xia Ruize\\
+Nanjing Foreign Language School\\
+{\tt\small xiaruize0911@gmail.com}\\
+\\
+\and Weizhi Gao\\
+North Carolina State University\\
+{\tt\small wgao23@ncsu.edu}\\
+\and Jiapeng Hu\\
+North Carolina State University\\
+{\tt\small jhu48@ncsu.edu}\\
+\and Xiaorui Liu\\
+North Carolina State University\\
+{\tt\small xliu96@ncsu.edu}\\
+}
+
+\begin{document}
+    \maketitle
+    \input{sections/0_Abstract}
+    \input{sections/1_intro_v2}
+    \input{sections/2_Related_Work}
+    \input{sections/3_method_v2}
+    \input{sections/4_experiments}
+    % \input{sections/4_Analysis_of_Performance}
+    \input{sections/5_Conclusion}
+    \bibliographystyle{unsrt}
+    \clearpage
+    \bibliography{main}
+\end{document}

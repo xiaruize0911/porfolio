@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering
+\caption{Zero-shot transfer accuracy (\%) on CIFAR-100 and Flowers102 after EuroSAT fine-tuning. LoRA preserves substantially more CIFAR-100 accuracy than full fine-tuning, while Flowers102 values are uniformly low for all models and should be treated as supplemental evidence only.}
+\label{tab:zeroshot}
+\small
+\resizebox{0.8\columnwidth}{!}{%
+\begin{tabular}{lrr}
+\toprule
+Model & CIFAR-100 (\%) & Flowers102 (\%) \\
+\midrule
+Pretrained & 60.22 & 0.20 \\
+Full FT (EuroSAT) & 9.43 & 1.37 \\
+LoRA $r=4$ (EuroSAT) & 40.51 & 1.27 \\
+LoRA $r=8$ (EuroSAT) & 47.28 & 0.78 \\
+LoRA $r=16$ (EuroSAT) & 39.35 & 0.98 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

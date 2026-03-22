@@ -1,0 +1,27 @@
+\begin{table}[t!]
+\small
+\centering
+\caption{The IS, FID, sFID, and GBOPs for LSUN-Bedrooms with LDM-4 under different precisions. 
+}
+\resizebox{0.45\textwidth}{!}{
+\begin{tabular}{l|c|c|cc}
+\toprule
+{Methods} & {Bits (W/A) } & GBops & FID $\downarrow$ & sFID $\downarrow$ \\
+\midrule
+Full Prec. & 8/32 & 25560 & 3.45 & 8.45 \\
+\midrule
+LCQ & \multirow{2}{*}{8/8} & \multirow{2}{*}{6390}& 3.61 & 8.65 \\
+LCQ+MoDiff (Ours) & && \bf 3.57 & \bf 8.44 \\
+\midrule
+LCQ & \multirow{2}{*}{8/6}&\multirow{2}{*}{4609} & 64.17 & 63.18 \\
+LCQ+MoDiff (Ours) & && \bf 3.57 & \bf 6.53 \\
+\midrule
+LCQ & \multirow{2}{*}{8/4}&\multirow{2}{*}{3195} & 372.30 & 262.11 \\
+LCQ+MoDiff (Ours) & && \bf 27.88 & \bf 77.85 \\
+\bottomrule
+\end{tabular}
+}
+\vspace{-0.1in}
+\label{tab:bedroom}
+\end{table}
+

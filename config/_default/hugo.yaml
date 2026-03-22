@@ -4,7 +4,7 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 # Website name
-title: xiaruize's Portfolio
+title: Artificial Minds, Human Values
 # Website URL
 baseURL: 'https://portfolio.xiaruize.org/'
 
@@ -35,6 +35,7 @@ disableAliases: true
 outputs:
   home: [HTML, RSS, headers, redirects, backlinks]
   section: [HTML, RSS]
+ignoreLogs: ['sections-none-/zh/']
 imaging:
   resampleFilter: lanczos
   quality: 90
@@ -47,6 +48,9 @@ taxonomies:
   publication_type: publication_types
 markup:
   _merge: deep
+  goldmark:
+    renderer:
+      unsafe: true
   highlight:
     lineNos: false
 security:

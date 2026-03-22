@@ -1,0 +1,41 @@
+\begin{table*}[!ht]
+\small
+\centering
+\caption{The IS, FID, sFID, and GBOPs for CIFAR-10 with DDIM under different precisions. The best performance is \textbf{bolded}.}
+\resizebox{0.9\textwidth}{!}{
+\begin{tabular}{l|c|c|ccc||c|c|cccc}
+\toprule
+{Methods} & {Bits (W/A)} & GBops & IS $\uparrow$ & FID $\downarrow$ & sFID $\downarrow$ & {Bits (W/A)} & GBops & IS $\uparrow$ & FID $\downarrow$ & sFID $\downarrow$ & \\
+\midrule
+Full Prec. (Act) & 8/32 & 1636 & 9.00 & 4.24 & 4.41 & 4/32 & 818 & 8.78 & 5.09 & 5.19 \\
+\midrule
+Q-Diff & \multirow{4}{*}{8/8} & \multirow{4}{*}{409} & \bf 9.48 & \bf 3.75 & 4.49 & \multirow{4}{*}{4/8} & \multirow{4}{*}{204} & \bf 9.12 & \bf 4.93 & 5.03 & \\
+Q-Diff+MoDiff (Ours) &  & & 9.10 & 4.10 & 4.39 && & 9.08 & 5.13 & 5.18 & \\
+LCQ & && 9.01 & 4.21 & 4.41 && & 8.80 & 4.96 & \bf 4.94 \\
+LCQ+MoDiff (Ours) & & & 9.10 & 4.10 & \bf 4.39 & && 9.08 &  4.95 & 4.95 & \\
+\midrule
+Q-Diff & \multirow{4}{*}{8/6}& \multirow{4}{*}{307} & 8.76 & 29.16 & 13.81 &  \multirow{4}{*}{4/6} & \multirow{4}{*}{153} & 8.51 & 28.60 & 15.09 & \\
+Q-Diff+MoDiff (Ours) & & & \bf 9.38 & 4.19 & \bf 4.32 && & 8.85 & 5.62 & 4.93 & \\
+LCQ & && 9.24 & \bf 4.15 & 4.61 & && \bf 9.01 & \bf 4.49 & 4.94 \\
+LCQ+MoDiff (Ours) &  && 9.01 & 4.21 & 4.40 & && 8.80 & 5.01 & \bf 4.92 \\
+\midrule
+Q-Diff & \multirow{4}{*}{8/4} & \multirow{4}{*}{205} & 2.19 & 332.75 & 100.37 & \multirow{4}{*}{4/4} & \multirow{4}{*}{102} & 2.47 & 325.76 & 92.84 & \\
+Q-Diff+MoDiff(Ours) && & 9.71 & 13.41 & 11.25 & && 9.60 & 13.62 & 11.94 & \\
+LCQ & && \bf 10.01 & 24.09 & 13.07 & && \bf 9.72 & 22.50 & 12.95 \\
+LCQ+MoDiff (Ours) & & & 9.08 & \bf 4.31 & \bf 4.38 && & 8.82 & \bf 5.10 & \bf 4.94 & \\
+\midrule
+Q-Diff & \multirow{4}{*}{8/3} & \multirow{4}{*}{153} & 1.19 & 457.35 & 165.79 & \multirow{4}{*}{4/3} & \multirow{4}{*}{77} & 1.19 &457.35 & 165.79 & \\
+Q-Diff+MoDiff (Ours) & && 5.19 & 90.34 & 41.26 && & 7.34 & 47.35 & 13.87 & \\
+LCQ & && 4.06 & 143.39 & 33.97 && & 3.86 & 146.29 & 33.56 \\
+LCQ+MoDiff (Ours) & & & \bf 9.02 & \bf 4.14 & \bf 4.38 & && \bf 8.79 & \bf 4.98 & \bf 4.95 & \\
+\midrule
+Q-Diff & \multirow{4}{*}{8/2}& \multirow{4}{*}{102} & 1.19 & 457.34 & 165.79 & \multirow{4}{*}{4/2}& \multirow{4}{*}{51} & 1.19 & 457.34 & 165.79 & \\
+Q-Diff+MoDiff (Ours) & & & 1.82 & 266.68 & 75.88 && & 1.36 & 387.75 & 168.38 & \\
+LCQ && & 1.20 & 429.59 & 146.46 && & 1.20 & 430.26 & 146.91 \\
+LCQ+MoDiff (Ours) & & & \bf 8.94 & \bf 15.85 & \bf 8.42 & && \bf 8.63 & \bf 18.10 & \bf 11.02 & \\
+\bottomrule
+\end{tabular}
+}
+\label{tab:cifar10}
+\end{table*}
+

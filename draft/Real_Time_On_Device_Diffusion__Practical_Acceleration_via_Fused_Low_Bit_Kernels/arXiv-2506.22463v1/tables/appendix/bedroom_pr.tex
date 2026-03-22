@@ -1,0 +1,23 @@
+\begin{table*}[!ht]
+\small
+\centering
+\caption{The Precision and Recall for Bedroom with LDM-4 under different Bits. The best performance is \textbf{bolded}.}
+\begin{tabular}{l|c|cc||c|ccc}
+\toprule
+{Methods} & {Bits (W/A)} & Precision & Recall & {Bits (W/A)} & Precision  & Recall & \\
+\midrule
+Full Prec. (Act) & 8/32 & 0.65 & 0.45 & 4/32 & 0.66 & 0.41 \\
+\midrule
+LCQ &\multirow{2}{*}{8/8} & 0.65 & 0.45 &\multirow{2}{*}{4/8} & 0.68 & 0.41 & \\
+LCQ+MoDiff (Ours) & & 0.60 & 0.51 & & 0.62 & 0.47 & \\
+\midrule
+LCQ &\multirow{2}{*}{8/6} & 0.17 & 0.13 &\multirow{2}{*}{4/6} & 0.63 & 0.43 & \\
+LCQ+MoDiff (Ours) & & 0.59 & 0.51 & & 0.62 & 0.47 & \\
+\midrule
+LCQ &\multirow{2}{*}{8/4} & 0.00 & 0.00 &\multirow{2}{*}{4/4} & 0.00 & 0.00 & \\
+LCQ+MoDiff (Ours) & & 0.40 & 0.17 & & 0.46 & 0.22 & \\
+\bottomrule
+\end{tabular}
+\label{tab:bedroom_pr}
+\end{table*}
+

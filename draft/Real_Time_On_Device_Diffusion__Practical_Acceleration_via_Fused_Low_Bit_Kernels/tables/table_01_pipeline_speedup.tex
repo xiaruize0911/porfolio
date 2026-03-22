@@ -1,0 +1,16 @@
+\begin{table*}
+    [bht]
+    \centering
+    \caption{Running time and DRAM transfer comparison on LSUN-Churches. DRAM transfers include weight, activation, output, cache read, and cache write. Speedup and DRAM transfer reduction are calculated against FP32.}
+    \label{tab:pipeline_speedup} \resizebox{\linewidth}{!}{
+    \begin{tabular}{lcc|crrrrrrl}
+        \toprule & \multicolumn{2}{c|}{Runtime} & \multicolumn{7}{c}{DRAM Transfer (GB)} \\
+        \cmidrule(lr){2-3}\cmidrule(lr){4-10} Mode & ms/Sample &  Speedup & Weight & Act & Output & Cache Rd & Cache Wr & Total & Ratio \\
+        \midrule FP32 & 613.4 &  1.000$\times$ & 219.2 & 26.3 & 19.2 & 0.0 & 0.0& 264.6 & 100\% \\
+        Baseline INT8 & 333.0  & 1.842$\times$& 66.2& 26.3 & 19.2 & 0.0 & 0.0 & 111.6 & 42.2\%  \\
+        \textbf{MoDiff INT8 (Ours)}& \textbf{367.7} & \textbf{1.668$\times$} & 66.2& 26.3& 19.2& 51.6  & 36.9& \textbf{200.2} & \textbf{75.6\%}  \\
+        Baseline INT4 & 306.2 & 2.003$\times$  & 42.6 & 26.3 & 19.2  & 0.0 & 0.0  & 88.0  & 33.2\%  \\
+        \textbf{MoDiff INT4 (Ours)}& \textbf{340.9}& \textbf{1.800$\times$} & 42.6& 26.3& 19.2& 51.6& 36.9& \textbf{176.6} & \textbf{66.7\%}  \\
+        \bottomrule
+    \end{tabular}}
+\end{table*}

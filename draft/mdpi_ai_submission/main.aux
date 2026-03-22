@@ -1,0 +1,124 @@
+\relax 
+\providecommand*\new@tpo@label[2]{}
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\bibstyle{Definitions/mdpi}
+\citation{radford2021learning,shao2023vlm}
+\citation{kumar2022finetuning,wortsman2022robust}
+\citation{vaswani2017attention,dosovitskiy2021image}
+\citation{raghu2021vision,caron2021emerging}
+\newmarginnote{note.1.1}{{1}{10945661sp}}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\citation{wiegreffe2019attention,chefer2021transformer}
+\citation{jain2019attention}
+\citation{dosovitskiy2021image}
+\citation{vaswani2017attention}
+\citation{raghu2021vision}
+\citation{caron2021emerging}
+\citation{radford2021learning}
+\citation{shao2023vlm}
+\citation{kumar2022finetuning}
+\citation{wortsman2022robust}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Vision Transformers (ViT)}{2}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Contrastive Vision--Language Models (CLIP)}{2}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Fine-Tuning and Feature Distortion}{2}{subsection.2.3}\protected@file@percent }
+\citation{hu2022lora}
+\citation{jain2019attention}
+\citation{wiegreffe2019attention}
+\citation{chefer2021transformer}
+\citation{abnar2020quantifying}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Low-Rank Adaptation (LoRA)}{3}{subsection.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Attention Analysis and Interpretability}{3}{subsection.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Materials and Methods}{3}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Problem Formulation}{3}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Structural Metrics}{3}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Attention Entropy}{3}{subsubsection.3.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Effective Receptive Field (ERF@0.95)}{3}{subsubsection.3.2.2}\protected@file@percent }
+\citation{vaswani2017attention}
+\citation{abnar2020quantifying}
+\citation{helber2019eurosat}
+\citation{parkhi2012cats}
+\citation{loshchilov2019decoupled}
+\citation{kingma2015adam}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}Gini Concentration}{4}{subsubsection.3.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.4}Head Diversity}{4}{subsubsection.3.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Additional Validation Metrics}{4}{subsection.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Experimental Setup}{4}{subsection.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Statistical Analysis}{4}{subsection.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Results}{4}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Overall Comparison of Adaptation Regimes}{4}{subsection.4.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Main experiment results. Positive $\Delta $Entropy and $\Delta $ERF indicate broader attention support relative to the corresponding pretrained baseline; positive $\Delta $Gini indicates more concentrated attention.}}{5}{table.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{tab:main-results}{{1}{5}{Main experiment results. Positive $\Delta $Entropy and $\Delta $ERF indicate broader attention support relative to the corresponding pretrained baseline; positive $\Delta $Gini indicates more concentrated attention}{table.caption.1}{}}
+\newlabel{tab:main-results@cref}{{[table][1][]1}{[1][4][]5}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Baseline attention structure of pretrained CLIP ViT-B/32 across layers. The model is already depth-heterogeneous before any downstream adaptation.}}{5}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:baseline-structure}{{1}{5}{Baseline attention structure of pretrained CLIP ViT-B/32 across layers. The model is already depth-heterogeneous before any downstream adaptation}{figure.caption.2}{}}
+\newlabel{fig:baseline-structure@cref}{{[figure][1][]1}{[1][5][]5}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Corrected inferential statistics. Exact permutation tests are used for the five-point learning-rate analysis. Holm--Bonferroni correction is applied across the regularizer family; no regularizer configuration survives this correction.}}{6}{table.caption.4}\protected@file@percent }
+\newlabel{tab:stats}{{2}{6}{Corrected inferential statistics. Exact permutation tests are used for the five-point learning-rate analysis. Holm--Bonferroni correction is applied across the regularizer family; no regularizer configuration survives this correction}{table.caption.4}{}}
+\newlabel{tab:stats@cref}{{[table][2][]2}{[1][6][]6}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces EuroSAT full fine-tuning versus LoRA. LoRA increases entropy and ERF relative to the pretrained baseline, whereas full fine-tuning remains near neutral to mildly contractive.}}{6}{figure.caption.3}\protected@file@percent }
+\newlabel{fig:ft-vs-lora}{{2}{6}{EuroSAT full fine-tuning versus LoRA. LoRA increases entropy and ERF relative to the pretrained baseline, whereas full fine-tuning remains near neutral to mildly contractive}{figure.caption.3}{}}
+\newlabel{fig:ft-vs-lora@cref}{{[figure][2][]2}{[1][5][]6}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Statistical Evidence and Layerwise Patterns}{6}{subsection.4.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Learning-rate sweep for EuroSAT full fine-tuning. Entropy decreases monotonically as the learning rate increases across the tested range.}}{7}{table.caption.7}\protected@file@percent }
+\newlabel{tab:lr-sweep}{{3}{7}{Learning-rate sweep for EuroSAT full fine-tuning. Entropy decreases monotonically as the learning rate increases across the tested range}{table.caption.7}{}}
+\newlabel{tab:lr-sweep@cref}{{[table][3][]3}{[1][7][]7}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Per-layer entropy change across selected experiments. The sign and magnitude of the change depend on the training regime and the dataset.}}{7}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:layer-heatmap}{{3}{7}{Per-layer entropy change across selected experiments. The sign and magnitude of the change depend on the training regime and the dataset}{figure.caption.5}{}}
+\newlabel{fig:layer-heatmap@cref}{{[figure][3][]3}{[1][6][]7}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Summary of exploratory per-layer comparisons and corrected statistical analyses, including the learning-rate trend and layer-group summaries.}}{7}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:stats-summary}{{4}{7}{Summary of exploratory per-layer comparisons and corrected statistical analyses, including the learning-rate trend and layer-group summaries}{figure.caption.6}{}}
+\newlabel{fig:stats-summary@cref}{{[figure][4][]4}{[1][7][]7}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Impact of Learning Rate on Structural Dynamics}{7}{subsection.4.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Regularization study on EuroSAT full fine-tuning. Among individually tested regularizers, entropy floor with $\lambda =0.1$ is the only setting with a paired per-layer entropy difference reaching $p<0.05$ in the current analysis.}}{8}{table.caption.9}\protected@file@percent }
+\newlabel{tab:regularization}{{4}{8}{Regularization study on EuroSAT full fine-tuning. Among individually tested regularizers, entropy floor with $\lambda =0.1$ is the only setting with a paired per-layer entropy difference reaching $p<0.05$ in the current analysis}{table.caption.9}{}}
+\newlabel{tab:regularization@cref}{{[table][4][]4}{[1][8][]8}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Learning-rate sweep for EuroSAT full fine-tuning. Larger learning rates produce stronger entropy decreases and stronger ERF contraction.}}{8}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:lr-sweep}{{5}{8}{Learning-rate sweep for EuroSAT full fine-tuning. Larger learning rates produce stronger entropy decreases and stronger ERF contraction}{figure.caption.8}{}}
+\newlabel{fig:lr-sweep@cref}{{[figure][5][]5}{[1][7][]8}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Regularization and Training Dynamics}{8}{subsection.4.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Regularization results. Both APR and entropy floor preserve a broader attention structure than the no-regularizer baseline in descriptive terms. Still, none of the tested settings survives Holm--Bonferroni correction across the regularizer family.}}{9}{figure.caption.10}\protected@file@percent }
+\newlabel{fig:regularization}{{6}{9}{Regularization results. Both APR and entropy floor preserve a broader attention structure than the no-regularizer baseline in descriptive terms. Still, none of the tested settings survives Holm--Bonferroni correction across the regularizer family}{figure.caption.10}{}}
+\newlabel{fig:regularization@cref}{{[figure][6][]6}{[1][8][]9}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Training dynamics and collapse-onset analysis. High-learning-rate full fine-tuning exhibits the earliest and strongest decrease in entropy.}}{9}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:dynamics}{{7}{9}{Training dynamics and collapse-onset analysis. High-learning-rate full fine-tuning exhibits the earliest and strongest decrease in entropy}{figure.caption.11}{}}
+\newlabel{fig:dynamics@cref}{{[figure][7][]7}{[1][9][]9}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Auxiliary Structural Validation}{9}{subsection.4.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Auxiliary validation analyses beyond CLS-to-patch entropy. Rollout and patch-to-patch metrics indicate broader attention support for LoRA than for Full FT on EuroSAT, while layerwise CKA shows higher representational similarity to the pretrained encoder. The subset-sensitivity coefficient of variation (CV) is low for both methods, indicating that the reported metrics are stable across five balanced evaluation subsets.}}{10}{table.caption.12}\protected@file@percent }
+\newlabel{tab:auxiliary-validation}{{5}{10}{Auxiliary validation analyses beyond CLS-to-patch entropy. Rollout and patch-to-patch metrics indicate broader attention support for LoRA than for Full FT on EuroSAT, while layerwise CKA shows higher representational similarity to the pretrained encoder. The subset-sensitivity coefficient of variation (CV) is low for both methods, indicating that the reported metrics are stable across five balanced evaluation subsets}{table.caption.12}{}}
+\newlabel{tab:auxiliary-validation@cref}{{[table][5][]5}{[1][10][]10}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Zero-shot transfer accuracy (\%) on CIFAR-100 and Flowers102 after EuroSAT fine-tuning. LoRA preserves substantially more CIFAR-100 accuracy than full fine-tuning, while Flowers102 values are uniformly low for all models and should be treated as supplemental evidence only.}}{10}{table.caption.13}\protected@file@percent }
+\newlabel{tab:zeroshot}{{6}{10}{Zero-shot transfer accuracy (\%) on CIFAR-100 and Flowers102 after EuroSAT fine-tuning. LoRA preserves substantially more CIFAR-100 accuracy than full fine-tuning, while Flowers102 values are uniformly low for all models and should be treated as supplemental evidence only}{table.caption.13}{}}
+\newlabel{tab:zeroshot@cref}{{[table][6][]6}{[1][10][]10}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}Zero-Shot Transfer: Evidence and Caveats}{10}{subsection.4.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Extended zero-shot evaluation under the study's evaluation protocol. CIFAR-100 is the more interpretable benchmark, whereas the Flowers102 values are uniformly too low to support strong conclusions.}}{11}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:zeroshot}{{8}{11}{Extended zero-shot evaluation under the study's evaluation protocol. CIFAR-100 is the more interpretable benchmark, whereas the Flowers102 values are uniformly too low to support strong conclusions}{figure.caption.14}{}}
+\newlabel{fig:zeroshot@cref}{{[figure][8][]8}{[1][10][]11}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Discussion}{11}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusions}{11}{section.6}\protected@file@percent }
+\bibdata{references}
+\bibcite{radford2021learning}{{1}{2021}{{Radford et~al.}}{{Radford, Kim, Hallacy, Ramesh, Goh, Agarwal, Sastry, Askell, Mishkin, Clark, Krueger, and Sutskever}}}
+\bibcite{shao2023vlm}{{2}{2023}{{Shao et~al.}}{{Shao, Zhang, Hong, Zhou, Qiu, Liang, Yu, Li, Zhang, Wu, et~al.}}}
+\bibcite{kumar2022finetuning}{{3}{2022}{{Kumar et~al.}}{{Kumar, Raghunathan, Jones, Ma, and Liang}}}
+\bibcite{wortsman2022robust}{{4}{2022}{{Wortsman et~al.}}{{Wortsman, Ilharco, Kim, Li, Kornblith, Roelofs, Lopes, Hajishirzi, Farhadi, Namkoong, and Schmidt}}}
+\bibcite{vaswani2017attention}{{5}{2017}{{Vaswani et~al.}}{{Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser, and Polosukhin}}}
+\bibcite{dosovitskiy2021image}{{6}{2021}{{Dosovitskiy et~al.}}{{Dosovitskiy, Beyer, Kolesnikov, Weissenborn, Zhai, Unterthiner, Dehghani, Minderer, Heigold, Gelly, Uszkoreit, and Houlsby}}}
+\bibcite{raghu2021vision}{{7}{2021}{{Raghu et~al.}}{{Raghu, Unterthiner, Kornblith, Zhang, and Dosovitskiy}}}
+\bibcite{caron2021emerging}{{8}{2021}{{Caron et~al.}}{{Caron, Touvron, Misra, Herv{\'e}, Mairal, Bojanowski, and Joulin}}}
+\bibcite{wiegreffe2019attention}{{9}{2019}{{Wiegreffe and Pinter}}{{}}}
+\bibcite{chefer2021transformer}{{10}{2021}{{Chefer et~al.}}{{Chefer, Gur, and Wolf}}}
+\bibcite{jain2019attention}{{11}{2019}{{Jain and Wallace}}{{}}}
+\bibcite{hu2022lora}{{12}{2022}{{Hu et~al.}}{{Hu, Shen, Wallis, Allen-Zhu, Li, Wang, Wang, and Chen}}}
+\bibcite{abnar2020quantifying}{{13}{2020}{{Abnar and Zuidema}}{{}}}
+\bibcite{helber2019eurosat}{{14}{2019}{{Helber et~al.}}{{Helber, Bischke, Dengel, and Borth}}}
+\bibcite{parkhi2012cats}{{15}{2012}{{Parkhi et~al.}}{{Parkhi, Vedaldi, Zisserman, and Jawahar}}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}References}{12}{section.7}\protected@file@percent }
+\bibcite{loshchilov2019decoupled}{{16}{2019}{{Loshchilov and Hutter}}{{}}}
+\bibcite{kingma2015adam}{{17}{2015}{{Kingma and Ba}}{{}}}
+\newlabel{LastPage}{{6}{13}{Conclusions}{page.13}{}}
+\gdef\lastpage@lastpage{13}
+\gdef\lastpage@lastpageHy{13}
+\gdef \@abspage@last{13}

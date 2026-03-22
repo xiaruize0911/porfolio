@@ -10,11 +10,11 @@ sections:
   - block: collection
     id: papers
     content:
-      title: My Publications
+      title: Research Papers
       filters:
         folders:
           - publications
-        featured_only: true
+        featured_only: false
     design:
       view: article-grid
       columns: 1

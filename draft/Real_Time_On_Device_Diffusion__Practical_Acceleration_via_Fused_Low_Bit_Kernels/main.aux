@@ -1,0 +1,134 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{ho2020ddpm,dhariwal2021diffusion,rombach2022ldm}
+\citation{sohl2015deep,ho2020ddpm}
+\citation{rombach2022ldm}
+\citation{jacob2018quantization,gholami2021survey}
+\citation{banner2019post}
+\citation{gao2025modulateddiffusionacceleratinggenerative}
+\citation{ho2020denoising,dhariwal2021diffusion,croitoru2022vision}
+\citation{song2020score}
+\citation{zheng2025diffusion,ho2020denoising}
+\citation{song2020denoising}
+\@writefile{toc}{\contentsline {section}{\numberline {1}\hskip -1em.~Introduction}{1}{section.1}\protected@file@percent }
+\@writefile{brf}{\backcite{ho2020ddpm}{{1}{1}{section.1}}}
+\@writefile{brf}{\backcite{rombach2022ldm}{{1}{1}{section.1}}}
+\@writefile{brf}{\backcite{ho2020ddpm}{{1}{1}{section.1}}}
+\@writefile{brf}{\backcite{sohl2015deep}{{1}{1}{section.1}}}
+\@writefile{brf}{\backcite{rombach2022ldm}{{1}{1}{section.1}}}
+\@writefile{brf}{\backcite{jacob2018quantization}{{1}{1}{section.1}}}
+\@writefile{brf}{\backcite{gholami2021survey}{{1}{1}{section.1}}}
+\@writefile{brf}{\backcite{banner2019post}{{1}{1}{section.1}}}
+\@writefile{brf}{\backcite{gao2025modulateddiffusionacceleratinggenerative}{{1}{1}{section.1}}}
+\citation{nagel2021white,yang2019quantization}
+\citation{li2021brecq}
+\citation{li2023q,wang2024towards,huang2024tfmq,shang2023post,he2023ptqd,zhao2024vidit,xiao2023smoothquant,feng2024mpq}
+\citation{gope2020high}
+\citation{gao2025modulateddiffusionacceleratinggenerative}
+\citation{ho2020denoising}
+\@writefile{toc}{\contentsline {section}{\numberline {2}\hskip -1em.~Related Work}{2}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}\hskip -1em.~Diffusion Models}{2}{subsection.2.1}\protected@file@percent }
+\@writefile{brf}{\backcite{dhariwal2021diffusion}{{2}{2.1}{subsection.2.1}}}
+\@writefile{brf}{\backcite{ho2020denoising}{{2}{2.1}{subsection.2.1}}}
+\@writefile{brf}{\backcite{croitoru2022vision}{{2}{2.1}{subsection.2.1}}}
+\@writefile{brf}{\backcite{song2020score}{{2}{2.1}{subsection.2.1}}}
+\@writefile{brf}{\backcite{ho2020denoising}{{2}{2.1}{subsection.2.1}}}
+\@writefile{brf}{\backcite{zheng2025diffusion}{{2}{2.1}{subsection.2.1}}}
+\@writefile{brf}{\backcite{song2020denoising}{{2}{2.1}{subsection.2.1}}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}\hskip -1em.~Modulated Diffusion}{2}{subsection.2.2}\protected@file@percent }
+\@writefile{brf}{\backcite{nagel2021white}{{2}{2.2}{subsection.2.2}}}
+\@writefile{brf}{\backcite{yang2019quantization}{{2}{2.2}{subsection.2.2}}}
+\@writefile{brf}{\backcite{li2021brecq}{{2}{2.2}{subsection.2.2}}}
+\@writefile{brf}{\backcite{li2023q}{{2}{2.2}{subsection.2.2}}}
+\@writefile{brf}{\backcite{feng2024mpq}{{2}{2.2}{subsection.2.2}}}
+\@writefile{brf}{\backcite{gope2020high}{{2}{2.2}{subsection.2.2}}}
+\@writefile{brf}{\backcite{gao2025modulateddiffusionacceleratinggenerative}{{2}{2.2}{subsection.2.2}}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}\hskip -1em.~Method}{2}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}\hskip -1em.~Integer Arithmetic Formulation}{2}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Diffusion Models.}{2}{section*.1}\protected@file@percent }
+\@writefile{brf}{\backcite{ho2020denoising}{{2}{3.1}{section*.1}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Kernel Design for MoDiff. The quantization operation and the update of $\hat  {\mathbf  {a}}_t^{(l)}$ are fused into the normalization layers, while the dequantization operation and the update of $\hat  {\mathbf  {o}}_t^{(l)}$ are fused into the computational layers.}}{2}{figure.caption.2}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:kernel_design}{{1}{2}{Kernel Design for MoDiff. The quantization operation and the update of $\hat \va _t^\ul $ are fused into the normalization layers, while the dequantization operation and the update of $\hat \vo _t^\ul $ are fused into the computational layers}{figure.caption.2}{}}
+\newlabel{fig:kernel_design@cref}{{[figure][1][]1}{[1][2][]2}{}{}{}}
+\newlabel{eqn:diffusion}{{3}{2}{Diffusion Models}{equation.3}{}}
+\newlabel{eqn:diffusion@cref}{{[equation][3][]3}{[1][2][]2}{}{}{}}
+\@writefile{toc}{\contentsline {paragraph}{Quantization.}{2}{section*.3}\protected@file@percent }
+\citation{cutlass,chen2018tvm,vasilache2018tensor}
+\citation{chen2018tvm}
+\citation{yu15lsun}
+\citation{rombach2022high}
+\citation{song2020denoising}
+\citation{heusel2017gans}
+\citation{xiao2023smoothquant}
+\@writefile{toc}{\contentsline {paragraph}{Modulated Diffusion.}{3}{section*.5}\protected@file@percent }
+\newlabel{eqn:update_ahat}{{6}{3}{Modulated Diffusion}{equation.6}{}}
+\newlabel{eqn:update_ahat@cref}{{[equation][6][]6}{[1][3][]3}{}{}{}}
+\newlabel{eqn:update_ohat}{{7}{3}{Modulated Diffusion}{equation.7}{}}
+\newlabel{eqn:update_ohat@cref}{{[equation][7][]7}{[1][3][]3}{}{}{}}
+\newlabel{eqn:otat}{{8}{3}{Modulated Diffusion}{equation.8}{}}
+\newlabel{eqn:otat@cref}{{[equation][8][]8}{[1][3][]3}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}\hskip -1em.~Kernel Fusion}{3}{subsection.3.2}\protected@file@percent }
+\@writefile{brf}{\backcite{cutlass}{{3}{3.2}{subsection.3.2}}}
+\@writefile{brf}{\backcite{vasilache2018tensor}{{3}{3.2}{subsection.3.2}}}
+\@writefile{brf}{\backcite{chen2018tvm}{{3}{3.2}{subsection.3.2}}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}\hskip -1em.~Experiments}{3}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}\hskip -1em.~Experimental Settings}{3}{subsection.4.1}\protected@file@percent }
+\@writefile{brf}{\backcite{yu15lsun}{{3}{4.1}{subsection.4.1}}}
+\@writefile{brf}{\backcite{rombach2022high}{{3}{4.1}{subsection.4.1}}}
+\@writefile{brf}{\backcite{song2020denoising}{{3}{4.1}{subsection.4.1}}}
+\@writefile{brf}{\backcite{heusel2017gans}{{3}{4.1}{subsection.4.1}}}
+\@writefile{brf}{\backcite{xiao2023smoothquant}{{3}{4.1}{subsection.4.1}}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}\hskip -1em.~Main Results}{3}{subsection.4.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Running time and DRAM transfer comparison on LSUN-Churches. DRAM transfers include weight, activation, output, cache read, and cache write. Speedup and DRAM transfer reduction are calculated against FP32.}}{4}{table.caption.4}\protected@file@percent }
+\newlabel{tab:pipeline_speedup}{{1}{4}{Running time and DRAM transfer comparison on LSUN-Churches. DRAM transfers include weight, activation, output, cache read, and cache write. Speedup and DRAM transfer reduction are calculated against FP32}{table.caption.4}{}}
+\newlabel{tab:pipeline_speedup@cref}{{[table][1][]1}{[1][3][]4}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Component-wise time cost and speedup. The speedup is compared to FP32.}}{4}{table.caption.6}\protected@file@percent }
+\newlabel{tab:component_breakdown}{{2}{4}{Component-wise time cost and speedup. The speedup is compared to FP32}{table.caption.6}{}}
+\newlabel{tab:component_breakdown@cref}{{[table][2][]2}{[1][4][]4}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}\hskip -1em.~Ablation Study}{4}{subsection.4.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Layer-wise speedup analysis across convolutional layers with different shapes. Here, \(C_{in}\) denotes the number of input channels, \(C_{out}\) denotes the number of output channels, and \(K\) denotes the kernel size. Count indicates how many times each layer shape appears in the model. The speedup is compared to FP32.}}{4}{table.caption.7}\protected@file@percent }
+\newlabel{tab:conv_layer}{{3}{4}{Layer-wise speedup analysis across convolutional layers with different shapes. Here, \(C_{in}\) denotes the number of input channels, \(C_{out}\) denotes the number of output channels, and \(K\) denotes the kernel size. Count indicates how many times each layer shape appears in the model. The speedup is compared to FP32}{table.caption.7}{}}
+\newlabel{tab:conv_layer@cref}{{[table][3][]3}{[1][4][]4}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Generation Results Visualization.}}{4}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:visualize_combined}{{2}{4}{Generation Results Visualization}{figure.caption.8}{}}
+\newlabel{fig:visualize_combined@cref}{{[figure][2][]2}{[1][4][]4}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}\hskip -1em.~Visualization}{4}{subsection.4.4}\protected@file@percent }
+\bibstyle{unsrt}
+\@writefile{toc}{\contentsline {section}{\numberline {5}\hskip -1em.~Conclusion}{5}{section.5}\protected@file@percent }
+\bibdata{main}
+\bibcite{ho2020ddpm}{{1}{}{{}}{{}}}
+\bibcite{dhariwal2021diffusion}{{2}{}{{}}{{}}}
+\bibcite{rombach2022ldm}{{3}{}{{}}{{}}}
+\bibcite{sohl2015deep}{{4}{}{{}}{{}}}
+\bibcite{jacob2018quantization}{{5}{}{{}}{{}}}
+\bibcite{gholami2021survey}{{6}{}{{}}{{}}}
+\bibcite{banner2019post}{{7}{}{{}}{{}}}
+\bibcite{gao2025modulateddiffusionacceleratinggenerative}{{8}{}{{}}{{}}}
+\bibcite{ho2020denoising}{{9}{}{{}}{{}}}
+\bibcite{croitoru2022vision}{{10}{}{{}}{{}}}
+\bibcite{song2020score}{{11}{}{{}}{{}}}
+\bibcite{zheng2025diffusion}{{12}{}{{}}{{}}}
+\bibcite{song2020denoising}{{13}{}{{}}{{}}}
+\bibcite{nagel2021white}{{14}{}{{}}{{}}}
+\bibcite{yang2019quantization}{{15}{}{{}}{{}}}
+\bibcite{li2021brecq}{{16}{}{{}}{{}}}
+\bibcite{li2023q}{{17}{}{{}}{{}}}
+\bibcite{wang2024towards}{{18}{}{{}}{{}}}
+\bibcite{huang2024tfmq}{{19}{}{{}}{{}}}
+\bibcite{shang2023post}{{20}{}{{}}{{}}}
+\bibcite{he2023ptqd}{{21}{}{{}}{{}}}
+\bibcite{zhao2024vidit}{{22}{}{{}}{{}}}
+\bibcite{xiao2023smoothquant}{{23}{}{{}}{{}}}
+\bibcite{feng2024mpq}{{24}{}{{}}{{}}}
+\bibcite{gope2020high}{{25}{}{{}}{{}}}
+\bibcite{cutlass}{{26}{}{{}}{{}}}
+\bibcite{chen2018tvm}{{27}{}{{}}{{}}}
+\bibcite{vasilache2018tensor}{{28}{}{{}}{{}}}
+\bibcite{yu15lsun}{{29}{}{{}}{{}}}
+\bibcite{rombach2022high}{{30}{}{{}}{{}}}
+\bibcite{heusel2017gans}{{31}{}{{}}{{}}}
+\providecommand\NAT@force@numbers{}\NAT@force@numbers
+\gdef \@abspage@last{7}

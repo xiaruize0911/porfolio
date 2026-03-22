@@ -1,0 +1,42 @@
+\begin{table}[t!]
+\small
+\centering
+\caption{The IS, FID, sFID, and GBOPs for LSUN-Bedrooms with LDM under 4-bit weight quantization. The best performance is \textbf{bolded}.}
+\begin{tabular}{l|c|c|cc}
+\toprule
+{Methods} & {Bits (W/A)} & GBops & FID $\downarrow$ & sFID $\downarrow$ \\
+\midrule
+Full Prec. & 8/32 & 25560 & 3.45 & 8.45 \\
+\midrule
+% DQ & \multirow{6}{*}{8/8} & - & - & \multirow{6}{*}{4/8} & - & - \\
+LCQ & \multirow{2}{*}{8/8} & \multirow{2}{*}{6390}& 3.61 & 8.65 \\
+% Q-Diff & & - & - & & - & - \\
+LCQ+MoDiff (Ours) & && 3.57 & 8.44 \\
+% DQ+RQF (Ours) & & - & - & & - & - \\
+% Q-Diff+RQF (Ours) & & - & - & & - & - \\
+% DQ-Diff+RQF (Ours) & & - & - & & - & - \\
+\midrule
+LCQ & \multirow{2}{*}{8/6}&\multirow{2}{*}{4609} & 64.17 & 63.18 \\
+% Q-Diff & & - & - & & - & - \\
+LCQ+MoDiff (Ours) & && 3.57 & 6.53 \\
+\midrule
+LCQ & \multirow{2}{*}{8/4}&\multirow{2}{*}{3195} & 372.30 & 262.11 \\
+% Q-Diff & & - & - & & - & - \\
+LCQ+MoDiff (Ours) & && 27.88 & 77.85 \\
+% \midrule
+% LCQ & \multirow{2}{*}{8/3}&\multirow{2}{*}{2396} & 371.06 & 262.04 \\
+% % Q-Diff & & - & - & & - & - \\
+% MoLCQ (Ours) & && 264.58 & 141.02 \\
+% \midrule
+% % DQ & \multirow{6}{*}{8/2} & - & - & \multirow{6}{*}{4/2} & - & - \\
+% Q-Diff & \multirow{4}{*}{8/2} & - & - & \multirow{4}{*}{4/2} & - & - \\
+% % Q-Diff & & - & - & & - & - \\
+% DQ-Diff & & - & - & & - & - \\
+% % DQ+RQF (Ours) & & - & - & & - & - \\
+% Q-Diff+RQF (Ours) & & - & - & & - & - \\
+% DQ-Diff+RQF (Ours) & & - & - & & - & - \\
+\bottomrule
+\end{tabular}
+\label{apptab:bedroom_w4}
+\end{table}
+

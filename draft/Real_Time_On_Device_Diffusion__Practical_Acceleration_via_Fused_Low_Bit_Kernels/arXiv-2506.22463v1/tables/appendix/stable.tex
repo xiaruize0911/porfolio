@@ -1,0 +1,19 @@
+\begin{table}[h!]
+\centering
+\caption{The FID and sFID on MS-COCO with Stable Diffusion using PLMS solver under different precisions. The best performance is \textbf{bolded}.}
+\begin{tabular}{l|c|c|c}
+\toprule
+{Methods} & {Bits (W/A)} & FID $\downarrow$ & sFID $\downarrow$ \\
+\midrule
+LTQ & \multirow{2}{*}{8/8} & 12.15 & 19.05 \\
+LTQ+MoDiff (Ours) & & \bf 12.14 & \bf 19.05 \\
+\midrule
+LTQ & \multirow{2}{*}{8/6} & 71.38 & 59.74 \\
+LTQ+MoDiff (Ours) & & \bf 13.21 & \bf 20.07 \\
+\midrule
+LTQ & \multirow{2}{*}{8/4} & 408.42 & 199.59 \\
+LTQ+MoDiff (Ours) & & \bf 225.22 & \bf 104.12 \\
+\bottomrule
+\end{tabular}
+\label{tab:stable}
+\end{table}

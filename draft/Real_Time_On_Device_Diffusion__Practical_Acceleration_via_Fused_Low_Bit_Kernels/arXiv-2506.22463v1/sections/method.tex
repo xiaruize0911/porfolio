@@ -1,0 +1,166 @@
+\section{Modulated Diffusion}
+\label{sec:method}
+
+In this section, we propose Modulated Diffusion (MoDiff), a novel framework to accelerate all diffusion models with low-bit activation quantization, as shown in Figure~\ref{fig:modulation}. We introduce a high-level motivation in Section~\ref{subsec:motivation}. To ease the understanding, we first present an equivalent reformulation of the diffusion process to reduce the quantization error in Section~\ref{subsec:modm}. Then, we propose novel error-compensated modulation to address accumulated error across the diffusion steps in Section~\ref{subsec:ecm}. Computation and memory costs are discussed in Section~\ref{subsec:cost}, followed by theoretical error analyses of our MoDiff in Section~\ref{subsec:theory}. 
+
+\subsection{High-Level Motivation}
+\label{subsec:motivation}
+While the heuristic design of caching methods exhibit significant and accumulated computation errors, the motivation to leverage computation in previous time steps to reduce computation in future time steps is still of great interest. Inspired by the similarity of activation patterns across adjacent time steps, we measure the temporal differences between activation values over the diffusion process as \(\mathbf{a}_t^{(l)} - \mathbf{a}_{t+1}^{(l)}\), where \(\mathbf{a}_t^{(l)}\) represents the activation at time step \(t\) for the \(l\)-th layer of the denoising network. The distribution of these differences is visualized in Figure~\ref{fig: activation distribution} in orange color. Compared to the activations, their temporal differences exhibit a much smaller and more consistent range across time steps. Moreover, their distribution is more concentrated, effectively reducing the presence of outliers. These interesting observation and analyses suggest that a strong motivation to leverage this temporal stability with quantized computing to alleviate the computation errors in existing approaches.
+
+\subsection{Modulated Quantization}
+\label{subsec:modm}
+
+\textbf{Notation.} 
+Let \(\mathcal{A}^{(l)}(\cdot)\) denote the \(l\)-th linear operator in the denoising network, such as the linear and convolutional layers, where $l\in\{1,2,\ldots,L\}$. We denote the input and output activations for \(\mathcal{A}^{(l)}(\cdot)\) at time step \(t\) as \(\mathbf{a}_t^{(l)}\) and $\vo_t^{(l)}=\cA^{(l)}(\va_t^{(l)})$, respectively. Note that we focus on accelerating the computation of linear operators, such as linear and convolutional layers, since they are the most costly operations in neural networks and account for the majority of computation during data generation~\citep{zhao2024mixdq}. 
+
+Motivated by the insights from Section~\ref{subsec:motivation}, we propose a novel modulated computation to reformulate the computation of each $l$-th linear layer in the denoising network in diffusion models as follows:
+{
+\small
+\begin{align}
+\label{eqn:reformulate}
+\begin{cases}
+    ~~~\vo_{T}^{(l)} &=  \cA^{(l)}(\va_T^{(l)})  \\[8pt]
+    ~~\vo_{T-1}^{(l)} &=  \cA^{(l)}(\va_{T-1}^{(l)}) = \cA^{(l)}(\va_{T-1}^{(l)}-\va_{T}^{(l)})+\vo_{T}^{(l)} \\[6pt]
+    & \cdots \\[6pt]
+    ~~~\vo_t^{(l)}  &=  \cA^{(l)}(\va_{t}^{(l)}) ~~~= \cA^{(l)}(\va_t^{(l)}-\va_{t+1}^{(l)})+\vo_{t+1}^{(l)} \\[6pt]
+    & \cdots \\[6pt]
+    ~~~\vo_1^{(l)}  &=  \cA^{(l)}(\va_{1}^{(l)}) ~~~= \cA^{(l)}(\va_1^{(l)}-\va_{2}^{(l)})+\vo_{2}^{(l)}
+\end{cases}
+\end{align}
+}
+
+where the output \(\mathbf{o}_t^{(l)}\) in time step $t$ can be equivalently computed by incrementally refining the output \(\mathbf{o}_{t+1}^{(l)}\) computed in previous time step $t+1$ with the modulated computation \(\mathcal{A}^{(l)}(\mathbf{a}_t^{(l)} - \mathbf{a}_{t+1}^{(l)})\). Specifically, the second equality in each equation holds because of the linearity of the operator $\cA^{(l)}$: 
+\begin{align*}
+\cA^{(l)}(\va_t^{(l)}) &= \cA^{(l)}(\va_t^{(l)}) - \cA^{(l)}(\va_{t+1}^{(l)}) + \cA^{(l)}(\va_{t+1}^{(l)}) \nonumber \\[6pt]
+&= \cA^{(l)}(\va_t^{(l)}-\va_{t+1}^{(l)})+\vo_{t+1}^{(l)}. \nonumber
+\end{align*}
+We further propose to apply a quantizer $Q$ to approximate the temporal difference before quantized computation\footnote{Note that the proposed modulated computation will be independently applied to every costly linear neural layer, so we omit the superscript index $(l)$ in the rest of the paper for simplicity.}:
+{\small
+\begin{align}
+\label{eqn:quantized residual}
+\begin{cases}
+    ~~~\hat \vo_{T}&= \cA\Big(Q(\va_T )\Big)  ~~~~~~~~~~~~~~~~~~~~~~~~~\approx \cA(\va_T)  \\[8pt]
+    ~~\hat \vo_{T-1}&= \cA \Big (Q(\va_{T-1} -\va_{T}) \Big)+ \hat \vo_{T}  ~\approx  \cA (\va_{T-1}) \\[6pt]
+    & \cdots \\[6pt]
+    ~~~\hat \vo_t&= \cA\Big( Q(\va_t-\va_{t+1}) \Big)+ \hat \vo_{t+1} \approx \cA(\va_{t}) \\[6pt]
+    & \cdots \\[6pt]
+    ~~~\hat \vo_1&= \cA\Big( Q(\va_1-\va_{2}) \Big)+\hat \vo_{2} ~~~~~~~\approx  \cA(\va_{1}) 
+\end{cases}
+\end{align}}
+
+Since the temporal difference $\mathbf{a}_t^{(l)} - \mathbf{a}_{t+1}^{(l)}$ has a much smaller and concentrated range as discussed in Section~\ref{subsec:motivation}, its quantization will incur much smaller quantization errors.
+
+\begin{remark}
+When the input range falls bellow a tolerable threshold due to significant computation redundancy, MoDiff allows assigning a 0-bit representation in the quantizer, which skips the computation. This behavior subsumes existing heuristic caching strategies~\cite{ma2024deepcache} as special cases within a generalizable and principled framework, allowing more flexible control over caching.
+\end{remark}
+
+\subsection{Error-Compensated Modulation}
+\label{subsec:ecm}
+
+
+While the modulated computation and quantization in Eq.~\eqref{eqn:quantized residual} can reduce the activation quantization errors, comparing with the full-precision computation in Eq.~\eqref{eqn:reformulate}, the computation error $\vo_t - \hat \vo_t$ will be carried over across the diffusion time steps and cause large accumulated errors. In this section, we introduce a novel error-compensated modulation to address the error accumulation, which leads to the complete \textbf{MoDiff framework} as follows:
+\begin{align}
+\label{ec1}
+\hat \va_T\quad &= Q(\va_T) 
+\\
+\label{ec2}
+\hat\vo_{T} \quad & = \cA (\hat \va_T) 
+\\
+\label{ec3}
+\hat \va_{T-1} &= Q(\va_{T-1}-\hat \va_T) + \hat \va_T 
+\\
+\label{ec4}
+\hat\vo_{T-1} & = \cA(\hat \va_{T-1}) = \cA\Big( Q(\va_{T-1}-\hat \va_T) \Big) + \hat\vo_{T} 
+\\ 
+& \cdots 
+\\
+\label{ec5}
+\hat \va_{t}\quad &= Q(\va_{t}-\hat \va_{t+1}) + \hat \va_{t+1} 
+\\
+\label{ec6}
+\hat\vo_{t}\quad & = \cA(\hat \va_{t}) = \cA\Big( Q(\va_{t}-\hat \va_{t+1}) \Big) + \hat\vo_{t+1} 
+\\ 
+& \cdots 
+\\
+\label{ec7}
+\hat \va_{1}\quad &= Q(\va_{1}-\hat \va_{2}) + \hat \va_{2} 
+\\
+\label{ec8}
+\hat\vo_{1}\quad &  = \cA(\hat\va_{1}) = \cA\Big(Q(\va_{1}-\hat\va_{2})\Big) + \hat\vo_{2} 
+\end{align}
+Specifically, we construct an intermediate variable $\hat \va_t$ to store the activation that is actually computed through quantization, which keeps track of the quantization errors: 
+\begin{align}
+\ve_t &= (\va_t - \hat \va_{t+1}) - Q(\va_t - \hat \va_{t+1})  \\
+&= (\va_t - \hat \va_{t+1}) - (\hat \va_t - \hat \va_{t+1}) \nonumber = \va_t - \hat\va_t, 
+\end{align}
+where the second equation comes from Eq.~\eqref{ec5}. Since we do not have access to the accurate $\vo_t$ but only its approximation $\hat \vo_t$, the incremental refinement will be on top of $\hat \vo_t$. Given that $\hat \vo_t = \cA(\hat \va_{t})$ is a feature tranformation of $\hat \va_{t}$, the residual should be computed based on $\hat \va_{t}$ instead of $\va_{t}$, which will compensate the errors and avoid error accumulation. Note that as shown in Eq.~\eqref{ec6}, $\hat \vo_t = \cA(\hat \va_{t})$ only represents their relation, but the actual quantized computation is the following: $\hat\vo_{t} = \cA\Big( Q(\va_{t}-\hat \va_{t+1}) \Big) + \hat\vo_{t+1}.$ A slight rewrite of this update clearly illustrates how quantization error is compensated across the diffusion time steps:
+\begin{align}
+\hat\vo_{t} &= \cA\Big( Q(\va_{t}-\va_{t+1} + \ve_{t+1})
+\Big) + \vo_{t+1} - \cA(\ve_{t+1}), \nonumber
+\end{align}
+where the previous time step misses the computation of $\cA(\ve_{t+1})$ but will be compensated in the next time step by adding $\ve_{t+1}$ into the input activations. 
+
+\begin{remark}
+The proposed MoDiff framework is agnostic to quantization methods and can be applied to existing PTQ methods. Therefore, it is orthogonal to the contributions of prior works in this area. Moreover, we argue that MoDiff is not limited to quantization. It can be extended to other techniques, such as sparse techniques~\citep{han2015deep}, further demonstrating its generality and versatility.
+\end{remark}
+
+\subsection{Computation and Memory Costs}
+\label{subsec:cost}
+\textbf{Computation Cost.} We categorize the computing operations into three main types: matrix multiplication, matrix addition, and quantization/dequantization. For matrix multiplication, our method maintains integer-only operations, identical to standard quantization techniques. Additionally, by reducing quantization errors, our approach enables the use of a lower bandwidth for activations, potentially reducing the computation cost. For matrix addition, our approach introduces two additional operations in $\va_t-\hat\va_{t+1}$ and $\hat\vo_{t+1}$. For Quantization and Dequantization, only dequantization on \( Q(\va_t - \hat\va_{t+1}) \) is an additional step introduced by our approach. Modern quantization techniques \citep{nagel2021white} indicate that matrix multiplication is the dominant computational cost during inference. Since our method introduces only a minimal number of additional additions and quantization/dequantization operations, their overhead is negligible in comparison to matrix multiplication. Consequently, our approach do not increase or even decrease the computation cost compared to existing PTQ methods.
+
+\textbf{Memory Consumption.} One limitation of our method is that it requires additional memory to store the intermediate variable \(\mathbf{a}_t\) and outputs \(\mathbf{o}_t\) for each layer. However, as demonstrated in Section~\ref{subsec:ablation}, this memory overhead remains negligible compared to the model size when using small batch sizes and low-bit activation quantization. Furthermore, we can locally select the layers that use MoDiff, allowing for a trade-off between performance and memory efficiency.  
+
+\subsection{Theoretical Error Analysis}
+\label{subsec:theory}
+The proposed MoDiff framework enables quantization with low quantization error while mitigating error accumulation through error compensation. In this section, we provide theoretical analyses to formally justify these advantages. The following theorem establishes the relationship between input magnitude and quantization error. For simplicity, we use dynamic quantizers, which determine the scaling parameter based on the input values to avoid clipping errors, and we consider vector inputs instead of assuming a specific distribution for the input data.
+\begin{theorem}[Quantization Error]
+\label{thm:quantize_error}
+Let \( \mathbf{x} \in \mathbb{R}^d \) be a vector, and let the quantization bandwidth be \( b \in \mathbb{N} \). Define the max-min dynamic quantizer as follows:
+\begin{gather}
+    s  = \frac{\max(\mathbf{x}) - \min(\mathbf{x})}{2^b - 1}, \\
+    \mathbf{z}  = \left\lfloor -\frac{\min(\mathbf{x})}{s} \right\rfloor, \\
+    \mathbf{x}_\text{int}  = \text{clamp}(\left\lfloor \frac{\mathbf{x}}{s} \right\rfloor + \mathbf{z}, 0, 2^b-1).
+\end{gather}
+The corresponding dequantization is given by:
+\begin{equation}
+    Q(\mathbf{x}) = s (\mathbf{x}_\text{int} - \mathbf{z}).
+\end{equation}
+
+The quantization error is bounded in terms of the quantization scaling factor \( s \), which depends on the range of \( \mathbf{x} \) and the bandwidth \( b \). Specifically, we have:
+\begin{equation}
+    \|\mathbf{x} - Q(\mathbf{x})\|_2^2 \leq {s^2d} = \frac{(\max(\mathbf{x}) - \min(\mathbf{x}))^2d}{(2^b - 1)^2}.
+\end{equation}
+\end{theorem}
+The proof is provided in Appendix~\ref{proof:quantize_error}. Theorem~\ref{thm:quantize_error} establishes that quantization error is directly influenced by the input range and quantization bandwidth. Specifically, for a smaller input range, lower-bit quantization can achieve the same error bound. Our preliminary results show that the residuals exhibit a significantly reduced activation range, more than 10$\times$ smaller, which suggests that activation bit precision can be lowered by at least 3 bits while maintaining comparable quantization error.  
+
+To illustrate how error-compensated modulation eliminates error accumulation, we assume that the inputs are independent for simplicity. The following theorem demonstrates that it reduces error accumulation at an exponential rate:
+\begin{theorem}
+\label{thm:acc_error}
+Let \(\mathcal{A}(\cdot)\) be a linear operator and consider a sequence of inputs \(\mathbf{a}_T, \mathbf{a}_{T-1}, \dots, \mathbf{a}_1\), with corresponding outputs \(\mathbf{o}_T, \mathbf{o}_{T-1}, \dots, \mathbf{o}_1\). Given a quantization operator \(Q\), we estimate the outputs using standard modulation: 
+\begin{align}
+    \tilde{\mathbf{o}}_t &= \mathcal{A}(Q(\mathbf{a}_t - \mathbf{a}_{t+1})) + \tilde{\mathbf{o}}_{t+1}, \\
+    \tilde{\mathbf{o}}_T &= \mathcal{A}(\mathbf{a}_T),
+\end{align}
+where \( t = T-1, \dots, 2, 1 \). Similarly, we estimate the outputs using error-compensated modulation:  
+\begin{align}
+    \hat{\mathbf{o}}_t &= \mathcal{A}(Q(\mathbf{a}_t - \hat{\mathbf{a}}_{t+1})) + \hat{\mathbf{o}}_{t+1}, \\
+    \hat{\mathbf{a}}_t &= Q(\mathbf{a}_t - \hat{\mathbf{a}}_{t+1}) + \hat{\mathbf{a}}_{t+1}, \\
+    \hat{\mathbf{o}}_T &= \mathcal{A}(\mathbf{a}_T), \quad
+    \hat\va_T = \va_T,
+\end{align}
+where \( t = T-1, \dots, 2, 1 \). Suppose the quantization operator \(Q\) satisfies the following error bound: 
+\begin{align}
+    \|\mathbf{x} - Q(\mathbf{x})\|_2^2 \leq c\|\mathbf{x}\|_2^2, \quad 0 < c < 1.
+\end{align}
+Then, the estimation errors are bounded as follows:  
+\begin{align}
+    \|\mathbf{o}_t - \tilde{\mathbf{o}}_t\|_2^2 &\leq \sum_{k=t}^{T-1} 2^{T-k-1} c \|\mathcal{A}\|_2^2 \|\mathbf{a}_k - \mathbf{a}_{k+1}\|_2^2, \\
+    \|\mathbf{o}_t - \hat{\mathbf{o}}_t\|_2^2 &\leq \sum_{k=t}^{T-1} (2c)^{T-k-1} \|\mathcal{A}\|_2^2 \|\mathbf{a}_k - \mathbf{a}_{k+1}\|_2^2.
+\end{align}
+\end{theorem}
+
+\input{tables/cifar10-main}
+
+The proof is provided in Appendix~\ref{proof:acc_error}. Here, we assume that the quantization error is bounded by the input magnitude with a coefficient smaller than $1/2$, which is a direct corollary of Theorem~\ref{thm:quantize_error} with appropriate $b$ as shown in Appendix~\ref{subsec:corollary}. Theorem~\ref{thm:acc_error} provides two key insights. First, MoDiff without error compensation accumulates error more than linearly over the generation steps, making its performance highly dependent on the quantization parameter \( c \). Second, error-compensation modulation in MoDiff ensures that errors from previous time steps are reduced exponentially, preventing error accumulation.
+
+Finally, we note that Theorem~\ref{thm:acc_error} assumes independent inputs. However, in diffusion models, \(\mathbf{a}_t\) is computed layer by layer using \(\mathbf{o}_t\), which can further accumulate errors. As a result, error compensation has greater meaning in the application of diffusion models compared to standard modulation, as counteracting error propagation is more indispensable.  

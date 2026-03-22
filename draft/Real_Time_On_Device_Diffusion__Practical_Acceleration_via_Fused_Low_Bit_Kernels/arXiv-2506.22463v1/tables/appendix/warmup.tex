@@ -1,0 +1,16 @@
+\begin{table}[h!]
+\centering
+\caption{FID on CIFAR-10 using the DDIM sampler in the ablation study of warm-up. The best performance is \textbf{bolded}.}
+\begin{tabular}{c|c|c|c|c}
+\toprule
+{Bits (W/A)} & LCQ w/o warmup & LCQ w/ warmup & LCQ+MoDiff w/o warmup & LCQ+MoDiff w/ warmup \\
+\midrule
+{8/8} & 4.19 & \bf 4.19 & 4.22 & 4.21 \\
+\midrule
+{8/6} & 9.93 & 9.53 & 4.25 & \bf 4.00 \\
+\midrule
+{8/4} & 306.06 & 299.96 & 31.22 & \bf 28.19 \\
+\bottomrule
+\end{tabular}
+\label{tab:warmup}
+\end{table}

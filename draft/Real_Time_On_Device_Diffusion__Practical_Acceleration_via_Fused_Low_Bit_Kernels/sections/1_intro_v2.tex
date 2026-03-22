@@ -1,0 +1,25 @@
+\section{Introduction}
+% Diffusion models achieve state-of-the-art generative performance but incur high inference costs due to iterative denoising.
+% MoDiff proposes \emph{modulated quantization}, enabling aggressive activation quantization while maintaining generation fidelity. The original work demonstrates large reductions in binary operations but does not provide kernel-level optimization or runtime analysis.
+
+Diffusion models achieve state-of-the-art generative performance in both image and language domains~\cite{ho2020ddpm,dhariwal2021diffusion,rombach2022ldm}. They generate complex outputs by iteratively refining noise samples via a learned reverse diffusion process~\cite{sohl2015deep,ho2020ddpm}. However, this iterative denoising and the use of heavy backbones incur high inference overhead, limiting deployment on edge devices~\cite{rombach2022ldm}.
+
+Quantization improves efficiency by converting high-precision floating-point values to low-precision integers, reducing memory and computation~\cite{jacob2018quantization,gholami2021survey}. While weight quantization is relatively straightforward, activation quantization is harder due to wide dynamic ranges and outliers~\cite{banner2019post}. As a result, mismatched bitwidths between weights and activations (e.g., W4A8 or W1A4) often reduce the effectiveness of hardware acceleration.
+
+Modulated Diffusion (MoDiff)~\cite{gao2025modulateddiffusionacceleratinggenerative} is a recent method that alleviates the challenges of low-bit activation quantization. Exploiting redundancy across consecutive generation steps, MoDiff can be combined with existing schemes to reduce activation precision from 8 bits to 4 bits without degrading performance. However, its benefits have so far been assessed only theoretically, in terms of model size and binary operations (BOPs), and its practical acceleration has not been studied.
+
+We address this gap by designing efficient kernel functions for MoDiff. We refine its notation to identify shared cache memory across the computation pipeline, and develop fused kernels for normalization and convolution layers to remove extra cache I/O. Experiments with the CUTLASS library show up to $1.8\times$ GPU speedup, moving diffusion models closer to practical edge deployment. Our main contributions are as follows:
+
+\begin{itemize}
+    \item We identify where cache memory is shared in the forward pipeline, providing guidance for kernel design.
+    \item We build the kernels using the CUTLASS library and fuse the cache-update operations into the layer kernels to avoid excessive I/O overhead.
+    \item We conducted benchmarking experiments and demonstrated performance optimizations in both computational throughput and memory-access efficiency.
+\end{itemize}
+
+% To achieve the goal above, we did the following work:
+% \begin{itemize}
+%     \item We implemented MoDiff on top of the CUTLASS library, employing 4-bit and 8-bit integer (int4/int8) layers to optimize computational efficiency.
+%     \item We performed a series of benchmarks with varying quantization bit-widths to empirically validate the effectiveness of the proposed optimization scheme.
+%     \item We conducted a detailed performance analysis of the MoDiff model, reporting the execution time for each constituent component and quantifying the speedup contributed by each component.
+%     \item We evaluated the method on the LSUN-Churches dataset and demonstrated that the proposed implementation achieves the anticipated image-generation quality.
+% \end{itemize}

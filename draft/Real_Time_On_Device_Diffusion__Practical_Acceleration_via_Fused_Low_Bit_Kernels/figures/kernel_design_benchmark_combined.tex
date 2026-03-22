@@ -1,0 +1,62 @@
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}[c]{0.48\linewidth}
+        \centering
+        \begin{tikzpicture}[
+            font=\footnotesize,
+            node distance=0.3cm,
+            box/.style={
+                draw,
+                dashed,
+                rounded corners,
+                inner sep=4pt,
+                align=center,
+                fill=blue!8
+            },
+            arrow/.style={-{Stealth[length=1.6mm]}, thin}
+        ]
+
+            % Top
+            \node[draw, rounded corners, fill=green!10, inner sep=3pt] (fp32in) {FP32};
+
+            % First kernel
+            \node[box, below=of fp32in] (k1) {GroupNorm\\[-0.2em] $\downarrow$\\[-0.2em] Quantize + $\hat{a}$ update};
+
+            % Mid precision
+            \node[draw, rounded corners, fill=orange!12, inner sep=3pt, below=of k1] (int) {Int8 / Int4};
+
+            % Second kernel
+            \node[box, below=of int] (k2) {Linear / Conv2d\\[-0.2em] $\downarrow$\\[-0.2em] Dequantize + $\hat{o}$ update};
+
+            % Output
+            \node[draw, rounded corners, fill=green!10, inner sep=3pt, below=of k2] (fp32out) {FP32};
+
+            % Arrows
+            \draw[arrow] (fp32in) -- (k1);
+            \draw[arrow] (k1) -- (int);
+            \draw[arrow] (int) -- (k2);
+            \draw[arrow] (k2) -- (fp32out);
+
+        \end{tikzpicture}
+        \subcaption{Fused Kernel Design} 
+        \label{fig:kernel_design}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{0.48\linewidth}
+        \centering
+        % \rowcolors{2}{gray!10}{white}
+        \begin{tabular}{c|c}
+            % \rowcolor{gray!20}
+            HyperParam / Env  & Value      \\
+            GPU               & NVIDIA A40 \\
+            Model             & LDM        \\
+            Batch Size        & 32         \\
+            Timesteps         & 200        \\
+            Number of Samples & 128        \\
+        \end{tabular}
+        \subcaption{Benchmark Hyperparameter \& Environment} 
+        \label{tab:bench_hyp_table}
+    \end{minipage}
+    \caption{Kernel Design and Benchmark Configuration}
+    \label{fig:kernel_benchmark}
+\end{figure}

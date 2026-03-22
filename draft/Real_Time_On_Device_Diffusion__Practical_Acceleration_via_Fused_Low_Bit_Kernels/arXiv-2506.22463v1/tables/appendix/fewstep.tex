@@ -1,0 +1,19 @@
+\begin{table}[h!]
+\centering
+\caption{FID on CIFAR-10 using the DDIM sampler in the ablation study of fewer steps.}
+\begin{tabular}{l|c|c}
+\toprule
+{Methods} & {Bits (W/A)} & FID $\downarrow$\\
+\midrule
+LTQ & \multirow{2}{*}{8/8} & 6.93 \\
+LTQ+MoDiff (Ours) & & \bf 6.90 \\
+\midrule
+LTQ & \multirow{2}{*}{8/6} & 20.28 \\
+LTQ+MoDiff (Ours) & & \bf 6.75 \\
+\midrule
+LTQ & \multirow{2}{*}{8/4} & 297.21 \\
+LTQ+MoDiff (Ours) & & \bf 22.12 \\
+\bottomrule
+\end{tabular}
+\label{tab:fewstep}
+\end{table}

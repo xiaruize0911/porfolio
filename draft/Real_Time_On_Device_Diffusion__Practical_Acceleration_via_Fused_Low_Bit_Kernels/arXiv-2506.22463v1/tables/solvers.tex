@@ -1,0 +1,23 @@
+\begin{table}[t!]
+\small
+\centering
+\caption{FID and sFID on LSUN-Bedrooms using the DDPM sampler under different quantization precisions with LCQ. The best performance is \textbf{bolded}.}
+\resizebox{0.45\textwidth}{!}{
+\begin{tabular}{l|c|cc}
+\toprule
+{Methods} & {Bits (W/A)} & FID $\downarrow$ & sFID $\downarrow$ \\
+\midrule
+LCQ (DDPM) & \multirow{2}{*}{8/8} & 3.61 & 8.65 \\
+LCQ+MoDiff (DDPM) & & \bf 3.39 & \bf 8.02  \\
+\midrule
+LCQ (DDPM) & \multirow{2}{*}{8/6} & 50.17 & 52.18\\
+LCQ+MoDiff (DDPM) & & \bf 12.60 & \bf 13.71  \\
+\midrule
+LCQ (DDPM) & \multirow{2}{*}{8/4} & 102.16 & 104.18 \\
+LCQ+MoDiff (DDPM) & & \bf 34.25 & \bf 30.12  \\
+\bottomrule
+\end{tabular}}
+\vspace{-0.1in}
+\label{tab:solver}
+\end{table}
+

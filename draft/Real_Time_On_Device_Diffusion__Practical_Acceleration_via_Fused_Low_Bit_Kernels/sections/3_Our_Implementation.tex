@@ -1,0 +1,32 @@
+\section{Our Implementation}
+
+In this section, we describe our implementation of the MoDiff method and the optimizations we obtained.
+\subsection{Implementation Details}
+
+We used PyTorch as the deep learning framework for our implementation. The code is based on the official implementation of the MoDiff method, which is available on GitHub. We made some modifications to the original code to adapt it to our specific use case.
+
+To enhance performance, we incorporated the following optimizations:
+\begin{itemize}
+    \item {\textbf{CUTLASS}} Added CUTLASS(CUDA Templates for Linear Algebra Subroutines and Solvers) to optimize the performance of int8 and int4 convolutions.
+
+    \item {\textbf{Fused Kernels}} Implemented fused kernels for int8 and int4 quantization, dequantization, and activation functions. These fused kernels reduce the overhead of separate quantization and dequantization steps, improving the overall efficiency of the model.
+
+    \item {\textbf{Other Optimizations}} We also implemented consistent buffer management and a channel-last memory format to further optimize performance.
+\end{itemize}
+
+\subsection{Benchmarking and Performance}
+
+In order to evaluate the performance of our implementation, we conducted benchmarking experiments. We ran the experiments on a machine equipped with an NVIDIA A40 GPU, using the hyperparameters listed in Table \ref{tab:bench_hyp_table}.
+
+\input{tables/benchmark_hyperparameter_table}
+
+We compared the performance of our implementation with the FP32 generation, the int8-quantized generation without MoDiff, and the int4-quantized generation without MoDiff. The result of our benchmarking is shown in Table \ref{tab:pipeline_speedup} and visualized in Figure \ref{fig:plot_01_pipeline_speedup}.
+
+\input{tables/table_01_pipeline_speedup.tex}
+\input{figures/plot_01_pipeline_speedup.tex}
+
+As shown in the results, our implementation of MoDiff with int8 quantization and int4 quantization achieved significant speedups compared to the FP32 generation. The int8-quantized generation with MoDiff achieved a speedup of 1.668x, while the int4-quantized generation with MoDiff achieved a speedup of 1.800x compared to the FP32 generation. These results demonstrate the effectiveness of our optimizations and the potential of MoDiff for accelerating deep learning models.
+
+In order to demonstrate that our implementation meets the quality expectations as the original MoDiff, we also evaluated the quality of the generated images using FID (Fréchet Inception Distance). The FID scores for the FP32 generation, int8-quantized generation with MoDiff, and int4-quantized generation with MoDiff are shown in Table \ref{tab:fid_eval}.
+
+\input{tables/fid_result}

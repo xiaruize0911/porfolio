@@ -1,0 +1,39 @@
+\begin{table}[t!]
+\centering
+\caption{The IS, FID, sFID, and GBOPs for LSUN-Church with LDM under 4-bit weight quantization. The best performance is \textbf{bolded}.}
+\begin{tabular}{l|c|c|cc}
+\toprule
+{Methods} & {Bits (W/A)} & GBops & FID $\downarrow$ & sFID $\downarrow$ \\
+\midrule
+Full Prec. (Act) & 8/32 &{5015} & 4.03 & 10.89 \\
+\midrule
+% DQ & \multirow{6}{*}{8/8} & - & - & \multirow{6}{*}{4/8} & - & - \\
+LCQ & \multirow{2}{*}{8/8} & \multirow{2}{*}{1254}& 4.02 & 11.53 \\
+% Q-Diff & & - & - & & - & - \\
+% Q-Diff & & - & - & & - & - \\
+% DQ+RQF (Ours) & & - & - & & - & - \\
+LCQ+MoDiff (Ours) & & & 3.99 & 10.06 \\
+% Q-Diff+RQF (Ours) & &  - & - & & - & - \\
+\midrule
+% DQ & \multirow{6}{*}{8/6} & - & - & \multirow{6}{*}{4/6} & - & - \\
+LCQ & \multirow{2}{*}{8/6} & \multirow{2}{*}{940}& 4.50 & 12.90 \\
+% Q-Diff & & - & - & & - & - \\
+% Q-Diff & & - & - & & - & - \\
+% DQ+RQF (Ours) & & - & - & & - & - \\
+LCQ+MoDiff (Ours) & && 3.89 & 10.12 \\
+% Q-Diff+RQF (Ours) & &  - & - & & - & - \\
+\midrule
+% DQ & \multirow{6}{*}{8/4} & - & - & \multirow{6}{*}{4/4} & - & - \\
+LCQ & \multirow{2}{*}{8/4}&\multirow{2}{*}{627} & 198.37 & 161.03 \\
+% Q-Diff & & - & - & & - & - \\
+% Q-Diff & & - & - & & - & - \\
+% DQ+RQF (Ours) & & - & - & & - & - \\
+LCQ+MoDiff (Ours) & && 34.02 & 10.59 \\
+% Q-Diff+RQF (Ours) & &  - & - & & - & - \\
+\midrule
+LCQ & \multirow{2}{*}{8/3}& \multirow{2}{*}{470}& 341.62 & 407.68 \\
+LCQ+MoDiff (Ours) && & 12.05 & 35.29 \\
+\bottomrule
+\end{tabular}
+\label{apptab:church_w4}
+\end{table}

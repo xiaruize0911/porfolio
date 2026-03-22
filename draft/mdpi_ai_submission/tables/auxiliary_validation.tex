@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\caption{Auxiliary validation analyses beyond CLS-to-patch entropy. Rollout and patch-to-patch metrics indicate broader attention support for LoRA than for Full FT on EuroSAT, while layerwise CKA shows higher representational similarity to the pretrained encoder. The subset-sensitivity coefficient of variation (CV) is low for both methods, indicating that the reported metrics are stable across five balanced evaluation subsets.}
+\label{tab:auxiliary-validation}
+\begin{adjustwidth}{-\extralength}{0cm}
+\small
+\begin{tabularx}{\fulllength}{LCCCCCCC}
+\toprule
+Model & Rollout Entropy & Rollout ERF@0.95 & Rollout Gini & PTP Entropy & Mean CKA & Entropy CV \\
+\midrule
+Full FT EuroSAT & 5.593 & 0.944 & 0.090 & 4.721 & 0.694 & 0.0006 \\
+\addlinespace[4.5pt]
+LoRA $r=8$ EuroSAT & 5.605 & 0.952 & 0.064 & 4.794 & 0.815 & 0.0005 \\
+\bottomrule
+\end{tabularx}
+\end{adjustwidth}
+\end{table}

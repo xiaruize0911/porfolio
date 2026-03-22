@@ -1,0 +1,128 @@
+\begin{thebibliography}{999}
+
+\bibitem[Radford et~al.(2021)Radford, Kim, Hallacy, Ramesh, Goh, Agarwal,
+  Sastry, Askell, Mishkin, Clark, Krueger, and Sutskever]{radford2021learning}
+Radford, A.; Kim, J.W.; Hallacy, C.; Ramesh, A.; Goh, G.; Agarwal, S.; Sastry,
+  G.; Askell, A.; Mishkin, P.; Clark, J.;  et~al.
+\newblock Learning Transferable Visual Models From Natural Language
+  Supervision.
+\newblock In Proceedings of the Proceedings of the 38th International
+  Conference on Machine Learning,  2021, pp. 8748--8763.
+
+\bibitem[Shao et~al.(2023)Shao, Zhang, Hong, Zhou, Qiu, Liang, Yu, Li, Zhang,
+  Wu, et~al.]{shao2023vlm}
+Shao, W.; Zhang, M.; Hong, Z.; Zhou, Z.; Qiu, S.; Liang, F.; Yu, X.; Li, K.;
+  Zhang, P.; Wu, Y.;  et~al.
+\newblock VLM-Eval: A General Evaluation Benchmark for Vision-Language Models.
+\newblock {\em arXiv preprint arXiv:2311.08419} {\bf 2023}.
+
+\bibitem[Kumar et~al.(2022)Kumar, Raghunathan, Jones, Ma, and
+  Liang]{kumar2022finetuning}
+Kumar, A.; Raghunathan, A.; Jones, R.; Ma, T.; Liang, P.
+\newblock Fine-Tuning Can Distort Pretrained Features and Underperform
+  Out-of-Distribution.
+\newblock In Proceedings of the International Conference on Learning
+  Representations,  2022.
+
+\bibitem[Wortsman et~al.(2022)Wortsman, Ilharco, Kim, Li, Kornblith, Roelofs,
+  Lopes, Hajishirzi, Farhadi, Namkoong, and Schmidt]{wortsman2022robust}
+Wortsman, M.; Ilharco, G.; Kim, J.W.; Li, M.; Kornblith, S.; Roelofs, R.;
+  Lopes, R.G.; Hajishirzi, H.; Farhadi, A.; Namkoong, H.;  et~al.
+\newblock Robust Fine-Tuning of Zero-Shot Models.
+\newblock In Proceedings of the Proceedings of the {IEEE/CVF} Conference on
+  Computer Vision and Pattern Recognition,  2022, pp. 7959--7971.
+
+\bibitem[Vaswani et~al.(2017)Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez,
+  Kaiser, and Polosukhin]{vaswani2017attention}
+Vaswani, A.; Shazeer, N.; Parmar, N.; Uszkoreit, J.; Jones, L.; Gomez, A.N.;
+  Kaiser, L.; Polosukhin, I.
+\newblock Attention is All You Need.
+\newblock In Proceedings of the Advances in Neural Information Processing
+  Systems,  2017.
+
+\bibitem[Dosovitskiy et~al.(2021)Dosovitskiy, Beyer, Kolesnikov, Weissenborn,
+  Zhai, Unterthiner, Dehghani, Minderer, Heigold, Gelly, Uszkoreit, and
+  Houlsby]{dosovitskiy2021image}
+Dosovitskiy, A.; Beyer, L.; Kolesnikov, A.; Weissenborn, D.; Zhai, X.;
+  Unterthiner, T.; Dehghani, M.; Minderer, M.; Heigold, G.; Gelly, S.;  et~al.
+\newblock An Image is Worth 16x16 Words: Transformers for Image Recognition at
+  Scale.
+\newblock In Proceedings of the International Conference on Learning
+  Representations,  2021.
+
+\bibitem[Raghu et~al.(2021)Raghu, Unterthiner, Kornblith, Zhang, and
+  Dosovitskiy]{raghu2021vision}
+Raghu, M.; Unterthiner, T.; Kornblith, S.; Zhang, C.; Dosovitskiy, A.
+\newblock Do Vision Transformers See Like Convolutional Neural Networks?
+\newblock In Proceedings of the Advances in Neural Information Processing
+  Systems,  2021.
+
+\bibitem[Caron et~al.(2021)Caron, Touvron, Misra, Herv{\'e}, Mairal,
+  Bojanowski, and Joulin]{caron2021emerging}
+Caron, M.; Touvron, H.; Misra, I.; Herv{\'e}, J.; Mairal, J.; Bojanowski, P.;
+  Joulin, A.
+\newblock Emerging Properties in Self-Supervised Vision Transformers.
+\newblock In Proceedings of the Proceedings of the IEEE/CVF International
+  Conference on Computer Vision,  2021, pp. 9650--9660.
+
+\bibitem[Wiegreffe and Pinter(2019)]{wiegreffe2019attention}
+Wiegreffe, S.; Pinter, Y.
+\newblock Attention is not not Explanation.
+\newblock In Proceedings of the Proceedings of the 2019 Conference on Empirical
+  Methods in Natural Language Processing,  2019, pp. 11--20.
+
+\bibitem[Chefer et~al.(2021)Chefer, Gur, and Wolf]{chefer2021transformer}
+Chefer, H.; Gur, S.; Wolf, L.
+\newblock Transformer Interpretability Beyond Attention Visualization.
+\newblock In Proceedings of the Proceedings of the IEEE/CVF Conference on
+  Computer Vision and Pattern Recognition,  2021, pp. 782--791.
+
+\bibitem[Jain and Wallace(2019)]{jain2019attention}
+Jain, S.; Wallace, B.C.
+\newblock Attention is not Explanation.
+\newblock In Proceedings of the Proceedings of the 2019 Conference of the North
+  {A}merican Chapter of the Association for Computational Linguistics: Human
+  Language Technologies,  2019, pp. 3543--3556.
+
+\bibitem[Hu et~al.(2022)Hu, Shen, Wallis, Allen-Zhu, Li, Wang, Wang, and
+  Chen]{hu2022lora}
+Hu, E.J.; Shen, Y.; Wallis, P.; Allen-Zhu, Z.; Li, Y.; Wang, S.; Wang, L.;
+  Chen, W.
+\newblock {LoRA}: Low-Rank Adaptation of Large Language Models.
+\newblock In Proceedings of the International Conference on Learning
+  Representations,  2022.
+
+\bibitem[Abnar and Zuidema(2020)]{abnar2020quantifying}
+Abnar, S.; Zuidema, W.
+\newblock Quantifying Attention Flow in Transformers.
+\newblock In Proceedings of the Proceedings of the 58th Annual Meeting of the
+  Association for Computational Linguistics,  2020, pp. 4190--4197.
+
+\bibitem[Helber et~al.(2019)Helber, Bischke, Dengel, and
+  Borth]{helber2019eurosat}
+Helber, P.; Bischke, B.; Dengel, A.; Borth, D.
+\newblock EuroSAT: A Novel Dataset and Deep Learning Benchmark for Land Use and
+  Land Cover Classification.
+\newblock {\em IEEE Journal of Selected Topics in Applied Earth Observations
+  and Remote Sensing} {\bf 2019}, {\em 12},~2217--2226.
+
+\bibitem[Parkhi et~al.(2012)Parkhi, Vedaldi, Zisserman, and
+  Jawahar]{parkhi2012cats}
+Parkhi, O.M.; Vedaldi, A.; Zisserman, A.; Jawahar, C.V.
+\newblock Cats and Dogs.
+\newblock In Proceedings of the IEEE Conference on Computer Vision and Pattern
+  Recognition,  2012, pp. 3498--3505.
+
+\bibitem[Loshchilov and Hutter(2019)]{loshchilov2019decoupled}
+Loshchilov, I.; Hutter, F.
+\newblock Decoupled Weight Decay Regularization.
+\newblock In Proceedings of the International Conference on Learning
+  Representations,  2019.
+
+\bibitem[Kingma and Ba(2015)]{kingma2015adam}
+Kingma, D.P.; Ba, J.
+\newblock Adam: A Method for Stochastic Optimization.
+\newblock In Proceedings of the International Conference on Learning
+  Representations,  2015.
+
+\end{thebibliography}

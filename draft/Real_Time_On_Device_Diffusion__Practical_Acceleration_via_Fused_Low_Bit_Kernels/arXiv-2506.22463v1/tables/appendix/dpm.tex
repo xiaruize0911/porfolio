@@ -1,0 +1,19 @@
+\begin{table}[h!]
+\centering
+\caption{The FID on CIFAR-10 with DDIM using DPM solver under different precisions. The best performance is \textbf{bolded}.}
+\begin{tabular}{l|c|c}
+\toprule
+{Methods} & {Bits (W/A)} & FID $\downarrow$ \\
+\midrule
+DPM & \multirow{2}{*}{8/8} & 3.92 \\
+DPM+MoDiff (Ours) & & \bf 3.91  \\
+\midrule
+DPM & \multirow{2}{*}{8/6} & 10.82  \\
+DPM+MoDiff (Ours) & & \bf 3.91  \\
+\midrule
+DPM & \multirow{2}{*}{8/4} & 299.72 \\
+DPM+MoDiff (Ours) & & \bf 26.54 \\
+\bottomrule
+\end{tabular}
+\label{tab:dpm}
+\end{table}

@@ -1,0 +1,187 @@
+\begin{thebibliography}{10}
+
+\bibitem{ho2020ddpm}
+Jonathan Ho, Ajay Jain, and Pieter Abbeel.
+\newblock Denoising diffusion probabilistic models.
+\newblock In {\em NeurIPS}, 2020.
+
+\bibitem{dhariwal2021diffusion}
+Prafulla Dhariwal and Alex Nichol.
+\newblock Diffusion models beat gans on image synthesis.
+\newblock {\em arXiv preprint arXiv:2105.05233}, 2021.
+
+\bibitem{rombach2022ldm}
+Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, and Bj{\"o}rn
+  Ommer.
+\newblock High-resolution image synthesis with latent diffusion models.
+\newblock In {\em CVPR}, 2022.
+
+\bibitem{sohl2015deep}
+Jascha Sohl-Dickstein, Eric Weiss, Niru Maheswaranathan, and Surya Ganguli.
+\newblock Deep unsupervised learning using nonequilibrium thermodynamics.
+\newblock In {\em ICML}, 2015.
+
+\bibitem{jacob2018quantization}
+Benoit Jacob, Skirmantas Kligys, Bo~Chen, and et~al.
+\newblock Quantization and training of neural networks for efficient
+  integer-arithmetic-only inference.
+\newblock In {\em CVPR}, 2018.
+
+\bibitem{gholami2021survey}
+Amir Gholami, Sehoon Kim, Zhen Dong, and et~al.
+\newblock A survey of quantization methods for efficient neural network
+  inference.
+\newblock {\em arXiv preprint arXiv:2103.13630}, 2021.
+
+\bibitem{banner2019post}
+Ron Banner, Yury Nahshan, and Daniel Soudry.
+\newblock Post training 4-bit quantization of convolutional networks for
+  rapid-deployment.
+\newblock In {\em NeurIPS}, 2019.
+
+\bibitem{gao2025modulateddiffusionacceleratinggenerative}
+Weizhi Gao, Zhichao Hou, Junqi Yin, Feiyi Wang, Linyu Peng, and Xiaorui Liu.
+\newblock Modulated diffusion: Accelerating generative modeling with modulated
+  quantization, 2025.
+
+\bibitem{ho2020denoising}
+Jonathan Ho, Ajay Jain, and Pieter Abbeel.
+\newblock Denoising diffusion probabilistic models.
+\newblock In {\em Advances in Neural Information Processing Systems}, 2020.
+
+\bibitem{croitoru2022vision}
+Florinel-Alin Croitoru, Vlad Hondru, Radu~Tudor Ionescu, and Mubarak Shah.
+\newblock Diffusion models in vision: A survey.
+\newblock \url{https://doi.org/10.48550/arXiv.2209.04747}, 2022.
+\newblock arXiv:2209.04747.
+
+\bibitem{song2020score}
+Yang Song, Jascha Sohl-Dickstein, Diederik~P Kingma, Abhishek Kumar, Stefano
+  Ermon, and Ben Poole.
+\newblock Score-based generative modeling through stochastic differential
+  equations.
+\newblock {\em arXiv preprint arXiv:2011.13456}, 2020.
+
+\bibitem{zheng2025diffusion}
+Dongqi Zheng.
+\newblock Diffusion models on the edge: Challenges, optimizations, and
+  applications.
+\newblock {\em arXiv preprint arXiv:2504.15298}, 2025.
+
+\bibitem{song2020denoising}
+Jiaming Song, Chenlin Meng, and Stefano Ermon.
+\newblock Denoising diffusion implicit models.
+\newblock {\em arXiv preprint arXiv:2010.02502}, 2020.
+
+\bibitem{nagel2021white}
+Markus Nagel, Rana~Ali Amjad, Mart~van Baalen, Christos Louizos, and Tijmen
+  Blankevoort.
+\newblock A white paper on neural network quantization.
+\newblock {\em arXiv preprint arXiv:2106.08295}, 2021.
+
+\bibitem{yang2019quantization}
+Eunhyeok Yang, Dongjun Choi, Sungjoo Lee, and Sungwoo Oh.
+\newblock Quantization networks.
+\newblock {\em arXiv preprint arXiv:1912.12655}, 2019.
+
+\bibitem{li2021brecq}
+Yuhang Li, Ruihao Gong, Xu~Tan, Yang Yang, Peng Hu, Qi~Zhang, Fengwei Yu, Wei
+  Wang, and Shi Gu.
+\newblock Brecq: Pushing the limit of post-training quantization by block
+  reconstruction.
+\newblock {\em arXiv preprint arXiv:2102.05426}, 2021.
+
+\bibitem{li2023q}
+Xiuyu Li, Meng Zhang, Shuai Zhang, Lei Li, Wei Chen, Xing Zhang, Kaisheng Lin,
+  Xiaoguang Zhang, Jie Luo, and Xiaolin Li.
+\newblock Q-diffusion: Quantizing diffusion models.
+\newblock {\em arXiv preprint arXiv:2302.04304}, 2023.
+
+\bibitem{wang2024towards}
+Yuzhang Wang, Jiahao Li, Zhijian Wang, Cheng Wang, Minghao Wang, Mingyang Wang,
+  Xiaowei Wang, Dong Li, Xin Wang, and Wenxin Li.
+\newblock Towards accurate post-training quantization for diffusion models.
+\newblock {\em arXiv preprint arXiv:2402.04324}, 2024.
+
+\bibitem{huang2024tfmq}
+Yushi Huang, Ruihao Li, Yifan Wang, Wei Wang, Shi Gu, Xiaoguang Li, Jie Luo,
+  and Xiaolin Li.
+\newblock Tfmq-dm: Temporal feature-modulated quantization for diffusion
+  models.
+\newblock {\em arXiv preprint arXiv:2405.19577}, 2024.
+
+\bibitem{shang2023post}
+Yuzhe Shang, Zhihang Wang, Yue Wang, Yang Wang, Linghao Wang, Pan Wang, Yajuan
+  Wang, Tong Wang, Mingyang Wang, Xiaowei Wang, et~al.
+\newblock Post-training quantization on diffusion models.
+\newblock {\em arXiv preprint arXiv:2311.06209}, 2023.
+
+\bibitem{he2023ptqd}
+Yixin He, Shoufa Li, Lingyu Wang, Wei Wang, Tian Wang, Mingyang Wang, Xiaowei
+  Wang, Dong Li, Xin Wang, and Wenxin Li.
+\newblock Ptqd: Accurate post-training quantization for diffusion models.
+\newblock {\em arXiv preprint arXiv:2305.10687}, 2023.
+
+\bibitem{zhao2024vidit}
+Xiuyu Zhao, Yuzhang Li, Minghao Wang, Mingyang Wang, Xiaowei Wang, Dong Li, Xin
+  Wang, and Wenxin Li.
+\newblock Vidit-q: Efficient and accurate quantization of diffusion
+  transformers for image and video generation.
+\newblock {\em arXiv preprint arXiv:2406.02540}, 2024.
+
+\bibitem{xiao2023smoothquant}
+Guangxuan Xiao, Ji~Yao, Wenguang Zhang, Sheng Luo, Wei Wang, and Xiaoying Yang.
+\newblock Smoothquant: Accurate and efficient post-training quantization for
+  large language models.
+\newblock {\em arXiv preprint arXiv:2211.10438}, 2023.
+
+\bibitem{feng2024mpq}
+Yuji Feng, Xin Li, Jing Wang, Wei Wang, Shi Gu, Xiaoguang Li, Jie Luo, and
+  Xiaolin Li.
+\newblock Mpq: Memory-efficient patch-wise quantization for stable diffusion
+  models.
+\newblock {\em arXiv preprint arXiv:2402.03575}, 2024.
+
+\bibitem{gope2020high}
+Dibakar Gope, Jesse Beu, and Matthew Mattina.
+\newblock High throughput matrix-matrix multiplication between asymmetric
+  bit-width operands.
+\newblock {\em arXiv preprint arXiv:2008.00638}, 2020.
+
+\bibitem{cutlass}
+NVIDIA Corporation.
+\newblock Cutlass: Fast linear algebra in cuda c++.
+\newblock \url{https://github.com/NVIDIA/cutlass}, 2023.
+
+\bibitem{chen2018tvm}
+Tianqi Chen, Thierry Moreau, Ziheng Jiang, and et~al.
+\newblock Tvm: An automated end-to-end optimizing compiler for deep learning.
+\newblock In {\em OSDI}, 2018.
+
+\bibitem{vasilache2018tensor}
+Nicolas Vasilache, Oleksandr Zinenko, Georgios Theodoridis, and et~al.
+\newblock Tensor comprehensions: Framework-agnostic high-performance machine
+  learning abstractions.
+\newblock In {\em arXiv preprint arXiv:1802.04730}, 2018.
+
+\bibitem{yu15lsun}
+Fisher Yu, Yinda Zhang, Shuran Song, Ari Seff, and Jianxiong Xiao.
+\newblock Lsun: Construction of a large-scale image dataset using deep learning
+  with humans in the loop.
+\newblock In {\em arXiv preprint arXiv:1506.03365}, 2015.
+
+\bibitem{rombach2022high}
+Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, and Bj{\"o}rn
+  Ommer.
+\newblock High-resolution image synthesis with latent diffusion models.
+\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and
+  Pattern Recognition (CVPR)}, 2022.
+
+\bibitem{heusel2017gans}
+Martin Heusel, Hubert Ramsauer, Thomas Unterthiner, Bernhard Nessler, and Sepp
+  Hochreiter.
+\newblock Gans trained by a two time-scale update rule converge to a local nash
+  equilibrium.
+\newblock {\em Advances in Neural Information Processing Systems}, 30, 2017.
+
+\end{thebibliography}

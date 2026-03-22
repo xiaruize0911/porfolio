@@ -1,0 +1,16 @@
+\begin{table*}
+  [htbp]
+  \centering
+  \footnotesize
+  \caption{Arithmetic Intensity: Linear Layers (time-embedding projections). Shape: $in \to out$, count. Bytes: FP32=4B/elem; INT8=1B act+weight, 4B output; INT4=0.5B act+weight, 4B output.}
+  \label{tab:ai_linear}
+  \begin{tabular}{lrrrrrrrrrr}
+    \toprule Shape                                          & FLOPs & \multicolumn{3}{c}{Bytes (MB)} & \multicolumn{3}{c}{AI (FLOPs/B)} & \multicolumn{2}{c}{Speedup} \\
+    \cmidrule(lr){3-5}\cmidrule(lr){6-8}\cmidrule(lr){9-10} &       & FP32                           & INT8                             & INT4                       & FP32 & INT8  & INT4  & INT8/FP32    & INT4/FP32    \\
+    \midrule 768→1536, ×15                                  & 0.02G & 4.79                           & 1.23                             & 0.64                       & 3.94 & 15.28 & 29.40 & 3.88$\times$ & 7.46$\times$ \\
+    768→768, ×15                                            & 0.01G & 2.41                           & 0.62                             & 0.32                       & 3.92 & 15.21 & 29.26 & 3.88$\times$ & 7.47$\times$ \\
+    768→384, ×6                                             & 0.00G & 1.22                           & 0.31                             & 0.16                       & 3.88 & 15.06 & 28.98 & 3.88$\times$ & 7.47$\times$ \\
+    192→768, ×1                                             & 0.00G & 0.62                           & 0.17                             & 0.10                       & 3.80 & 13.59 & 23.81 & 3.58$\times$ & 6.26$\times$ \\
+    \bottomrule
+  \end{tabular}
+\end{table*}

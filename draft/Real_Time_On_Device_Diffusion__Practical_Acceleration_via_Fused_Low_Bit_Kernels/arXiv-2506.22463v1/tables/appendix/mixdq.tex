@@ -1,0 +1,25 @@
+\begin{table}[h!]
+\centering
+\caption{FID on MS-COCO using SDXL-Turbo and MixDQ across different generation steps. The best performance is \textbf{bolded}.}
+\begin{tabular}{c|c|c|c}
+\toprule
+{Step} & {Bits(W/A)} & {MixDQ} & {MixDQ+MoDiff} \\
+\midrule
+\multirow{3}{*}{2} 
+& 8/8 & 46.48 & \textbf{46.30} \\
+& 8/6 & 318.68 & \textbf{193.17} \\
+& 8/4 & 304.77 & \textbf{192.65} \\
+\midrule
+\multirow{3}{*}{4} 
+& 8/8 & \bf 44.29 & {44.74} \\
+& 8/6 & 318.57 & \textbf{191.59} \\
+& 8/4 & 325.68 & \textbf{192.74} \\
+\midrule
+\multirow{3}{*}{8} 
+& 8/8 & 44.61 & \textbf{43.30} \\
+& 8/6 & 347.75 & \textbf{210.38} \\
+& 8/4 & 348.75 & \textbf{212.68} \\
+\bottomrule
+\end{tabular}
+\label{tab:mixdq}
+\end{table}

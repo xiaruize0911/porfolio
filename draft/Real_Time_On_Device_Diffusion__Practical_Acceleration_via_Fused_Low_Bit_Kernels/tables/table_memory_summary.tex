@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\caption{Measured DRAM transfer (50 steps, batch 4).}
+\label{tab:memory_transfer}
+\begin{tabular}{lrrrrrrl}
+\toprule
+Mode & Weight & Act & Output & Cache Rd & Cache Wr & \textbf{Total} & vs FP32 \\
+ & (GB) & (GB) & (GB) & (GB) & (GB) & \textbf{(GB)} & \\
+\midrule
+  FP32 & 54.8 & 6.6 & 4.8 & 0.0 & 0.0 & \textbf{66.2} & --- \\
+  INT8 Standard & 16.5 & 6.6 & 4.8 & 0.0 & 0.0 & \textbf{27.9} & +57.8\% \\
+  INT4 Standard & 10.6 & 6.6 & 4.8 & 0.0 & 0.0 & \textbf{22.0} & +66.8\% \\
+  INT8 MoDiff & 16.5 & 6.6 & 4.8 & 12.7 & 9.2 & \textbf{49.8} & +24.7\% \\
+  INT4 MoDiff & 10.6 & 6.6 & 4.8 & 12.7 & 9.2 & \textbf{43.9} & +33.6\% \\
+\bottomrule
+\end{tabular}
+\end{table}

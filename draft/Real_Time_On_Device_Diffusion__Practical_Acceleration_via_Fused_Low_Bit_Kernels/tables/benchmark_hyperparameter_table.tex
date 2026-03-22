@@ -1,0 +1,42 @@
+% \begin{table*}
+%     [htbp]
+%     \centering
+%     \begin{minipage}[c]{0.58\linewidth}
+%         \centering
+%         \begin{tabular}{c|c|c|c}
+%             Environment & Value               & Hyperparameter    & Value       \\
+%             \hline
+%             GPU         & NVIDIA A40          & Model             & LDM         \\
+%             OS          & Ubuntu 22.04 Server & Dataset           & LSUN-Church \\
+%             PyTorch     & 2.4.0               & Batch Size        & 32          \\
+%             Python      & 3.11                & Timesteps         & 200         \\
+%             CUDA        & 12.4.1              & Number of Samples & 128         \\
+%         \end{tabular}
+%         \caption{Benchmark Results for Model Performance Optimization}
+%         \label{tab:hyper_table}
+%     \end{minipage}
+%     \hfill
+%     \begin{minipage}[c]{0.38\linewidth}
+%         \centering
+%         \begin{tabular}{lccc}
+%             \toprule \textbf{Mode} & \textbf{FID Score} & \textbf{Samples} \\
+%             \midrule FP32          & 5.73               & 50000            \\
+%             INT8                   & 5.85               & 50000            \\
+%             INT4                   & 14.80              & 50000            \\
+%             \bottomrule
+%         \end{tabular}
+%         \caption{FID Evaluation Results}
+%         \label{tab:fid_eval}
+%     \end{minipage}
+% \end{table*}
+\begin{table}
+\begin{tabular}{lccc}
+    \toprule \textbf{Mode} & \textbf{FID Score} & \textbf{Samples} \\
+    \midrule FP32          & 5.73               & 50000            \\
+    INT8                   & 5.85               & 50000            \\
+    INT4                   & 14.80              & 50000            \\
+    \bottomrule
+\end{tabular}
+\caption{FID Evaluation Results}
+\label{tab:fid_eval}
+\end{table}
