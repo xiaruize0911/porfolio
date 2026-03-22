@@ -33,7 +33,7 @@
                     {{- range seq 1 3 -}}
                     {{- range $row -}}
                     <figure class="hero-image-stream__card">
-                        <img src="{{ index . " src" }}" alt="" loading="lazy" decoding="async">
+                        <img src="{{ index . "src" }}" alt="" loading="lazy" decoding="async">
                         <figcaption>{{ index . "pageTitle" }}</figcaption>
                     </figure>
                     {{- end -}}

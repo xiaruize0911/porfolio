@@ -1,0 +1,76 @@
+{{- $url := .Get "url" | default (.Get 0) -}}
+{{- $viewerId := printf "pdf-viewer-%s" (md5 $url) -}}
+<div id="{{ $viewerId }}" class="pdf-inline-viewer" data-pdf-url="{{ $url }}">
+  <div class="pdf-inline-viewer__toolbar">
+    <a class="pdf-inline-viewer__open" href="{{ $url }}" target="_blank" rel="noopener noreferrer">
+      Open the compiled PDF in a new tab
+    </a>
+    <span class="pdf-inline-viewer__status">Loading preview…</span>
+  </div>
+  <div class="pdf-inline-viewer__pages"></div>
+</div>
+<script type="module">
+  const root = document.currentScript?.previousElementSibling;
+
+  if (root && !root.dataset.initialized) {
+    root.dataset.initialized = 'true';
+
+    const statusEl = root.querySelector('.pdf-inline-viewer__status');
+    const pagesEl = root.querySelector('.pdf-inline-viewer__pages');
+    const pdfUrl = root.dataset.pdfUrl;
+
+    try {
+      const pdfjsLib = await import('https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.min.mjs');
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.worker.min.mjs';
+
+      const loadingTask = pdfjsLib.getDocument({
+        url: pdfUrl,
+        useWorkerFetch: true,
+        isEvalSupported: false,
+      });
+
+      const pdf = await loadingTask.promise;
+      statusEl.textContent = `${pdf.numPages} page${pdf.numPages === 1 ? '' : 's'} loaded`;
+
+      for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber += 1) {
+        const page = await pdf.getPage(pageNumber);
+        const baseViewport = page.getViewport({ scale: 1 });
+        const availableWidth = Math.min(pagesEl.clientWidth || root.clientWidth || 920, 920);
+        const scale = availableWidth / baseViewport.width;
+        const viewport = page.getViewport({ scale });
+        const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+
+        const pageShell = document.createElement('section');
+        pageShell.className = 'pdf-inline-viewer__page';
+
+        const pageLabel = document.createElement('div');
+        pageLabel.className = 'pdf-inline-viewer__page-label';
+        pageLabel.textContent = `Page ${pageNumber}`;
+
+        const canvas = document.createElement('canvas');
+        canvas.width = Math.floor(viewport.width * pixelRatio);
+        canvas.height = Math.floor(viewport.height * pixelRatio);
+        canvas.style.width = `${viewport.width}px`;
+        canvas.style.height = `${viewport.height}px`;
+        canvas.setAttribute('role', 'img');
+        canvas.setAttribute('aria-label', `PDF page ${pageNumber}`);
+
+        const ctx = canvas.getContext('2d', { alpha: false });
+        ctx.scale(pixelRatio, pixelRatio);
+
+        pageShell.appendChild(pageLabel);
+        pageShell.appendChild(canvas);
+        pagesEl.appendChild(pageShell);
+
+        await page.render({
+          canvasContext: ctx,
+          viewport,
+        }).promise;
+      }
+    } catch (error) {
+      console.error('PDF viewer failed to load', error);
+      statusEl.textContent = 'Preview unavailable in-browser.';
+      root.classList.add('pdf-inline-viewer--failed');
+    }
+  }
+</script>

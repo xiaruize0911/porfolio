@@ -38,4 +38,4 @@ Sign language is a primary communication channel for millions of Deaf and hard-o
 
 [Open the compiled PDF](/publications/text2sign/paper.pdf)
 
-<iframe src="/publications/text2sign/paper.pdf#view=FitH" width="100%" height="980" style="border: 1px solid #d1d5db; border-radius: 12px;"></iframe>
+{{< pdf-inline-viewer url="/publications/text2sign/paper.pdf" >}}
