@@ -36,6 +36,4 @@ Diffusion models have demonstrated remarkable effectiveness as generative models
 
 ## Read the paper
 
-[Open the compiled PDF](/publications/real-time-on-device-diffusion/paper.pdf)
-
 {{< pdf-inline-viewer url="/publications/real-time-on-device-diffusion/paper.pdf" >}}

@@ -210,6 +210,24 @@
   margin-bottom: 1rem;
 }
 
+.pdf-inline-viewer__fallback {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  background: #2563eb;
+  color: #fff !important;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
+}
+
+.pdf-inline-viewer__fallback:hover {
+  background: #1d4ed8;
+  text-decoration: none;
+}
+
 .pdf-inline-viewer__open {
   display: inline-flex;
   align-items: center;
@@ -272,6 +290,10 @@
 
 .pdf-inline-viewer--failed .pdf-inline-viewer__status {
   color: #b91c1c;
+}
+
+.pdf-inline-viewer--failed .pdf-inline-viewer__fallback {
+  display: inline-flex;
 }
 
 @keyframes hero-marquee-left {

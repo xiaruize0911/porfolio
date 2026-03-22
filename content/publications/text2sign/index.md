@@ -36,6 +36,4 @@ Sign language is a primary communication channel for millions of Deaf and hard-o
 
 ## Read the paper
 
-[Open the compiled PDF](/publications/text2sign/paper.pdf)
-
 {{< pdf-inline-viewer url="/publications/text2sign/paper.pdf" >}}

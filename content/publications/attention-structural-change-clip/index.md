@@ -36,6 +36,4 @@ Fine-tuning contrastive vision-language models such as CLIP is an essential step
 
 ## Read the paper
 
-[Open the compiled PDF](/publications/attention-structural-change-clip/paper.pdf)
-
 {{< pdf-inline-viewer url="/publications/attention-structural-change-clip/paper.pdf" >}}
