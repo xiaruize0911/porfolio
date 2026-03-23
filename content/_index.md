@@ -42,6 +42,23 @@ sections:
       columns: 3
 
   - block: collection
+    id: concerns
+    content:
+      title: Our Concerns
+      subtitle: 'Three longer essays on fairness, labor, and the physical costs behind AI development'
+      text: ''
+      count: 3
+      filters:
+        folders:
+          - concerns
+        featured_only: false
+      order: desc
+    design:
+      css_class: responsive-card-grid
+      view: card
+      columns: 3
+
+  - block: collection
     id: experience
     content:
       title: Experience
@@ -52,6 +69,30 @@ sections:
           - experience
         featured_only: false
       count: 3
+      order: desc
+    design:
+      css_class: responsive-card-grid
+      view: card
+      columns: 3
+
+  - block: collection
+    id: blog
+    content:
+      title: Blog
+      subtitle: 'Essays on AI, ethics, public life, and human flourishing'
+      text: ''
+      page_type: blog
+      count: 3
+      filters:
+        kinds: ["page"]
+        author: ''
+        category: ''
+        tag: ''
+        exclude_featured: false
+        exclude_future: false
+        exclude_past: false
+        publication_type: ''
+      offset: 0
       order: desc
     design:
       css_class: responsive-card-grid
