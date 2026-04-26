@@ -4,7 +4,7 @@ authors:
 - admin
 date: "2026-01-01T00:00:00Z"
 publishDate: "2026-01-01T00:00:00Z"
-publication_types: ["article"]
+publication_types: ["article-journal"]
 publication: "IEEE Access"
 publication_short: "IEEE Access"
 doi: "10.1109/ACCESS.2026.3686260"
