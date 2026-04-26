@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Xia Ruize
+title: Ruize Xia
 
 # Name pronunciation (optional)
 name_pronunciation: ''
@@ -23,7 +23,7 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Student Researcher in AI & Society
+role: Student Researcher
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
@@ -40,6 +40,9 @@ profiles:
     url: https://twitter.com/xiaruize
   - icon: brands/github
     url: https://github.com/xiaruize0911
+  - icon: brands/orcid
+    url: https://orcid.org/0009-0000-0501-0943
+    label: ORCID
 
 interests:
   - AI Ethics and Governance
@@ -77,14 +80,14 @@ education:
   #     Minored in Mathematics. President of AI Club.
 
 work:
-  # - position: Senior AI Research Scientist
-  #   company_name: Meta AI
-  #   company_url: 'https://ai.meta.com/'
-  #   company_logo: ''
-  #   date_start: 2020-01-01
-  #   date_end: ''
-  #   summary: |2-
-  #     Leading research on multimodal AI systems. Contributed to Llama 2 and other open-source models. 50+ citations in 3 years.
+  - position: Student
+    company_name: Nanjing Foreign Language School
+    company_url: ''
+    company_logo: ''
+    date_start: 2024-09-01
+    date_end: ''
+    summary: |
+      ORCID-listed affiliation in Nanjing, Jiangsu, China.
   # - position: AI Research Intern
   #   company_name: OpenAI
   #   company_url: 'https://openai.com/'
@@ -172,7 +175,9 @@ languages:
 
 ## Artificial Minds, Human Values
 
-I’m **Ruize Xia**, a student researcher interested in the meeting point between **artificial intelligence**, **ethics**, and **public life**.
+I’m **Ruize Xia**, a student at **Nanjing Foreign Language School** in Nanjing, Jiangsu, China, and a student researcher working across artificial intelligence, generative models, accessibility, and AI's social impact. My ORCID is [0009-0000-0501-0943](https://orcid.org/0009-0000-0501-0943).
+
+My current publications include **“Attention Heatmap Drift in a Contrastively Pretrained Vision–Language Model: A Controlled Matched-Learning-Rate Comparison of Full Fine-Tuning and Low-Rank Adaptation”** and **“Text2Sign: A Single-GPU Diffusion Baseline for Text-to-Sign Language Video Generation.”**
 
 My work begins with a conviction: technical progress is not automatically human progress. Powerful systems can help people learn, communicate, and solve hard problems, but only when they are built with care for fairness, accessibility, accountability, and human dignity.
 
