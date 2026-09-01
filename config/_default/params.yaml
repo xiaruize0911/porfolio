@@ -14,7 +14,7 @@ marketing:
     site_type: Person
     local_business_type: ''
     org_name: 'Ruize Xia'
-    description: 'Student researcher at Nanjing Foreign Language School. Work on accessible generative models, efficient diffusion systems, and the social responsibilities of AI.'
+    description: 'Ideas about access, compute, and judgment in AI — then the papers, code, and teaching used to test them. Ruize Xia, Nanjing Foreign Language School.'
     twitter: 'xiaruize'
   analytics:
     google_analytics: ''

@@ -14,7 +14,7 @@ sections:
       text: |
         <p class="section-kicker">Conversation and collaboration</p>
 
-        This project grows through careful questions, not through noise.
+        The ideas on this site are unfinished on purpose. They grow through careful questions, not through noise.
 
         You can get involved by:
 

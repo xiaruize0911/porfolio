@@ -14,29 +14,21 @@ sections:
       text: |
         <p class="section-kicker">Artificial Minds, Human Values</p>
 
-        **Artificial Minds, Human Values** is the research and writing project of **Ruize Xia**, a student at Nanjing Foreign Language School.
+        **Artificial Minds, Human Values** is the idea, not the résumé line. It is the research and writing project of **Ruize Xia**, a student at Nanjing Foreign Language School.
 
-        Artificial intelligence is becoming more capable, more visible, and more influential in everyday life. The language used to judge it often remains too narrow. We talk about speed, scale, accuracy, and benchmarks. We talk less about dignity, legibility, fairness, and what good judgment should look like when machines participate in human decisions.
+        The starting claim is narrow and demanding: technical progress is not automatically human progress. Speed, scale, and benchmark scores are easy to talk about. Dignity, access, and the right to disagree with a machine are harder — and more important once a system leaves the lab.
 
-        This site answers that gap with technical work and civic work in the same frame. The current public record includes:
+        Three ideas organize the work.
 
-        * **Text2Sign** — a 2026 [IEEE Access](https://doi.org/10.1109/ACCESS.2026.3686260) article, with code and a Hugging Face checkpoint, on single-GPU text-to-sign-language video generation.
-        * **CLIP attention drift** — an [arXiv](https://arxiv.org/abs/2604.16410) study of 80 matched-learning-rate runs comparing full fine-tuning and LoRA.
-        * **On-device diffusion** — a systems manuscript on fused low-bit kernels for MoDiff.
-        * **NFLS AI Club** — a school community for workshops, invited lectures, and AI literacy, which Ruize leads as president.
-        * **NYLF Engineering** — a 2025 residential program at Georgia Tech.
+        **Access is a design problem.** If a model can generate language or video, the first question is who can enter the conversation. [Text2Sign](/publications/text2sign/) is the current test of that idea: text-to-sign-language video on a single GPU, with public code and a released model.
 
-        The questions underneath those artifacts are stable:
+        **Capability should survive real limits.** A method that only exists on a cluster is not the same as a method someone can run, inspect, and share. The [on-device diffusion](/publications/real-time-on-device-diffusion/) kernels and the [University Ranking](/projects/university-ranking/) app are two different attempts to keep useful systems inside ordinary constraints.
 
-        * What should responsible AI look like in classrooms, public institutions, and community settings?
-        * How do we evaluate systems not only by output quality, but also by whether people can trust, question, and understand them?
-        * What does it mean to keep a human being visible when automation encourages abstraction?
+        **Adaptation needs to stay visible.** Fine-tuning can raise a score while changing what a model attends to. The [CLIP attention study](/publications/attention-structural-change-clip/) measures that drift. The notes on [human judgment](/publications/human-judgment-in-the-loop/) and [value-aligned evaluation](/publications/value-aligned-evaluation/) ask who remains able to contest the result.
 
-        The work takes three forms. **Research** explores accessible generation, efficient inference, and value-aligned evaluation. **Writing** connects machine learning to explanation, labor, inclusion, and design responsibility. **Service** turns those ideas into workshops and public-interest experiments.
+        The NFLS AI Club is the same argument in a classroom: technical skill, then the question of whether the system should work that way, and for whom.
 
-        The aim is technically serious and morally serious at the same time. Not alarmism. Not hype. Clearer thinking, better design, and stronger human values.
-
-        Contact: [xiaruize0911@gmail.com](mailto:xiaruize0911@gmail.com) · [GitHub](https://github.com/xiaruize0911) · [ORCID](https://orcid.org/0009-0000-0501-0943) · [Hugging Face](https://huggingface.co/xiaruize) · [Personal blog](https://xiaruize.org/)
+        Contact: [xiaruize0911@gmail.com](mailto:xiaruize0911@gmail.com) · [GitHub](https://github.com/xiaruize0911) · [ORCID](https://orcid.org/0009-0000-0501-0943) · [Hugging Face](https://huggingface.co/xiaruize)
     design:
       columns: '1'
       css_class: 'page-intro about-page'

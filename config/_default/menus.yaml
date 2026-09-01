@@ -7,21 +7,18 @@ main:
   - name: Home
     url: /
     weight: 10
-  - name: Research
-    url: /publications/
+  - name: Ideas
+    url: /#ideas
     weight: 20
-  - name: Projects
-    url: /projects/
+  - name: Work
+    url: /publications/
     weight: 30
-  - name: Club
-    url: /nfls-ai-club/
-    weight: 40
-  - name: Experience
-    url: /experience/
-    weight: 50
   - name: Writing
     url: /blog/
-    weight: 60
+    weight: 40
+  - name: Club
+    url: /nfls-ai-club/
+    weight: 50
   - name: About
     url: /about-us/
-    weight: 70
+    weight: 60

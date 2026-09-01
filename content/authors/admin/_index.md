@@ -145,14 +145,10 @@ languages:
 
 ## Artificial Minds, Human Values
 
-I’m **Ruize Xia**, a student at **Nanjing Foreign Language School** in Nanjing, Jiangsu, China. I work as an independent student researcher on generative models, accessibility, and the social conditions of AI systems. ORCID: [0009-0000-0501-0943](https://orcid.org/0009-0000-0501-0943).
+I’m **Ruize Xia**, a student at **Nanjing Foreign Language School** in Nanjing, Jiangsu, China. ORCID: [0009-0000-0501-0943](https://orcid.org/0009-0000-0501-0943).
 
-Recent work includes **Text2Sign**, a peer-reviewed [IEEE Access](https://doi.org/10.1109/ACCESS.2026.3686260) article (also on [arXiv:2607.13164](https://arxiv.org/abs/2607.13164)) on single-GPU text-to-sign-language video generation, and a controlled [arXiv](https://arxiv.org/abs/2604.16410) study of attention drift and transfer retention in fine-tuned CLIP. Code and checkpoints live on [GitHub](https://github.com/xiaruize0911) and [Hugging Face](https://huggingface.co/xiaruize).
+The site is organized around a claim, not a venue list: technical progress is not automatically human progress. I use that idea to decide what to build next — accessible generation, systems that still work under real compute limits, and evaluation that stays visible to the people affected.
 
-Technical progress is not automatically human progress. Powerful systems can help people learn, communicate, and solve hard problems, but only when they are built with care for fairness, accessibility, accountability, and human dignity. That belief shapes the work collected here:
+The public work is how the claim gets tested. [Text2Sign](/publications/text2sign/) asks whether sign-language video can be generated under a single-GPU budget. The [CLIP attention study](/publications/attention-structural-change-clip/) asks what fine-tuning changes besides the score. The [on-device diffusion](/publications/real-time-on-device-diffusion/) kernels ask whether an efficiency story survives hardware measurement. Code and checkpoints are on [GitHub](https://github.com/xiaruize0911) and [Hugging Face](https://huggingface.co/xiaruize).
 
-* **Research** on accessible generation, efficient inference, and value-aligned evaluation.
-* **Writing** that connects machine learning to education, civic trust, and moral responsibility.
-* **Service** through the NFLS AI Club and public-facing experiments that turn principles into practice.
-
-The goal is not to romanticize technology or reject it. The goal is to ask better questions, design better systems, and keep human values legible even when the machines grow more capable.
+The NFLS AI Club is the same argument taught in public: how a model works, then whether it should work that way, and for whom.

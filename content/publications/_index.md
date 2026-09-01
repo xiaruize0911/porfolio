@@ -9,12 +9,12 @@ design:
 sections:
   - block: markdown
     content:
-      title: Research
+      title: Work
       subtitle: ''
       text: |
-        <p class="section-kicker">Papers and working notes</p>
+        <p class="section-kicker">Results</p>
 
-        Work collected here sits at the intersection of generative modeling, accessibility, and evaluation. The peer-reviewed and preprint papers are listed first. The working papers ask what should count as a good system once it leaves the benchmark and enters a classroom, clinic, or public office.
+        These pages are the work that follows the ideas: access, compute limits, and visible adaptation. Venue and preprint links live on each paper page, as publication details rather than as the point of the site.
     design:
       columns: '1'
       css_class: 'page-intro'

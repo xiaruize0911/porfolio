@@ -12,9 +12,9 @@ sections:
       title: Projects
       subtitle: ''
       text: |
-        <p class="section-kicker">Code, models, and tools</p>
+        <p class="section-kicker">Work you can run</p>
 
-        These projects sit next to the papers: public training code, model checkpoints, and software that had to work for other people, not only for a figure in a PDF.
+        Code, checkpoints, and tools that make the ideas inspectable. A paper is one way to state a claim. A repository is how someone else can pressure-test it.
     design:
       columns: '1'
       css_class: 'page-intro'
