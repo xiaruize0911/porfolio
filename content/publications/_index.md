@@ -1,16 +1,28 @@
 ---
 title: ''
-date: 2022-10-24
+date: 2026-04-06
 type: landing
 
 design:
-  # Default section spacing
-  spacing: '6rem'
+  spacing: '5rem'
+
 sections:
+  - block: markdown
+    content:
+      title: Research
+      subtitle: ''
+      text: |
+        <p class="section-kicker">Papers and working notes</p>
+
+        Work collected here sits at the intersection of generative modeling, accessibility, and evaluation. The peer-reviewed and preprint papers are listed first. The working papers ask what should count as a good system once it leaves the benchmark and enters a classroom, clinic, or public office.
+    design:
+      columns: '1'
+      css_class: 'page-intro'
+
   - block: collection
     id: papers
     content:
-      title: Research Papers
+      title: Papers
       filters:
         folders:
           - publications
@@ -18,5 +30,5 @@ sections:
     design:
       view: article-grid
       columns: 1
-
+      css_class: 'publication-list'
 ---

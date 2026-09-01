@@ -12,7 +12,9 @@ sections:
       title: NFLS AI CLUB
       subtitle: ''
       text: |
-        As **President** of the NFLS AI Club at Nanjing Foreign Language School, Ruize leads a student community focused on artificial intelligence — from the technical mechanics of how models learn, to the human and ethical questions that make the technology worth thinking carefully about.
+        <p class="section-kicker">Nanjing Foreign Language School</p>
+
+        As **President** of the NFLS AI Club, Ruize leads a student community focused on artificial intelligence — from the technical mechanics of how models learn, to the human and ethical questions that make the technology worth thinking carefully about.
 
         The club holds regular workshops, reading discussions, and hands-on coding sessions. Members range from complete beginners to experienced programmers, each pushing the group to ask sharper questions: not just *how does this work?* but *should it work this way, and for whom?*
 

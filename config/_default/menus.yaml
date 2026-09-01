@@ -1,24 +1,27 @@
 # Navigation Links
 #   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
-  #     desired widget in your `content/home/` folder.
-  #   The weight parameter defines the order that the links will appear in.
+#     desired widget in your `content/home/` folder.
+#   The weight parameter defines the order that the links will appear in.
 
 main:
   - name: Home
     url: /
     weight: 10
-  - name: About Us
-    url: /about-us/
-    weight: 11
-  - name: Blog
-    url: /blog/
-    weight: 12
-  - name: NFLS AI Club
+  - name: Research
+    url: /publications/
+    weight: 20
+  - name: Projects
+    url: /projects/
+    weight: 30
+  - name: Club
     url: /nfls-ai-club/
-    weight: 13
+    weight: 40
   - name: Experience
     url: /experience/
-    weight: 14
-  - name: Get Involved
-    url: /get-involved/
-    weight: 15
+    weight: 50
+  - name: Writing
+    url: /blog/
+    weight: 60
+  - name: About
+    url: /about-us/
+    weight: 70

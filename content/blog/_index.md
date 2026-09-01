@@ -11,7 +11,7 @@ sections:
     - block: collection
       content:
         title: Blog
-        subtitle: 'Essays on AI, ethics, public life, and human flourishing'
+        subtitle: 'Study notes on machine learning, optimization, and how models actually learn'
         text: ''
         # Page type to display. E.g. post, talk, publication...
         page_type: blog

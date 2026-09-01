@@ -12,6 +12,8 @@ sections:
       title: Our Concerns
       subtitle: ''
       text: |
+        <p class="section-kicker">Risks worth taking seriously</p>
+
         These essays focus on the risks that matter most in AI development: unfair decision systems, unequal labor disruption, and the physical infrastructure costs hidden behind software language.
     design:
       columns: '1'

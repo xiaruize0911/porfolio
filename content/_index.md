@@ -5,7 +5,7 @@ date: 2022-10-24
 type: landing
 
 design:
-  spacing: '6rem'
+  spacing: '5.5rem'
 
 sections:
   - block: markdown
@@ -15,22 +15,26 @@ sections:
       text: |
         {{< home-hero-floating-title >}}
 
-        ### Our Mission
+        {{< site-stats >}}
 
-        This site investigates how artificial intelligence can be designed, governed, and taught in ways that protect **human dignity**, strengthen **public trust**, and expand **social opportunity**.
+        <div class="mission-panel">
 
-        Inspired by the interdisciplinary spirit of technology, philosophy, and civic engagement, the project asks a simple but demanding question: **How do we build intelligent systems without losing sight of the people they are meant to serve?**
+        <p class="section-kicker">The through-line</p>
 
-        The answer lives in research, essays, real-world experience, and community-facing work. In other words: fewer black boxes, more human responsibility.
+        ### Build capable systems without losing the people they are meant to serve.
+
+        This site collects research, engineering, essays, and school-facing work on artificial intelligence. The technical questions are about generation, adaptation, and efficiency. The civic questions are about dignity, access, and responsibility. They belong in the same place.
+
+        </div>
     design:
       columns: '1'
-      css_class: 'text-center homepage-hero-section'
+      css_class: 'homepage-hero-section'
 
   - block: collection
     id: research
     content:
       title: Research
-      subtitle: 'Compiled papers and working notes on accessibility, efficient AI systems, and responsible model adaptation'
+      subtitle: 'Peer-reviewed and preprint work on accessible generation, model adaptation, and on-device diffusion'
       text: ''
       filters:
         folders:
@@ -40,12 +44,23 @@ sections:
     design:
       view: article-grid
       columns: 3
+      css_class: 'section-research'
+
+  - block: markdown
+    content:
+      title: Selected projects
+      subtitle: 'Code, models, and tools that sit next to the papers'
+      text: |
+        {{< selected-projects >}}
+    design:
+      columns: '1'
+      css_class: 'section-projects'
 
   - block: collection
     id: concerns
     content:
-      title: Our Concerns
-      subtitle: 'Three longer essays on fairness, labor, and the physical costs behind AI development'
+      title: Concerns
+      subtitle: 'Longer essays on fairness, labor, and the physical costs behind AI development'
       text: ''
       count: 3
       filters:
@@ -62,7 +77,7 @@ sections:
     id: experience
     content:
       title: Experience
-      subtitle: 'Internships and practical engineering work'
+      subtitle: 'Engineering programs and practical work beyond the classroom'
       text: ''
       filters:
         folders:
@@ -76,10 +91,27 @@ sections:
       columns: 3
 
   - block: collection
+    id: club
+    content:
+      title: NFLS AI Club
+      subtitle: 'A student community for technical skill, critical reading, and public-facing AI literacy'
+      text: ''
+      filters:
+        folders:
+          - nfls-ai-club
+        featured_only: false
+      count: 4
+      order: desc
+    design:
+      css_class: responsive-card-grid
+      view: card
+      columns: 3
+
+  - block: collection
     id: blog
     content:
-      title: Blog
-      subtitle: 'Essays on AI, ethics, public life, and human flourishing'
+      title: Notes
+      subtitle: 'Study notes on machine learning, optimization, and how models actually learn'
       text: ''
       page_type: blog
       count: 3
@@ -99,31 +131,24 @@ sections:
       view: card
       columns: 3
 
-  - block: collection
-    id: club
+  - block: markdown
     content:
-      title: NFLS AI Club
-      subtitle: 'Meetings, workshops, and hands-on learning'
-      text: ''
-      filters:
-        folders:
-          - nfls-ai-club
-        featured_only: false
-      count: 4
-      order: desc
+      title: ''
+      subtitle: ''
+      text: |
+        {{< home-cta >}}
     design:
-      css_class: responsive-card-grid
-      view: card
-      columns: 3
+      columns: '1'
+      css_class: 'section-cta'
 
   - block: resume-biography-3
     content:
       username: admin
       text: ''
       headings:
-        about: 'About the Founder'
+        about: 'About'
         education: 'Education'
-        interests: 'Focus Areas'
+        interests: 'Focus areas'
     design:
       css_class: hbx-bg-gradient
       avatar:

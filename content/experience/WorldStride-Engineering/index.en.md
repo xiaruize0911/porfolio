@@ -3,6 +3,7 @@ title: "NYLF Engineering Scholar"
 company: "NYLF Engineering | Envision by WorldStrides"
 company_url: "https://www.envisionexperience.com/explore-our-programs/national-young-leaders-forum-engineering"
 location: "Georgia Tech University, Atlanta, GA"
+date: 2025-07-12
 date_start: 2025-07-05
 date_end: 2025-07-12
 summary: "A residential engineering leadership program at Georgia Tech focused on design thinking, robotics, communication, and collaborative problem solving."

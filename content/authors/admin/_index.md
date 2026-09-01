@@ -23,7 +23,7 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Student Researcher
+role: Student researcher · President, NFLS AI Club
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
@@ -35,51 +35,56 @@ organizations:
 profiles:
   - icon: at-symbol
     url: 'mailto:xiaruize0911@gmail.com'
-    label: Email Me
-  - icon: brands/x
-    url: https://twitter.com/xiaruize
+    label: Email
+  - icon: globe-alt
+    url: https://xiaruize.org/
+    label: Personal blog
   - icon: brands/github
     url: https://github.com/xiaruize0911
+    label: GitHub
+  - icon: brands/huggingface
+    url: https://huggingface.co/xiaruize
+    label: Hugging Face
   - icon: brands/orcid
     url: https://orcid.org/0009-0000-0501-0943
     label: ORCID
+  - icon: brands/x
+    url: https://twitter.com/xiaruize
+    label: X
 
 interests:
-  - AI Ethics and Governance
-  - Human-Centered Machine Learning
-  - Accessibility and Inclusive Design
-  - Civic Technology
-  - Education and AI Literacy
-  - Interdisciplinary Research
+  - Accessible generative models
+  - Efficient diffusion systems
+  - Vision-language model adaptation
+  - AI ethics and governance
+  - Human-centered evaluation
+  - AI literacy in schools
 
 education:
-  # - area: PhD Computer Science (AI Focus)
-  #   institution: Stanford University
-  #   date_start: 2015-09-01
-  #   date_end: 2019-06-30
-  #   summary: |
-  #     Thesis on _Scaling Laws for Neural Language Models_. Supervised by Prof. Andrew Ng. Published 5 papers in NeurIPS and ICML, with 2 best paper awards.
-  #   button:
-  #     text: 'Read Thesis'
-  #     url: 'https://example.com/thesis.pdf'
-  # - area: MS Computer Science
-  #   institution: Carnegie Mellon University
-  #   date_start: 2013-09-01
-  #   date_end: 2015-05-31
-  #   summary: |
-  #     GPA: 4.0/4.0
-
-  #     Specialized in machine learning and robotics.
-  # - area: BS Computer Science
-  #   institution: MIT
-  #   date_start: 2009-09-01
-  #   date_end: 2013-05-31
-  #   summary: |
-  #     GPA: 3.9/4.0
-
-  #     Minored in Mathematics. President of AI Club.
+  - area: High School
+    institution: Nanjing Foreign Language School
+    date_start: 2024-09-01
+    date_end: ''
+    summary: |
+      Student researcher working across generative models, accessibility, and the social impact of AI. President of the NFLS AI Club.
 
 work:
+  - position: President, NFLS AI Club
+    company_name: Nanjing Foreign Language School
+    company_url: ''
+    company_logo: ''
+    date_start: 2025-09-01
+    date_end: ''
+    summary: |
+      Lead a student community for technical workshops, invited lectures, and discussions on how AI systems should be built and questioned.
+  - position: NYLF Engineering Scholar
+    company_name: NYLF Engineering | Envision by WorldStrides
+    company_url: 'https://www.envisionexperience.com/explore-our-programs/national-young-leaders-forum-engineering'
+    company_logo: ''
+    date_start: 2025-07-05
+    date_end: 2025-07-12
+    summary: |
+      Residential engineering leadership program at Georgia Tech, covering design thinking, robotics, ethics, and collaborative prototyping.
   - position: Student
     company_name: Nanjing Foreign Language School
     company_url: ''
@@ -88,14 +93,6 @@ work:
     date_end: ''
     summary: |
       ORCID-listed affiliation in Nanjing, Jiangsu, China.
-  # - position: AI Research Intern
-  #   company_name: OpenAI
-  #   company_url: 'https://openai.com/'
-  #   company_logo: ''
-  #   date_start: 2019-06-01
-  #   date_end: 2019-12-31
-  #   summary: |
-  #     Worked on GPT-3 scaling. Co-authored paper on prompt engineering.
 
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
@@ -104,37 +101,37 @@ skills:
     items:
       - name: Python & PyTorch
         description: ''
-        percent: 95
+        percent: 90
         icon: code-bracket
+      - name: Diffusion & Generative Models
+        description: ''
+        percent: 88
+        icon: cpu-chip
       - name: Machine Learning
         description: ''
-        percent: 100
+        percent: 85
         icon: chart-bar
-      - name: Competitive Programming
-        description: ''
-        percent: 90
-        icon: puzzle-piece
       - name: Algorithms & Data Structures
         description: ''
-        percent: 95
-        icon: cpu-chip
+        percent: 88
+        icon: puzzle-piece
       - name: Web Development
         description: ''
-        percent: 80
+        percent: 78
         icon: code-bracket
   - name: Hobbies
-    color: '#eeac02'
-    color_border: '#f0bf23'
+    color: '#c45c26'
+    color_border: '#e07a3d'
     items:
       - name: Tetris
         description: ''
         percent: 80
         icon: puzzle-piece
-      - name: Building Custom AI models
+      - name: Building custom models
         description: ''
         percent: 90
         icon: cpu-chip
-      - name: Sci-Fi Reading
+      - name: Sci-fi reading
         description: ''
         percent: 70
         icon: book-open
@@ -144,47 +141,18 @@ languages:
     percent: 100
   - name: English (Fluent)
     percent: 90
-
-# Awards.
-#   Add/remove as many awards below as you like.
-#   Only `title`, `awarder`, and `date` are required.
-#   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
-# awards:
-  # - title: Best Paper Award
-  #   url: https://neurips.cc/
-  #   date: '2022-12-01'
-  #   awarder: NeurIPS
-  #   icon: hero/trophy
-  #   summary: |
-  #     Awarded for groundbreaking work on efficient training of large models.
-  # - title: AI Innovation Grant
-  #   url: https://www.nsf.gov/
-  #   date: '2021-06-15'
-  #   awarder: National Science Foundation
-  #   icon: hero/currency-dollar
-  #   summary: |
-  #     $500,000 grant for research in ethical AI development.
-  # - title: Outstanding PhD Thesis
-  #   url: https://www.stanford.edu/
-  #   date: '2019-06-30'
-  #   awarder: Stanford University
-  #   icon: hero/academic-cap
-  #   summary: |
-  #     Recognized for contributions to scaling laws in deep learning.
 ---
 
 ## Artificial Minds, Human Values
 
-I’m **Ruize Xia**, a student at **Nanjing Foreign Language School** in Nanjing, Jiangsu, China, and a student researcher working across artificial intelligence, generative models, accessibility, and AI's social impact. My ORCID is [0009-0000-0501-0943](https://orcid.org/0009-0000-0501-0943).
+I’m **Ruize Xia**, a student at **Nanjing Foreign Language School** in Nanjing, Jiangsu, China. I work as an independent student researcher on generative models, accessibility, and the social conditions of AI systems. ORCID: [0009-0000-0501-0943](https://orcid.org/0009-0000-0501-0943).
 
-My current publications include **“Attention Heatmap Drift in a Contrastively Pretrained Vision–Language Model: A Controlled Matched-Learning-Rate Comparison of Full Fine-Tuning and Low-Rank Adaptation”** and **“Text2Sign: A Single-GPU Diffusion Baseline for Text-to-Sign Language Video Generation.”**
+Recent work includes **Text2Sign**, a peer-reviewed [IEEE Access](https://doi.org/10.1109/ACCESS.2026.3686260) article (also on [arXiv:2607.13164](https://arxiv.org/abs/2607.13164)) on single-GPU text-to-sign-language video generation, and a controlled [arXiv](https://arxiv.org/abs/2604.16410) study of attention drift and transfer retention in fine-tuned CLIP. Code and checkpoints live on [GitHub](https://github.com/xiaruize0911) and [Hugging Face](https://huggingface.co/xiaruize).
 
-My work begins with a conviction: technical progress is not automatically human progress. Powerful systems can help people learn, communicate, and solve hard problems, but only when they are built with care for fairness, accessibility, accountability, and human dignity.
+Technical progress is not automatically human progress. Powerful systems can help people learn, communicate, and solve hard problems, but only when they are built with care for fairness, accessibility, accountability, and human dignity. That belief shapes the work collected here:
 
-That belief shapes the work collected on this site:
-
-* **Research** on value-aligned evaluation, accessible AI, and decision support.
+* **Research** on accessible generation, efficient inference, and value-aligned evaluation.
 * **Writing** that connects machine learning to education, civic trust, and moral responsibility.
-* **Service and public-facing experiments** that turn abstract principles into workshops, tools, and community-facing practice.
+* **Service** through the NFLS AI Club and public-facing experiments that turn principles into practice.
 
 The goal is not to romanticize technology or reject it. The goal is to ask better questions, design better systems, and keep human values legible even when the machines grow more capable.
