@@ -5,7 +5,7 @@ date: 2022-10-24
 type: landing
 
 design:
-  spacing: '6rem'
+  spacing: '5.5rem'
 
 sections:
   - block: markdown
@@ -15,37 +15,36 @@ sections:
       text: |
         {{< home-hero-floating-title >}}
 
-        ### Our Mission
+        <div class="mission-panel">
 
-        This site investigates how artificial intelligence can be designed, governed, and taught in ways that protect **human dignity**, strengthen **public trust**, and expand **social opportunity**.
+        <p class="section-kicker">The claim</p>
 
-        Inspired by the interdisciplinary spirit of technology, philosophy, and civic engagement, the project asks a simple but demanding question: **How do we build intelligent systems without losing sight of the people they are meant to serve?**
+        ### Build systems that remain answerable to the people they affect.
 
-        The answer lives in research, essays, real-world experience, and community-facing work. In other words: fewer black boxes, more human responsibility.
+        The work on this site is not a list of venues first. It is a sequence of ideas about access, compute, and judgment — and then the papers, code, and teaching used to pressure-test them.
+
+        </div>
+
+        {{< core-ideas >}}
     design:
       columns: '1'
-      css_class: 'text-center homepage-hero-section'
+      css_class: 'homepage-hero-section'
 
-  - block: collection
-    id: research
+  - block: markdown
     content:
-      title: Research
-      subtitle: 'Compiled papers and working notes on accessibility, efficient AI systems, and responsible model adaptation'
-      text: ''
-      filters:
-        folders:
-          - publications
-        featured_only: true
-      count: 3
+      title: The work
+      subtitle: 'Results that follow from the ideas, not the other way around'
+      text: |
+        {{< work-results >}}
     design:
-      view: article-grid
-      columns: 3
+      columns: '1'
+      css_class: 'section-projects'
 
   - block: collection
     id: concerns
     content:
-      title: Our Concerns
-      subtitle: 'Three longer essays on fairness, labor, and the physical costs behind AI development'
+      title: Writing
+      subtitle: 'Essays that keep the ideas in contact with fairness, labor, and material cost'
       text: ''
       count: 3
       filters:
@@ -59,51 +58,10 @@ sections:
       columns: 3
 
   - block: collection
-    id: experience
-    content:
-      title: Experience
-      subtitle: 'Internships and practical engineering work'
-      text: ''
-      filters:
-        folders:
-          - experience
-        featured_only: false
-      count: 3
-      order: desc
-    design:
-      css_class: responsive-card-grid
-      view: card
-      columns: 3
-
-  - block: collection
-    id: blog
-    content:
-      title: Blog
-      subtitle: 'Essays on AI, ethics, public life, and human flourishing'
-      text: ''
-      page_type: blog
-      count: 3
-      filters:
-        kinds: ["page"]
-        author: ''
-        category: ''
-        tag: ''
-        exclude_featured: false
-        exclude_future: false
-        exclude_past: false
-        publication_type: ''
-      offset: 0
-      order: desc
-    design:
-      css_class: responsive-card-grid
-      view: card
-      columns: 3
-
-  - block: collection
     id: club
     content:
-      title: NFLS AI Club
-      subtitle: 'Meetings, workshops, and hands-on learning'
+      title: Practice
+      subtitle: 'The NFLS AI Club is where the same questions get taught, argued, and tried with other students'
       text: ''
       filters:
         folders:
@@ -116,14 +74,41 @@ sections:
       view: card
       columns: 3
 
+  - block: collection
+    id: experience
+    content:
+      title: Elsewhere
+      subtitle: 'Places the work left the notebook'
+      text: ''
+      filters:
+        folders:
+          - experience
+        featured_only: false
+      count: 3
+      order: desc
+    design:
+      css_class: responsive-card-grid
+      view: card
+      columns: 3
+
+  - block: markdown
+    content:
+      title: ''
+      subtitle: ''
+      text: |
+        {{< home-cta >}}
+    design:
+      columns: '1'
+      css_class: 'section-cta'
+
   - block: resume-biography-3
     content:
       username: admin
       text: ''
       headings:
-        about: 'About the Founder'
+        about: 'About'
         education: 'Education'
-        interests: 'Focus Areas'
+        interests: 'Focus areas'
     design:
       css_class: hbx-bg-gradient
       avatar:

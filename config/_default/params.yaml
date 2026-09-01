@@ -6,15 +6,15 @@
 # Appearance
 appearance:
   mode: system
-  color: indigo
+  color: teal
 
 # SEO
 marketing:
   seo:
-    site_type: WebSite
+    site_type: Person
     local_business_type: ''
-    org_name: 'Artificial Minds, Human Values'
-    description: 'A Hugo site exploring artificial intelligence, human values, ethics, education, and social impact through research, essays, and public-interest service.'
+    org_name: 'Ruize Xia'
+    description: 'Ideas about access, compute, and judgment in AI — then the papers, code, and teaching used to test them. Ruize Xia, Nanjing Foreign Language School.'
     twitter: 'xiaruize'
   analytics:
     google_analytics: ''
@@ -35,12 +35,12 @@ header:
     show_search: true
     show_theme_chooser: true
     logo:
-      text: 'Artificial Minds, Human Values'
+      text: 'AMHV'
 
 # Site footer
 footer:
   copyright:
-    notice: '© {year} Artificial Minds, Human Values. This work is licensed under {license}'
+    notice: '© {year} Ruize Xia · Artificial Minds, Human Values. Licensed under {license}'
     license:
       enable: true
       allow_derivatives: false

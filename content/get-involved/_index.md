@@ -4,17 +4,17 @@ date: 2026-03-16
 type: landing
 
 design:
-  spacing: '6rem'
+  spacing: '5.5rem'
 
 sections:
   - block: markdown
     content:
-      title: GET INVOLVED
+      title: Get involved
       subtitle: ''
       text: |
-        ## Let's hear your voice
+        <p class="section-kicker">Conversation and collaboration</p>
 
-        This project grows through conversation and collaboration.
+        The ideas on this site are unfinished on purpose. They grow through careful questions, not through noise.
 
         You can get involved by:
 
@@ -22,11 +22,16 @@ sections:
         * collaborating on a workshop or reading group,
         * sharing feedback on research drafts,
         * proposing an accessibility or civic-tech idea,
-        * or simply starting a thoughtful conversation about AI and human values.
+        * or starting a specific conversation about AI and human values.
 
-        If you'd like to connect, reach out at [xiaruize0911@gmail.com](mailto:xiaruize0911@gmail.com) or through [GitHub](https://github.com/xiaruize0911).
+        The most useful contributions are often the most human ones: a lived experience, a criticism that sharpens an argument, or a community need that technology should be made to answer.
 
-        The most useful contributions are often the most human ones: a careful question, a lived experience, a criticism that sharpens the argument, or a community need that technology should be made to answer.
+        <div class="home-cta__actions" style="margin-top:1.5rem;">
+        <a class="btn-primary" href="mailto:xiaruize0911@gmail.com">Email Ruize</a>
+        <a class="btn-secondary" href="https://github.com/xiaruize0911">GitHub</a>
+        <a class="btn-secondary" href="https://orcid.org/0009-0000-0501-0943">ORCID</a>
+        </div>
     design:
       columns: '1'
+      css_class: 'page-intro'
 ---

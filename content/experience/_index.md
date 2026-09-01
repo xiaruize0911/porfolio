@@ -10,7 +10,7 @@ design:
 sections:
     - block: collection
       content:
-        title: My Experience
+        title: Experience
         subtitle: ''
         text: ''
         # Choose how many pages you would like to display (0 = all pages)

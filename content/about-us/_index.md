@@ -4,35 +4,32 @@ date: 2026-03-16
 type: landing
 
 design:
-  spacing: '6rem'
+  spacing: '5.5rem'
 
 sections:
   - block: markdown
     content:
-      title: ABOUT US
+      title: About
       subtitle: ''
       text: |
-        **Artificial Minds, Human Values** is a personal research and public-writing project led by **Ruize Xia**.
+        <p class="section-kicker">Artificial Minds, Human Values</p>
 
-        The project was created to study a problem that is increasingly hard to ignore: artificial intelligence is becoming more capable, more visible, and more influential in everyday life, yet the language we use to judge it often remains too narrow. We talk about speed, scale, accuracy, and benchmarks. We talk less about dignity, legibility, fairness, and what good judgment should look like when machines participate in human decisions.
+        **Artificial Minds, Human Values** is the idea, not the résumé line. It is the research and writing project of **Ruize Xia**, a student at Nanjing Foreign Language School.
 
-        This site responds to that gap through an interdisciplinary lens. It combines technical curiosity with ethical analysis, drawing from machine learning, philosophy, education, accessibility, and civic life. The aim is not to separate engineering from human concerns, but to put them back into the same sentence.
+        The starting claim is narrow and demanding: technical progress is not automatically human progress. Speed, scale, and benchmark scores are easy to talk about. Dignity, access, and the right to disagree with a machine are harder — and more important once a system leaves the lab.
 
-        Ruize's work asks questions such as:
+        Three ideas organize the work.
 
-        * What should responsible AI look like in classrooms, public institutions, and community settings?
-        * How do we evaluate systems not only by output quality, but also by whether people can trust, question, and understand them?
-        * What does it mean to keep a human being visible when automation encourages abstraction?
+        **Access is a design problem.** If a model can generate language or video, the first question is who can enter the conversation. [Text2Sign](/publications/text2sign/) is the current test of that idea: text-to-sign-language video on a single GPU, with public code and a released model.
 
-        The work on this site takes three forms.
+        **Capability should survive real limits.** A method that only exists on a cluster is not the same as a method someone can run, inspect, and share. The [on-device diffusion](/publications/real-time-on-device-diffusion/) kernels and the [University Ranking](/projects/university-ranking/) app are two different attempts to keep useful systems inside ordinary constraints.
 
-        **First, research.** Concept notes and working papers explore value-aligned evaluation, accessibility, and the role of human judgment in socio-technical systems.
+        **Adaptation needs to stay visible.** Fine-tuning can raise a score while changing what a model attends to. The [CLIP attention study](/publications/attention-structural-change-clip/) measures that drift. The notes on [human judgment](/publications/human-judgment-in-the-loop/) and [value-aligned evaluation](/publications/value-aligned-evaluation/) ask who remains able to contest the result.
 
-        **Second, writing.** Essays connect AI to everyday moral and civic questions: explanation, accountability, labor, inclusion, and the responsibilities of designers.
+        The NFLS AI Club is the same argument in a classroom: technical skill, then the question of whether the system should work that way, and for whom.
 
-        **Third, service.** Workshops, reading groups, and public-interest experiments translate ideas into practical work that can help learners and communities engage AI critically rather than passively.
-
-        The deeper goal is to build a style of inquiry that is technically serious and morally serious at the same time. Not alarmism. Not hype. Just clearer thinking, better design, and stronger human values.
+        Contact: [xiaruize0911@gmail.com](mailto:xiaruize0911@gmail.com) · [GitHub](https://github.com/xiaruize0911) · [ORCID](https://orcid.org/0009-0000-0501-0943) · [Hugging Face](https://huggingface.co/xiaruize)
     design:
       columns: '1'
+      css_class: 'page-intro about-page'
 ---

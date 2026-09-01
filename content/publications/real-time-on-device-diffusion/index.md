@@ -7,7 +7,8 @@ publishDate: "2026-03-21T00:00:00Z"
 publication_types: ["article"]
 publication: "Compiled Research Manuscript"
 publication_short: "Manuscript"
-abstract: This paper turns low-bit diffusion acceleration into a real systems result. Building on MoDiff, it introduces a practical kernel implementation and a cache-update fusion strategy that reduces memory traffic during inference, achieving measured runtime gains on hardware rather than only operation-count estimates.
+abstract: |
+  Diffusion models are effective generative models, but iterative denoising and heavy backbones make real-time on-device deployment difficult. Building on Modulated Diffusion (MoDiff), this paper implements a practical kernel path and a cache-update fusion strategy that reduces memory traffic during inference. Experiments show up to 1.8x runtime speedup over FP32 models and up to 42.2% reduction in memory I/O compared with FP32.
 summary: A systems paper on accelerating diffusion inference with fused low-bit kernels and cache-update fusion.
 tags:
 - Diffusion Models
@@ -19,6 +20,9 @@ links:
   - type: custom
     label: PDF
     url: /publications/real-time-on-device-diffusion/paper.pdf
+  - type: custom
+    label: MoDiff code
+    url: https://github.com/xiaruize0911/MoDiff
 image:
   caption: 'Overview image generated from the compiled PDF.'
   focal_point: Center
@@ -28,7 +32,8 @@ slides: ""
 ---
 
 **Authors:** Xia Ruize, Weizhi Gao, Jiapeng Hu, Xiaorui Liu  
-**Compiled from:** `draft/Real_Time_On_Device_Diffusion__Practical_Acceleration_via_Fused_Low_Bit_Kernels/main.tex`
+**Compiled from:** `draft/Real_Time_On_Device_Diffusion__Practical_Acceleration_via_Fused_Low_Bit_Kernels/main.tex`  
+**Related implementation:** [github.com/xiaruize0911/MoDiff](https://github.com/xiaruize0911/MoDiff)
 
 ## Abstract
 
